@@ -84,7 +84,7 @@ fig = plt.figure()
 style = {'edgecolor':'k','color':'white',
          }
 
-RATIO_SIZE_CIRCLE = 85
+RATIO_SIZE_CIRCLE = 120
 ax = fig.add_subplot(111)
 indices = np.where(count_matrix_im > 0)
 index_row, index_col = indices
