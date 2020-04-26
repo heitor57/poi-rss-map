@@ -761,7 +761,15 @@ the model performance?"
   month        = {-},
   problem      = {poi_rec},
   methodology  = {cf,factorization,probabilistic},
-  information  = {user_pref,geographical},
+  information  = {user_pref,geographical,image},
+
+
+  dataset      = {instagram},
+  metrics      = {precision,recall},
+  baselines    = {UBCF,VUCF,NMF,PMF,VBPR},
+  model_name   = {VPOI, Visual Content Enhanced POI recommendation},
+
+  annotation = {N(metric list size) 5,10},
 }
 
 @article{liu17_exper_evaluat_point_of_inter,
@@ -793,8 +801,27 @@ the model performance?"
   date_added   = {Wed Jul 24 23:17:03 2019},
   month        = {-},
   problem      = {poi_rec},
-  methodology  = {others},
-  information  = {user_pref,geographical,social,textual},
+  methodology  = {link_based},
+  information  = {geographical,category,social,textual,sequential},
+
+
+  dataset      = {yelp},
+  metrics      = {precision,recall},
+  baselines    = {Random,UBCF,IBCF,PMF,ItemRank,Personalized PageRank(PPR),LFBCA,TriRank},
+  model_name   = {AGSG,Aspect-aware Geo-Social Influence Graph},
+
+  annotation = {sequential because use dist of two pois
+  uses 5-fold cross validation
+  list size 5, 10, 20
+  good baselines
+  Phoenix, Las Vegas and Charlotte
+
+  "Following the preprocessing
+  practice for evaluating the performance of recommender systems
+  [5], users and POIs with less than 10 reviews are filtered out"
+  
+  },
+
 }
 
 @inproceedings{rakesh17_probab_social_sequen_model_tour_recom,
@@ -810,9 +837,15 @@ the model performance?"
   url          = {https://doi.org/10.1145/3018661.3018711},
   date_added   = {Wed Jul 24 23:17:08 2019},
   month        = {-},
-  problem      = {next_poi,Tour},
+  problem      = {Tour},
   methodology  = {probabilistic},
-  information  = {geographical,social,categorical},
+  information  = {geographical,social,categorical,sequential},
+
+  dataset      = {foursquare(tweets)},
+  metrics      = {precision,recall,success,dcg},
+  baselines    = {Random Multinomial Choice,Markov,Photographer Behavior Model},
+  model_name   = {SSTREC},
+  annotation = {success is a particular metric from the article},
 }
 
 @inproceedings{yang17_bridg_collab_filter_semi_super_learn,
@@ -830,7 +863,13 @@ the model performance?"
   month        = {-},
   problem      = {poi_rec},
   methodology  = {cf},
-  information  = {user_pref,geographical,social},
+  information  = {geographical,social},
+
+  dataset      = {gowalla,yelp},
+  metrics      = {precision,recall,ndcg,map},
+  baselines    = {IRenMF,LOCABAL,USG,iGSLR,LORE,ASMF,ARMF},
+  model_name   = {PACE},
+  annotation = {},
 }
 
 @inproceedings{pham17_gener_model_out_region_recom,
