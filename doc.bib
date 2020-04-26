@@ -564,6 +564,11 @@
   problem      = {poi_rec,time_aware},
   methodology  = {factorization,TF,T},
   information  = {user_pref,geographical,categorical,sequential,temporal},
+  dataset = {foursquare,newyork,losangeles},
+
+  metrics      = {precision},
+  baselines    = {MF,PMF,FPMC,CD,TD,TA-FBMC,TAD-FMPC},
+  model_name   = {Prido,s-Prido},
 }
 
 @inproceedings{baral18_close,
@@ -579,8 +584,13 @@
   date_added   = {Wed Jul 24 23:14:39 2019},
   month        = {-},
   problem      = {ContSeq},
-  methodology  = {LSTM},
+  methodology  = {cf,LSTM,RNN},
   information  = {user_pref,geographical,social,categorical,temporal},
+
+  dataset = {weeplaces,gowalla},
+  metrics      = {diversity,pair-f1,ndcg},
+  baselines    = {MostPopular,MarkovChain,Apriori,HITS},
+  model_name   = {CLoSe,CLoSe-LSTM,CLoSe-RNN},
 }
 
 @inproceedings{liang18_top_route_searc_submod_model,
@@ -595,9 +605,15 @@
   url          = {https://doi.org/10.1145/3209978.3210038},
   date_added   = {Wed Jul 24 23:14:44 2019},
   month        = {-},
-  problem      = {Req},
+  problem      = {Req,Trip,Tour},
   methodology  = {cf},
-  information  = {geographical,sequential},
+  information  = {geographical,category,textual,sequential},
+
+  dataset = {foursquare,singapore,gowalla,austin},
+  metrics      = {gain for effectiveness,runtime,search space},
+  baselines    = {BF,PACER+1,PACER+2,PACER-SC,GR,AP,A*},
+  model_name   = {PACER},
+  unique = {true},
 }
 
 @article{logesh17_reliab_point_inter_recom_based,
@@ -615,6 +631,13 @@
   problem      = {poi_rec},
   methodology  = {factorization},
   information  = {social,categorical},
+
+  dataset = {foursquare,gowalla,jiepang,britekite},
+  metrics      = {rmse,coverage,precision,f1,doa,map,averageprecision},
+  baselines    = {TidalTrust,MoleTrust,TrustWalker,RelevantTrustWalker,SocialPertinentTrustWalker},
+  model_name   = {},
+
+  annotation = {model name?,bad article, bad model presentation, bad baselines and other things},
 }
 
 @article{si17_ctf_ara,
@@ -630,8 +653,14 @@
   url          = {https://doi.org/10.1016/j.knosys.2017.04.013},
   date_added   = {Wed Jul 24 23:16:09 2019},
   problem      = {poi_rec},
-  methodology  = {cf},
-  information  = {geographical,social,sequential,temporal},
+  methodology  = {cf,hybrid},
+  information  = {geographical,sequential,temporal},
+
+  dataset = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  baselines    = {UBCF,LRT,UTE,CTAG-BPP,},
+  model_name   = {FSUA,CTF-ARA},
+
 }
 
 @article{ying17_tempor_aware_poi_recom_system,
@@ -646,9 +675,17 @@
   doi          = {10.1016/j.neucom.2017.02.067},
   url          = {https://doi.org/10.1016/j.neucom.2017.02.067},
   date_added   = {Wed Jul 24 23:16:14 2019},
-  problem      = {time_aware},
+  problem      = {poi_rec,time_aware},
   methodology  = {link_based,factorization,hybrid,TF},
-  information  = {user_pref,geographical,social,textual,temporal},
+  information  = {user_pref,geographical,category,social,textual,temporal},
+
+  dataset      = {foursquare},
+  metrics      = {precision,recall},
+  baselines    = {TD-CF, LP-CF,HITS},
+  model_name   = {TAP w/o TI(without temporal influence), TAP(without friendship), TAP-F},
+
+  annotation = {confuse reading article, but it is ok to use},
+
 }
 
 @article{luan17_partit_based_collab_tensor_factor_poi_recom,
@@ -667,6 +704,14 @@
   problem      = {poi_rec,time_aware},
   methodology  = {cf,factorization,TF,CTF},
   information  = {geographical,categorical,temporal},
+
+  dataset      = {weibo,dianping},
+  metrics      = {MAE,RMSE},
+  baselines    = {TMF},
+  model_name   = {CTF,PCTF},
+
+  annotation = {only one baseline},
+
 }
 
 @inbook{zhao18_geo_teaser,
@@ -682,8 +727,23 @@
   url          = {https://doi.org/10.1007/978-981-13-1349-3_4},
   year         = 2018,
   problem      = {poi_rec},
-  methodology  = {cf},
+  methodology  = {cf,SGD},
   information  = {geographical,sequential,temporal},
+
+  dataset      = {},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {},
+
+  annotation = {
+  word2vec,
+  "(1) how
+the Geo-Teaser model performs comparing with state-of-the-art recommendation
+methods? (2) how each component (i.e., the various temporal characteristics and
+geographical influence) affects the model performance? (3) how the parameters affect
+the model performance?"
+},
+
 }
 
 @inproceedings{wang17_what_your_images_reveal,
