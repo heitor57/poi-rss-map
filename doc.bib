@@ -67,7 +67,7 @@
   month =	 7,
 
   problem = {['next_poi',]},
-  methodology = {['OP,]},
+  methodology = {['OP',]},
   information = {['geographical','textual']},
   comp={['STELLAR','LSTM','GRU','ST-RNN','Random','SG','POI2Vec','Geo-Teaser']},
 }
@@ -87,8 +87,8 @@
   problem = {['poi_rec',]},
   methodology = {['factorization','TF','SGD']},
   information = {['temporal']},
-  annotation={periodicity, consecutiveness, and non-uniformness}
-  model_name= {ATTF}
+  annotation={periodicity, consecutiveness, and non-uniformness},
+  model_name= {ATTF},
   comp={['WRMF','BPR-MF','LRT','FPMC-LR']},
 
 }
@@ -248,8 +248,8 @@
   problem = {['next_poi',]},
   methodology = {['cf','LSTM',]},
   information = {['geographical','temporal']},
-  model_name = {ST-LSTM,ASST-LSTM}
-  comp = {'no access to article'}
+  model_name = {ST-LSTM,ASST-LSTM},
+  comp = {'no access to article'},
 
 }
 
@@ -269,8 +269,8 @@
   problem = {['poi_rec','Friend']},
   methodology = {['cf','ML',]},
   information = {['geographical','social']},
-  model_name = {GR-DELM}
-  comp = {['UCFR','EPR','HGSMR','EFR']}
+  model_name = {GR-DELM},
+  comp = {['UCFR','EPR','HGSMR','EFR']},
 }
 
 @article{zhu18_contex_aware_group_recom_point_of_inter,
@@ -308,7 +308,7 @@
   problem = {['next_poi']},
   methodology = {['cf','LSTM',]},
   information = {['user_pref','geographical','categorical','temporal']},
-  comp= {['Popu','FPMC','PRME','RNN','LSTM',TMCA-n','TMCA-ca','TMCA-ta']}
+  comp= {['Popu','FPMC','PRME','RNN','LSTM','TMCA-n','TMCA-ca','TMCA-ta']},
   model_name= {TMCA},
   metrics= {recall,ndcg},
 }
@@ -371,8 +371,8 @@
   problem = {['time_aware','Tour','Trip']},
   methodology = {['cf','hybrid',]},
   information = {['user_pref','geographical','categorical','temporal','sequential']},
-  metrics = {trecall,tprecision,tf1}
-  comp = {['NearestPOI','MostPopular','MostPreferred','Forward']}
+  metrics = {trecall,tprecision,tf1},
+  comp = {['NearestPOI','MostPopular','MostPreferred','Forward']},
 }
 
 @article{liu18_self_adapt_point_of_inter,
@@ -413,8 +413,8 @@
   methodology = {['cf','hybrid','IRL','Markov','Factorization',]},
   information = {['user_pref','categorical','sequential']},
   
-  comp= {['kNN','ALMM']}
-  metrics = {reward, dissimilarity, novelty, precision}
+  comp= {['kNN','ALMM']},
+  metrics = {reward, dissimilarity, novelty, precision},
 }
 
 @inproceedings{tang12_locat_aware_collab_filter_qos,
@@ -431,9 +431,9 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:47 2019},
   month =	 6,
 
-  @Comment problem = {['poi_rec']},
-  @Comment methodology = {['cf',]},
-  @Comment information = {['geographical','social','textual',]},
+  _problem = {['poi_rec']},
+  _methodology = {['cf',]},
+  _information = {['geographical','social','textual',]},
 }
 
 @article{17_social_recom_model_regul_with,
@@ -582,7 +582,7 @@
   information = {['geographical','categorical',]},
 
   metrics = {precision},
-  comp = {['MF',PMF','FPMC','PRME']},
+  comp = {['MF','PMF','FPMC','PRME']},
   model_name = {LBPR,LBPR-M,LBPR-N},
   
 }
