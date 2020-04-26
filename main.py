@@ -9,11 +9,10 @@ from collections import defaultdict
 with open('doc.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
-
-
 fields = ['problem',
           'methodology',
           'information']
+
 PRETTY_PROBLEM = {
     'poi_rec': 'Poi rec.',
     'time_aware': 'Time-aware',
@@ -55,9 +54,9 @@ count_problems = defaultdict(int)
 num_articles = 0
 for i,entry in enumerate(bib_database.entries):
     if entry.get('problem',None):
-        methodologies.append(eval(entry['methodology']))
-        informations.append(eval(entry['information']))
-        problems.append(eval(entry['problem']))
+        methodologies.append(entry['methodology'].split(','))
+        informations.append(entry['information'].split(','))
+        problems.append(entry['problem'].split(','))
         num_articles += 1
 
 for i,methodology in enumerate(methodologies.copy()):
