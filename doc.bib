@@ -28,7 +28,7 @@
   problem      = {poi_rec},
   methodology  = {factorization,probabilistic,CNN},
   information  = {user_pref,geographical,social},
-  comp         = {LCARS,CoRe,GeoMF,DRW,NCPD},
+  baselines    = {LCARS,CoRe,GeoMF,DRW,NCPD},
 }
 
 @inproceedings{wang18_exploit_poi_specif_geogr_influen,
@@ -47,7 +47,7 @@
   problem      = {poi_rec},
   methodology  = {SGA},
   information  = {user_pref,geographical},
-  comp         = {UCF+G,MGM+PFM,GeoMF,RankGeoFM,Geo-Teaser},
+  baselines    = {UCF+G,MGM+PFM,GeoMF,RankGeoFM,Geo-Teaser},
 }
 
 @inproceedings{chang18_conten_aware_hierar_point_inter,
@@ -66,7 +66,7 @@
   problem      = {next_poi},
   methodology  = {OP},
   information  = {geographical,textual},
-  comp         = {STELLAR,LSTM,GRU,ST-RNN,Random,SG,POI2Vec,Geo-Teaser},
+  baselines    = {STELLAR,LSTM,GRU,ST-RNN,Random,SG,POI2Vec,Geo-Teaser},
 }
 
 @article{zhao17_aggreg_tempor_tensor_factor_model,
@@ -86,7 +86,7 @@
   information  = {temporal},
   annotation   = {periodicity, consecutiveness, and non-uniformness},
   model_name   = {ATTF},
-  comp         = {WRMF,BPR-MF,LRT,FPMC-LR},
+  baselines    = {WRMF,BPR-MF,LRT,FPMC-LR},
 }
 
 @article{cai17_integ_spatial_tempor_contex_into,
@@ -105,7 +105,7 @@
   problem      = {poi_rec},
   methodology  = {factorization},
   information  = {geographical,temporal},
-  comp         = {MF-0/1,MF-Freq,WMF,Rank-GeoFM},
+  baselines    = {MF-0/1,MF-Freq,WMF,Rank-GeoFM},
 }
 
 @article{lim17_person_trip_recom_touris_based,
@@ -125,7 +125,7 @@
   problem      = {Tour,Req},
   methodology  = {cf},
   information  = {user_pref,geographical,temporal,sequential,categorical},
-  comp         = {CF-Pho,CF-Bin,GNear,GPop,Rand},
+  baselines    = {CF-Pho,CF-Bin,GNear,GPop,Rand},
 }
 
 @inproceedings{yao18_exploit_human_mobil_patter_point_inter_recom,
@@ -144,7 +144,7 @@
   methodology  = {factorization,probabilistic,PFM},
   information  = {categorical,temporal},
   model_name   = {TM-PFM},
-  comp         = {PMF,NMF,BPTF,LRT},
+  baselines    = {PMF,NMF,BPTF,LRT},
 }
 
 @inproceedings{ma18_point_inter_recom,
@@ -178,7 +178,7 @@
   methodology  = {factorization,SVR,ML},
   information  = {user_pref,geographical,social},
   model_name   = {GeoEISo},
-  comp         = {USG,IRenMF,MGM,CoReSo,SVD++,TrustMF,iGSLR,UA,DRW,NCP},
+  baselines    = {USG,IRenMF,MGM,CoReSo,SVD++,TrustMF,iGSLR,UA,DRW,NCP},
 }
 
 @article{ding18_recnet,
@@ -197,7 +197,7 @@
   problem      = {poi_rec},
   methodology  = {factorization,DNN},
   information  = {geographical,categorical,sequential},
-  comp         = {WRMF,BPR-MF,USG,GeoMF,Rank-GeoFM,ARMF},
+  baselines    = {WRMF,BPR-MF,USG,GeoMF,Rank-GeoFM,ARMF},
   model_name   = {RecNet},
 }
 
@@ -217,7 +217,7 @@
   problem      = {poi_rec},
   methodology  = {cf,probabilistic,hybrid},
   information  = {geographical,temporal},
-  comp         = {UBCF,USG,LRT,UTE-SE,STELLAR,FPMC,TRM,TICRec},
+  baselines    = {UBCF,USG,LRT,UTE-SE,STELLAR,FPMC,TRM,TICRec},
 }
 
 @article{huang19_atten_based_spatiot_lstm_networ,
@@ -237,7 +237,7 @@
   methodology  = {cf,LSTM},
   information  = {geographical,temporal},
   model_name   = {ST-LSTM,ASST-LSTM},
-  comp         = {n,o, ,a,c,c,e,s,s, ,t,o, ,a,r,t,i,c,l,e},
+  baselines    = {no access to article},
 }
 
 @article{zhao17_novel_recom_system_locat_based,
@@ -256,7 +256,7 @@
   methodology  = {cf,ML},
   information  = {geographical,social},
   model_name   = {GR-DELM},
-  comp         = {UCFR,EPR,HGSMR,EFR},
+  baselines    = {UCFR,EPR,HGSMR,EFR},
 }
 
 @article{zhu18_contex_aware_group_recom_point_of_inter,
@@ -275,7 +275,7 @@
   problem      = {Group},
   methodology  = {cf,factorization,hybrid},
   information  = {geographical,categorical,social},
-  comp         = {UMEAN,IMEAN,UBCF,ReRex},
+  baselines    = {UMEAN,IMEAN,UBCF,ReRex},
   metrics      = {MAE,RMSE,MD},
 }
 
@@ -294,7 +294,7 @@
   problem      = {next_poi},
   methodology  = {cf,LSTM},
   information  = {user_pref,geographical,categorical,temporal},
-  comp         = {Popu,FPMC,PRME,RNN,LSTM,TMCA-n,TMCA-ca,TMCA-ta},
+  baselines    = {Popu,FPMC,PRME,RNN,LSTM,TMCA-n,TMCA-ca,TMCA-ta},
   model_name   = {TMCA},
   metrics      = {recall,ndcg},
 }
@@ -315,7 +315,7 @@
   problem      = {Trip},
   methodology  = {cf},
   information  = {geographical,temporal,sequential},
-  comp         = {n,o,t, ,c,l,e,a,r, ,w,h,a,t, ,b,a,s,e,l,i,n,e, ,i,s},
+  baselines    = {not clear what baseline is},
 }
 
 @article{aliannejadi18_person_contex_aware_point_inter_recom,
@@ -333,7 +333,7 @@
   problem      = {poi_rec},
   methodology  = {probabilistic},
   information  = {geographical,categorical,textual},
-  comp         = {LinearCatRev,GeoSoCa,nDTF,UT-ML,UT-CRF,UT-SVM},
+  baselines    = {LinearCatRev,GeoSoCa,nDTF,UT-ML,UT-CRF,UT-SVM},
 }
 
 @inproceedings{debnath18_prefer_aware_travel_route_recom_tempor_influen,
@@ -354,7 +354,7 @@
   methodology  = {cf,hybrid},
   information  = {user_pref,geographical,categorical,temporal,sequential},
   metrics      = {trecall,tprecision,tf1},
-  comp         = {NearestPOI,MostPopular,MostPreferred,Forward},
+  baselines    = {NearestPOI,MostPopular,MostPreferred,Forward},
 }
 
 @article{liu18_self_adapt_point_of_inter,
@@ -373,7 +373,7 @@
   methodology  = {cf,hybrid,Markov},
   information  = {geographical,sequential,temporal},
   metrics      = {precision, recall,fn},
-  comp         = {LORE,Rank-GeoFM,HSMM},
+  baselines    = {LORE,Rank-GeoFM,HSMM},
 }
 
 @inproceedings{massimo18_harnes_poi,
@@ -391,7 +391,7 @@
   problem      = {next_poi},
   methodology  = {cf,hybrid,IRL,Markov,Factorization},
   information  = {user_pref,categorical,sequential},
-  comp         = {kNN,ALMM},
+  baselines    = {kNN,ALMM},
   metrics      = {reward, dissimilarity, novelty, precision},
 }
 
@@ -443,7 +443,7 @@
   methodology  = {probabilistic},
   information  = {geographical},
   metrics      = {precision, recall},
-  comp         = {MostPopular,WRMF,GeoMF,BPRMF,IRenMF,WBPR-F,NBPR},
+  baselines    = {MostPopular,WRMF,GeoMF,BPRMF,IRenMF,WBPR-F,NBPR},
 }
 
 @article{ding18_spatial_tempor_distan_metric_embed,
@@ -461,7 +461,7 @@
   problem      = {poi_rec,time_aware},
   methodology  = {cf,probabilistic,hybrid,ML},
   information  = {geographical,sequential,temporal},
-  comp         = {Time-Pop,BPR-MF,UTS,Rank-GeoFM,GE,STELLAR},
+  baselines    = {Time-Pop,BPR-MF,UTS,Rank-GeoFM,GE,STELLAR},
   metrics      = {accuracy,hit,MMR},
 }
 
@@ -481,7 +481,7 @@
   problem      = {next_poi},
   methodology  = {probabilistic,Markov},
   information  = {geographical,sequential,temporal},
-  comp         = {MostPopular,BPR,FPMC,PRME},
+  baselines    = {MostPopular,BPR,FPMC,PRME},
   metrics      = {precision, recall},
   model_name   = {MEAP-T},
 }
@@ -504,7 +504,7 @@
   methodology  = {probabilistic},
   information  = {user_pref,geographical,categorical,social},
   metrics      = {precision, recall},
-  comp         = {CFA,CFL,CFR,SIG,PIT,COM},
+  baselines    = {CFA,CFL,CFR,SIG,PIT,COM},
 }
 
 @inproceedings{liao18_poi_recom_locat_based_social,
@@ -524,7 +524,7 @@
   methodology  = {factorization,probabilistic,hybrid,TF},
   information  = {user_pref,textual,categorical,temporal},
   metrics      = {precision, recall, map},
-  comp         = {TLA,CMF,ULT},
+  baselines    = {TLA,CMF,ULT},
   model_name   = {UZT},
 }
 
@@ -544,7 +544,7 @@
   methodology  = {factorization,probabilistic},
   information  = {geographical,categorical},
   metrics      = {precision},
-  comp         = {MF,PMF,FPMC,PRME},
+  baselines    = {MF,PMF,FPMC,PRME},
   model_name   = {LBPR,LBPR-M,LBPR-N},
 }
 
@@ -1227,7 +1227,7 @@
   year         = 2018,
   problem      = {Not POI},
   methodology  = {factorization,CPF},
-},
+  information = {},
 }
 
 @article{DBLP:journals/corr/abs-1805-06316,
