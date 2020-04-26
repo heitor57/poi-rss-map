@@ -1,0 +1,67 @@
+1. which are the main works of diversification on POI recommendation? What are their premises? What are their limitations?
+
+O trabalho principal é o GeoDiv. Pelo meu conhecimento nâo existe outros trabalhos sobre diversificação especificamente em POI que tenham boas avaliações/experimentos.
+
+- Sistemas de recomendação para POIs atualmente recomendam POIs limitados em uma area de atividade do usuário.
+- Diversificação geográfica é essencial para usuários que visitam muitas areas.
+
+suas premissas são:
+- POIs aptos para recomendação devem estar perto de POIs visitados pelo usuário.
+- A quantidade de POIs recomendados em cada localização deve ser proporcional ao número de POIs vizinhos que ja foram visitados pelo usuário.
+
+Somente faz a aplicação de diversificação geográfica, usuários com mais disponibilidade de andar longas distancias para consumir POIs de sua preferência não são explorados.
+Possui uma falha em endereçar o problema de diversidade entre itens por suas particularidades (categorias, gêneros, etc), tanto que em sua avaliação de ILD e outras métricas de diversidade categórica a diferença relativa entre o GeoDiv e métodos estado da arte em diversificação categórica é considerável.
+
+2. which are the main works of personalization on POI recommendation? What are their premises? What are their limitations?
+
+   Não existe trabalho sobre personalização (de diversidade) em POI especificamente pelo meu conhecimento.
+
+3. How diversity is addressed by other domains of recommendation? What are the most recent works published on RecSys Community about diversification?
+
+Na maioria dos problemas a diversidade é abordada de maneira genérica, servindo para muitos domínios.
+O trade-off entre acurácia e diversidade geralmente é explicitado no modelo. (geralmente por λ ∈ [0,1] tal que fo = rel*(1-λ) + div*λ ou fo = rel^(1-λ) * div^λ)
+
+
+Trabalhos recentes sobre diversificação RecSys:
+
+- A Diversity Adjusting Strategy with Personality for Music Recommendation (2018)
+  Métricas de avaliação(Offline): Hit rate e ILD
+- Geographical Diversification in POI Recommendation:Toward Improved Coverage on Interested Areas (2017)
+  Métricas de avaliação(Offline): Recall, ILD(cat,geo), EPC, PRg e PRg-r
+- Intent-Aware Diversification using Item-Based SubProfiles (2017)
+  Métricas de avaliação(Offline): Precision e α-NDCG
+- Diversified Utility Maximization for Recommendations. (2014)
+  Métrica de avaliação(Offline): Precision(bem particular do artigo, não é precision explicitamente)
+- Coverage, redundancy and size-awareness in genre diversity for recommender systems (2014)
+  Métricas de avaliação(Offline): Função objetivo do modelo desenvolvido pelo artigo, EILD, ERR-IA, CPR, S-recall (by subtopic)
+
+No geral avaliam comparando com xQuAD, PM, MMR, ILD, BinomDiv(Binomial)
+
+4. How these works usually evaluate the POI recommendation task? Is there any work that compares the different results in the literature?
+
+Trabalhos de recomendadores tradicionais usam cross validation ou separação simples de treino/teste em porcentagem pelo histórico de consumo de cada usuário.
+Mais particularidades de avaliação podem ser vistas pelos artigos citados acima.
+
+Para recomendadores de POI tradicionais existe o [3] que compara diversos resultados.
+
+5. Is there any work that addresses explicitly the trade-off between accuracy vs diversity on POI recommendations?
+
+Não. (Exceto o GeoDiv que na sua própria modelagem isso é explicitado, rel^(1-λ) * div^λ)
+
+6. What are the main directions that POI recommendation works are taking?
+
+Recomendação de POIs concentrados em pequenas areas e sem levar em conta questões de diversidade, novidade e usuários com disponibilidade por visitas distantes.
+
+Os métodos (recomendadores "base" e o único diversificador de POI GeoDiv) estão se apegando muito na power law definida por [1], usada para modelar probabilidade de um usuário visitar um POI.
+Esse modelo faz com que usuários que visitam muito dispersamente POIs (ou pelo menos fogem dessa regra) tenham recomendações ruins pois o modelo não endereça bem para esse usuário.
+Em [2] esse problema parece ser solucionado (no modelo) porém empiricamente continua havendo uma falha pois os modelos são complexos de mais e não conseguem generalizar bem. Porém mesmo assim nesse modelo existe uma limitação "probabilistica" de area.
+Então ainda nos modelos para recomendação de POI a power law continua a ser seguida (não é diretamente a mesma fórmula mas os modelos mais complexos expressam a mesma ideia, "mais proximo → mais provável de ser visitado").
+
+Referências:
+
+[1]
+"Exploiting Geographical Inﬂuence for Collaborative Point-of-Interest Recommendation"
+[2]
+"GeoSoCa: Exploiting Geographical, Social and Categorical Correlations for Point-of-Interest Recommendations"
+[3]
+"An Experimental Evaluation of Point-of-interest Recommendation in Location-based Social Networks"
