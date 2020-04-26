@@ -483,4 +483,4 @@ Elementos podem ser compinados para gerar feedback com mais granularidade.
 
 
 bibliographystyle:plain
-bibliography:doc.bib
+bibliography:../doc.bib
