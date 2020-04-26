@@ -730,12 +730,13 @@
   methodology  = {cf,SGD},
   information  = {geographical,sequential,temporal},
 
-  dataset      = {},
-  metrics      = {},
-  baselines    = {},
-  model_name   = {},
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  baselines    = {BPRMF,WRMF,LRT,LORE,Rank-GeoFM,SG-CWARP},
+  model_name   = {Geo-Teaser},
 
   annotation = {
+ 80\% train and 20\% test
   word2vec,
   "(1) how
 the Geo-Teaser model performs comparing with state-of-the-art recommendation
