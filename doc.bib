@@ -26,9 +26,10 @@
   url =		 {https://doi.org/10.1007/s10489-017-1103-0},
   DATE_ADDED =	 {Wed Jul 24 23:09:31 2019},
 
-  problem = {['poi_rec','',]},
+  problem = {['poi_rec',]},
   methodology = {['factorization','probabilistic','CNN']},
-  information = {['geographical','social',]},
+  information = {['user_pref','geographical','social',]},
+  comp = {['LCARS','CoRe','GeoMF','DRW','NCPD']},
 }
 
 @inproceedings{wang18_exploit_poi_specif_geogr_influen,
@@ -47,6 +48,7 @@
   problem = {['poi_rec',]},
   methodology = {['SGA',]},
   information = {['user_pref','geographical']},
+  comp = {['UCF+G','MGM+PFM','GeoMF','RankGeoFM','Geo-Teaser']},
 
 }
 
@@ -65,8 +67,9 @@
   month =	 7,
 
   problem = {['next_poi',]},
-  methodology = {['GD',]},
+  methodology = {['OP,]},
   information = {['geographical','textual']},
+  comp={['STELLAR','LSTM','GRU','ST-RNN','Random','SG','POI2Vec','Geo-Teaser']},
 }
 
 @article{zhao17_aggreg_tempor_tensor_factor_model,
@@ -82,8 +85,12 @@
   url =		 {https://doi.org/10.1007/s11063-017-9681-8},
   DATE_ADDED =	 {Wed Jul 24 23:10:18 2019},
   problem = {['poi_rec',]},
-  methodology = {['factorization','TF']},
+  methodology = {['factorization','TF','SGD']},
   information = {['temporal']},
+  annotation={periodicity, consecutiveness, and non-uniformness}
+  model_name= {ATTF}
+  comp={['WRMF','BPR-MF','LRT','FPMC-LR']},
+
 }
 
 @article{cai17_integ_spatial_tempor_contex_into,
@@ -103,6 +110,7 @@
   problem = {['poi_rec',]},
   methodology = {['factorization']},
   information = {['geographical','temporal']},
+  comp={['MF-0/1','MF-Freq','WMF','Rank-GeoFM']},
 }
 
 @article{lim17_person_trip_recom_touris_based,
@@ -121,7 +129,8 @@
   DATE_ADDED =	 {Wed Jul 24 23:10:28 2019},
   problem = {['Tour','Req']},
   methodology = {['cf']},
-  information = {['user_pref','geographical','social']},
+  information = {['user_pref','geographical','temporal','sequential','categorical']},
+  comp={['CF-Pho','CF-Bin','GNear','GPop','Rand']},
 
 }
 
@@ -139,8 +148,10 @@
   month =	 {-},
   problem = {['poi_rec']},
   methodology = {['factorization','probabilistic','PFM']},
-  information = {['geographical','social','categorical','temporal']},
-
+  information = {['categorical','temporal']},
+  model_name = {TM-PFM},
+  comp = {['PMF', 'NMF', 'BPTF','LRT']},
+  
 }
 
 @inproceedings{ma18_point_inter_recom,
@@ -173,8 +184,10 @@
   DATE_ADDED =	 {Wed Jul 24 23:10:44 2019},
 
   problem = {['poi_rec',]},
-  methodology = {['SVR','ML']},
+  methodology = {['factorization','SVR','ML']},
   information = {['user_pref','geographical','social']},
+  model_name={GeoEISo},
+  comp = {['USG','IRenMF','MGM','CoReSo','SVD++','TrustMF','iGSLR','UA','DRW','NCP']},
 }
 
 @article{ding18_recnet,
@@ -195,6 +208,8 @@
   problem = {['poi_rec',]},
   methodology = {['factorization','DNN']},
   information = {['geographical','categorical','sequential']},
+  comp= {['WRMF','BPR-MF','USG', 'GeoMF', 'Rank-GeoFM', 'ARMF']},
+  model_name= {RecNet},
 }
 
 @article{chen18_exploit_spatial_tempor_point_inter_recom,
@@ -212,8 +227,9 @@
   DATE_ADDED =	 {Wed Jul 24 23:10:55 2019},
 
   problem = {['poi_rec',]},
-  methodology = {['cf','probabilistic']},
+  methodology = {['cf','probabilistic','hybrid']},
   information = {['geographical','temporal']},
+  comp= {['UBCF','USG','LRT','UTE-SE','STELLAR','FPMC','TRM','TICRec']}
 }
 
 @article{huang19_atten_based_spatiot_lstm_networ,
@@ -230,8 +246,10 @@
   url =		 {https://doi.org/10.1109/tsc.2019.2918310},
   DATE_ADDED =	 {Wed Jul 24 23:11:00 2019},
   problem = {['next_poi',]},
-  methodology = {['LSTM',]},
+  methodology = {['cf','LSTM',]},
   information = {['geographical','temporal']},
+  model_name = {ST-LSTM,ASST-LSTM}
+  comp = {'no access to article'}
 
 }
 
@@ -249,8 +267,10 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:05 2019},
 
   problem = {['poi_rec','Friend']},
-  methodology = {['ML',]},
+  methodology = {['cf','ML',]},
   information = {['geographical','social']},
+  model_name = {GR-DELM}
+  comp = {['UCFR','EPR','HGSMR','EFR']}
 }
 
 @article{zhu18_contex_aware_group_recom_point_of_inter,
@@ -267,9 +287,10 @@
   url =		 {https://doi.org/10.1109/access.2018.2805701},
   DATE_ADDED =	 {Wed Jul 24 23:11:10 2019},
   problem = {['Group']},
-  methodology = {['factorization',]},
-  information = {['geographical','social']},
-
+  methodology = {['cf','factorization','hybrid',]},
+  information = {['geographical','categorical','social']},
+  comp = {['UMEAN','IMEAN', 'UBCF','ReRex']},
+  metrics = {MAE,RMSE,MD},
 }
 
 @inproceedings{li18_next_point_inter_recom_tempor,
@@ -285,9 +306,11 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:15 2019},
   month =	 11,
   problem = {['next_poi']},
-  methodology = {['LSTM',]},
-  information = {['Context','user_pref','geographical','temporal']},
-
+  methodology = {['cf','LSTM',]},
+  information = {['user_pref','geographical','categorical','temporal']},
+  comp= {['Popu','FPMC','PRME','RNN','LSTM',TMCA-n','TMCA-ca','TMCA-ta']}
+  model_name= {TMCA},
+  metrics= {recall,ndcg},
 }
 
 @inproceedings{migliorini18_adapt_trip_recom_system,
@@ -304,6 +327,11 @@
                   {https://doi.org/10.1109/bigdatacongress.2018.00045},
   DATE_ADDED =	 {Wed Jul 24 23:11:20 2019},
   month =	 7,
+  problem = {['Trip']},
+  methodology = {['cf',]},
+  information = {['geographical','temporal','sequential']},
+  comp= {'not clear what baseline is'}
+
 }
 
 @article{aliannejadi18_person_contex_aware_point_inter_recom,
@@ -320,7 +348,8 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:25 2019},
   problem = {['poi_rec',]},
   methodology = {['probabilistic',]},
-  information = {['geographical','textual']},
+  information = {['geographical','categorical','textual']},
+  comp = {['LinearCatRev','GeoSoCa','nDTF','UT-ML','UT-CRF','UT-SVM']},
 
 }
 
@@ -339,9 +368,11 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:29 2019},
   month =	 {-},
 
-  problem = {['time_aware','Tour']},
-  methodology = {['others',]},
-  information = {['user_pref','geographical?','categorical','temporal']},
+  problem = {['time_aware','Tour','Trip']},
+  methodology = {['cf','hybrid',]},
+  information = {['user_pref','geographical','categorical','temporal','sequential']},
+  metrics = {trecall,tprecision,tf1}
+  comp = {['NearestPOI','MostPopular','MostPreferred','Forward']}
 }
 
 @article{liu18_self_adapt_point_of_inter,
@@ -359,8 +390,11 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:35 2019},
 
   problem = {['poi_rec']},
-  methodology = {['Markov',]},
-  information = {['geographical?','sequential','temporal']},
+  methodology = {['cf','hybrid','Markov',]},
+  information = {['geographical','sequential','temporal']},
+  metrics = {precision, recall,fn},
+  comp= {['LORE','Rank-GeoFM', 'HSMM']}
+  
 }
 
 @inproceedings{massimo18_harnes_poi,
@@ -376,8 +410,11 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:39 2019},
   month =	 {-},
   problem = {['next_poi']},
-  methodology = {['IRL',]},
-  information = {['user_pref',]},
+  methodology = {['cf','hybrid','IRL','Markov','Factorization',]},
+  information = {['user_pref','categorical','sequential']},
+  
+  comp= {['kNN','ALMM']}
+  metrics = {reward, dissimilarity, novelty, precision}
 }
 
 @inproceedings{tang12_locat_aware_collab_filter_qos,
@@ -394,9 +431,9 @@
   DATE_ADDED =	 {Wed Jul 24 23:11:47 2019},
   month =	 6,
 
-  problem = {['poi_rec']},
-  methodology = {['cf',]},
-  information = {['geographical','social','textual',]},
+  @Comment problem = {['poi_rec']},
+  @Comment methodology = {['cf',]},
+  @Comment information = {['geographical','social','textual',]},
 }
 
 @article{17_social_recom_model_regul_with,
@@ -430,6 +467,8 @@
   problem = {['poi_rec',]},
   methodology = {['probabilistic',]},
   information = {['geographical',]},
+  metrics = {precision, recall},
+  comp = {['MostPopular','WRMF','GeoMF','BPRMF','IRenMF','WBPR-F','NBPR']},
 
 }
 
@@ -446,9 +485,11 @@
   url =		 {https://doi.org/10.1109/access.2018.2869994},
   DATE_ADDED =	 {Wed Jul 24 23:14:11 2019},
 
-  problem = {['time_aware',]},
-  methodology = {['ML',]},
-  information = {['sequential','temporal',]},
+  problem = {['poi_rec','time_aware',]},
+  methodology = {['cf','probabilistic','hybrid','ML',]},
+  information = {['geographical','sequential','temporal',]},
+  comp = {['Time-Pop','BPR-MF','UTS','Rank-GeoFM','GE','STELLAR']},
+  metrics = {accuracy,hit,MMR},
 }
 
 @article{ying18_time_aware_metric_embed_with,
@@ -469,6 +510,10 @@
   methodology = {['probabilistic','Markov',]},
   information = {['geographical','sequential','temporal',]},
 
+  comp = {['MostPopular','BPR','FPMC','PRME']},
+  metrics = {precision, recall},
+  model_name = {MEAP-T},
+
 }
 
 @article{zhao18_gener_model_approac_geo_social_group_recom,
@@ -487,9 +532,11 @@
   DATE_ADDED =	 {Wed Jul 24 23:14:21 2019},
 
 
-  problem = {['Group',]},
+  problem = {['poi_rec','Group',]},
   methodology = {['probabilistic',]},
-  information = {['user_pref','geographical','social',]},
+  information = {['user_pref','geographical','categorical','social',]},
+  metrics = {precision, recall},
+  comp = {['CFA','CFL', 'CFR','SIG', 'PIT','COM']},
 }
 
 @inproceedings{liao18_poi_recom_locat_based_social,
@@ -507,9 +554,12 @@
   month =	 6,
 
   problem = {['poi_rec',]},
-  methodology = {['factorization','TF',]},
-  information = {['user_pref','textual','temporal',]},
+  methodology = {['factorization','probabilistic','hybrid','TF',]},
+  information = {['user_pref','textual','categorical','temporal',]},
 
+  metrics = {precision, recall, map},
+  comp = {['TLA','CMF', 'ULT']},
+  model_name = {UZT}
 
 }
 
@@ -526,6 +576,15 @@
   doi =		 {10.1016/j.jocs.2017.09.014},
   url =		 {https://doi.org/10.1016/j.jocs.2017.09.014},
   DATE_ADDED =	 {Wed Jul 24 23:14:31 2019},
+
+  problem = {['next_poi',]},
+  methodology = {['factorization','probabilistic',]},
+  information = {['geographical','categorical',]},
+
+  metrics = {precision},
+  comp = {['MF',PMF','FPMC','PRME']},
+  model_name = {LBPR,LBPR-M,LBPR-N},
+  
 }
 
 @article{liao18_improv_poi_recom_via_dynam_tensor_compl,
