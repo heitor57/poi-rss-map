@@ -142,7 +142,7 @@
   month        = {-},
   problem      = {poi_rec},
   methodology  = {factorization,probabilistic,PFM},
-  information  = {categorical,temporal},
+  information  = {categorical,social,temporal},
   model_name   = {TM-PFM},
   baselines    = {PMF,NMF,BPTF,LRT},
 }
@@ -196,7 +196,7 @@
   date_added   = {Wed Jul 24 23:10:50 2019},
   problem      = {poi_rec},
   methodology  = {factorization,DNN},
-  information  = {geographical,categorical,sequential},
+  information  = {user_pref,geographical,categorical,sequential},
   baselines    = {WRMF,BPR-MF,USG,GeoMF,Rank-GeoFM,ARMF},
   model_name   = {RecNet},
 }
@@ -216,7 +216,7 @@
   date_added   = {Wed Jul 24 23:10:55 2019},
   problem      = {poi_rec},
   methodology  = {cf,probabilistic,hybrid},
-  information  = {geographical,temporal},
+  information  = {user_pref,geographical,temporal},
   baselines    = {UBCF,USG,LRT,UTE-SE,STELLAR,FPMC,TRM,TICRec},
 }
 
@@ -314,7 +314,7 @@
   month        = 7,
   problem      = {Trip},
   methodology  = {cf},
-  information  = {geographical,temporal,sequential},
+  information  = {geographical,temporal,sequential,social},
   baselines    = {not clear what baseline is},
 }
 
@@ -352,9 +352,10 @@
   month        = {-},
   problem      = {time_aware,Tour,Trip},
   methodology  = {cf,hybrid},
-  information  = {user_pref,geographical,categorical,temporal,sequential},
+  information  = {user_pref,geographical,categorical,temporal,sequential,social},
   metrics      = {trecall,tprecision,tf1},
   baselines    = {NearestPOI,MostPopular,MostPreferred,Forward},
+  annotation = {uses social info because use some mostpopular score inside the method}
 }
 
 @article{liu18_self_adapt_point_of_inter,
@@ -371,7 +372,7 @@
   date_added   = {Wed Jul 24 23:11:35 2019},
   problem      = {poi_rec},
   methodology  = {cf,hybrid,Markov},
-  information  = {geographical,sequential,temporal},
+  information  = {user_pref,geographical,sequential,temporal},
   metrics      = {precision, recall,fn},
   baselines    = {LORE,Rank-GeoFM,HSMM},
 }
@@ -441,7 +442,7 @@
   date_added   = {Wed Jul 24 23:14:05 2019},
   problem      = {poi_rec},
   methodology  = {probabilistic},
-  information  = {geographical},
+  information  = {user_pref,geographical},
   metrics      = {precision, recall},
   baselines    = {MostPopular,WRMF,GeoMF,BPRMF,IRenMF,WBPR-F,NBPR},
 }
@@ -460,7 +461,7 @@
   date_added   = {Wed Jul 24 23:14:11 2019},
   problem      = {poi_rec,time_aware},
   methodology  = {cf,probabilistic,hybrid,ML},
-  information  = {geographical,sequential,temporal},
+  information  = {user_pref,geographical,sequential,temporal},
   baselines    = {Time-Pop,BPR-MF,UTS,Rank-GeoFM,GE,STELLAR},
   metrics      = {accuracy,hit,MMR},
 }
@@ -478,7 +479,7 @@
   doi          = {10.1007/s11280-018-0596-8},
   url          = {https://doi.org/10.1007/s11280-018-0596-8},
   date_added   = {Wed Jul 24 23:14:16 2019},
-  problem      = {next_poi},
+  problem      = {next_poi,successive},
   methodology  = {probabilistic,Markov},
   information  = {geographical,sequential,temporal},
   baselines    = {MostPopular,BPR,FPMC,PRME},
@@ -546,6 +547,7 @@
   metrics      = {precision},
   baselines    = {MF,PMF,FPMC,PRME},
   model_name   = {LBPR,LBPR-M,LBPR-N},
+  annotation = {no sequential information?},
 }
 
 @article{liao18_improv_poi_recom_via_dynam_tensor_compl,
@@ -607,7 +609,7 @@
   month        = {-},
   problem      = {Req,Trip,Tour},
   methodology  = {cf},
-  information  = {geographical,category,textual,sequential},
+  information  = {user_pref,geographical,category,textual,sequential},
 
   dataset = {foursquare,singapore,gowalla,austin},
   metrics      = {gain for effectiveness,runtime,search space},
@@ -654,13 +656,13 @@
   date_added   = {Wed Jul 24 23:16:09 2019},
   problem      = {poi_rec},
   methodology  = {cf,hybrid},
-  information  = {geographical,sequential,temporal},
+  information  = {geographical,social,sequential,temporal},
 
   dataset = {foursquare,gowalla},
   metrics      = {precision,recall},
   baselines    = {UBCF,LRT,UTE,CTAG-BPP,},
   model_name   = {FSUA,CTF-ARA},
-
+  annotation = {uses social because of the ubcf},
 }
 
 @article{ying17_tempor_aware_poi_recom_system,
@@ -703,14 +705,14 @@
   date_added   = {Wed Jul 24 23:16:19 2019},
   problem      = {poi_rec,time_aware},
   methodology  = {cf,factorization,TF,CTF},
-  information  = {geographical,categorical,temporal},
+  information  = {user_pref,geographical,categorical,temporal,social},
 
   dataset      = {weibo,dianping},
   metrics      = {MAE,RMSE},
   baselines    = {TMF},
   model_name   = {CTF,PCTF},
 
-  annotation = {only one baseline},
+  annotation = {only one baseline, social because of the preference correlation between users},
 
 }
 
@@ -728,7 +730,7 @@
   year         = 2018,
   problem      = {poi_rec},
   methodology  = {cf,SGD},
-  information  = {geographical,sequential,temporal},
+  information  = {user_pref,geographical,sequential,temporal},
 
   dataset      = {foursquare,gowalla},
   metrics      = {precision,recall},
@@ -950,7 +952,7 @@ this article has more evaluation in his field of problem (region)},
   date_added   = {Wed Jul 24 23:17:46 2019},
   problem      = {poi_rec,in_out_town},
   methodology  = {cf,probabilistic,DL},
-  information  = {user_pref,geographical,sequential},
+  information  = {user_pref,geographical,sequential,social},
 
   dataset      = {yelp,foursquare},
   metrics      = {accuracy(recall),MAE},
@@ -1024,7 +1026,7 @@ this article has more evaluation in his field of problem (region)},
   month        = {-},
   problem      = {next_poi},
   methodology  = {cf},
-  information  = {geographical,sequential,temporal},
+  information  = {geographical,sequential,temporal,social},
 
 
   dataset      = {foursquare,gowalla},
@@ -1193,6 +1195,8 @@ in ascending order of their distance from the current location."
   annotation = {},
 }
 
+
+%checkpoint (categorical)
 @article{liu19_mix_geogr_infor_into_local,
   author       = {Wei Liu and Hanjiang Lai and Jing Wang and Geyang Ke
     and Weiwei Yang and Jian Yin},
@@ -1209,6 +1213,14 @@ in ascending order of their distance from the current location."
   problem      = {poi_rec},
   methodology  = {cf},
   information  = {geographical},
+
+
+  dataset      = {},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {},
+
+  annotation = {},
 }
 
 @inproceedings{zhou19_adver_point_inter_recom,
