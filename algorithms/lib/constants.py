@@ -9,7 +9,6 @@ PRETTY_PROBLEM = {
     'next_poi': 'Next Poi',
     'in_out_town': 'In-/Out-of-town',
     'others': 'Others',
-
 }
 
 PRETTY_METHODOLOGY = {
