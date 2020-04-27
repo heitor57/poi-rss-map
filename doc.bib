@@ -1,3 +1,31 @@
+@inproceedings{kurilovas18_exper_center_vs_user_center,
+  author       = {Eugenijus Kurilovas},
+  title        = {EXPERT-CENTERED VS USER-CENTERED EVALUATION OF
+    VIRTUAL LEARNING ENVIRONMENTS},
+  booktitle    = {ICERI2018 Proceedings},
+  year         = 2018,
+  pages        = {nil},
+  doi          = {10.21125/iceri.2018.0553},
+  url          = {https://doi.org/10.21125/iceri.2018.0553},
+  date_added   = {Wed Jul 24 23:37:25 2019},
+  month        = 11,
+}
+
+@article{wang18_protec_multi_party_privac_locat,
+  author       = {Weiqi Wang and An Liu and Zhixu Li and Xiangliang
+    Zhang and Qing Li and Xiaofang Zhou},
+  title        = {Protecting Multi-Party Privacy in Location-Aware
+    Social Point-Of-Interest Recommendation},
+  journal      = {World Wide Web},
+  volume       = 22,
+  number       = 2,
+  pages        = {863-883},
+  year         = 2018,
+  doi          = {10.1007/s11280-018-0550-9},
+  url          = {https://doi.org/10.1007/s11280-018-0550-9},
+  date_added   = {Wed Jul 24 23:36:53 2019},
+}
+
 @article{liu17_exper_evaluat_point_of_inter,
   author       = {Yiding Liu and Tuan-Anh Nguyen Pham and Gao Cong and
     Quan Yuan},
@@ -239,20 +267,6 @@
   information  = {categorical,social,temporal},
   model_name   = {TM-PFM},
   baselines    = {PMF,NMF,BPTF,LRT},
-}
-
-@inproceedings{ma18_point_inter_recom,
-  author       = {Chen Ma and Yingxue Zhang and Qinglong Wang and Xue
-    Liu},
-  title        = {Point-of-Interest Recommendation},
-  booktitle    = {Proceedings of the 27th ACM International Conference
-    on Information and Knowledge Management - CIKM '18},
-  year         = 2018,
-  pages        = {nil},
-  doi          = {10.1145/3269206.3271733},
-  url          = {https://doi.org/10.1145/3269206.3271733},
-  date_added   = {Wed Jul 24 23:10:38 2019},
-  month        = {-},
 }
 
 @article{gao18_person_point_of_inter_recom,
@@ -1272,6 +1286,18 @@ in ascending order of their distance from the current location."
     Successive POI Recommendation},
   url          = {https://doi.org/10.1007/978-981-13-1349-3_5},
   year         = 2018,
+
+  problem      = {successive},
+  methodology  = {cf,factorization,tensor},
+  information  = {user_pref,temporal,},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  baselines    = {WRMF,BPRMF,LRT,FPMC-LR},
+  model_name   = {STELLAR,TLAR,SLAR},
+
+  annotation   = {"FPMC-LR is the state-of-the-art"},
+
 }
 
 @inproceedings{song19_person_poi,
@@ -1323,20 +1349,6 @@ in ascending order of their distance from the current location."
 
 }
 
-@article{wang18_protec_multi_party_privac_locat,
-  author       = {Weiqi Wang and An Liu and Zhixu Li and Xiangliang
-    Zhang and Qing Li and Xiaofang Zhou},
-  title        = {Protecting Multi-Party Privacy in Location-Aware
-    Social Point-Of-Interest Recommendation},
-  journal      = {World Wide Web},
-  volume       = 22,
-  number       = 2,
-  pages        = {863-883},
-  year         = 2018,
-  doi          = {10.1007/s11280-018-0550-9},
-  url          = {https://doi.org/10.1007/s11280-018-0550-9},
-  date_added   = {Wed Jul 24 23:36:53 2019},
-}
 
 @article{si19_adapt_point_of_inter_recom,
   author       = {Yali Si and Fuzhi Zhang and Wenyuan Liu},
@@ -1415,18 +1427,6 @@ in ascending order of their distance from the current location."
   annotation = {},
 }
 
-@inproceedings{kurilovas18_exper_center_vs_user_center,
-  author       = {Eugenijus Kurilovas},
-  title        = {EXPERT-CENTERED VS USER-CENTERED EVALUATION OF
-    VIRTUAL LEARNING ENVIRONMENTS},
-  booktitle    = {ICERI2018 Proceedings},
-  year         = 2018,
-  pages        = {nil},
-  doi          = {10.21125/iceri.2018.0553},
-  url          = {https://doi.org/10.21125/iceri.2018.0553},
-  date_added   = {Wed Jul 24 23:37:25 2019},
-  month        = 11,
-}
 
 @article{lu18_succes_point_of_inter_recom,
   author       = {Yi-Shu Lu and Wen-Yueh Shih and Hung-Yi Gau and
@@ -1690,5 +1690,4 @@ little gains compared to other methods
   model_name   = {CAPR},
 
   annotation = {},
-
 }
