@@ -1626,4 +1626,20 @@ little gains compared to other methods
 
 }
 
+@inproceedings{feng2017poi2vec,
+  title={Poi2vec: Geographical latent representation for predicting future visitors},
+  author={Feng, Shanshan and Cong, Gao and An, Bo and Chee, Yeow Meng},
+  booktitle={Thirty-First AAAI Conference on Artificial Intelligence},
+  year={2017},
 
+  problem      = {poi_rec,next_poi,future_visitor},
+  methodology  = {probabilistic,SGD},
+  information  = {user_pref,sequential,geographical,temporal},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  baselines    = {FMC,ME,NS,HS,FPMC,PRME,CWRAP},
+  model_name   = {POI2Vec},
+
+  annotation = {Good experimentations in future visitor and next poi. Solves next_poi and future_visitor problem},
+}
