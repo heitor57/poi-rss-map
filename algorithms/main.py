@@ -6,7 +6,7 @@ import matplotlib.collections
 import bibtexparser
 from collections import defaultdict
 
-with open('doc.bib') as bibtex_file:
+with open('../doc.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 fields = ['problem',
