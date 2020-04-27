@@ -1,3 +1,14 @@
+@article{he2019research,
+  title={Research on comprehensive point of interest (POI) recommendation based on spark},
+  author={He, Fangcheng and Wei, Pengcheng},
+  journal={Cluster Computing},
+  volume={22},
+  number={4},
+  pages={9049--9057},
+  year={2019},
+  publisher={Springer},
+}
+
 @inproceedings{kurilovas18_exper_center_vs_user_center,
   author       = {Eugenijus Kurilovas},
   title        = {EXPERT-CENTERED VS USER-CENTERED EVALUATION OF
@@ -1690,4 +1701,83 @@ little gains compared to other methods
   model_name   = {CAPR},
 
   annotation = {},
+}
+
+@article{huang2019context,
+  title={Context-Aware POI Sequence Recommendation with Attention-Based Neural Network},
+  author={Huang, Jianfeng and Liu, Yuefeng and Chen, Yue and Jia, Chen},
+  journal={Abstracts of the ICA},
+  volume={1},
+  year={2019},
+  _problem      = {next_poi,successive},
+  _methodology  = {NN},
+  _information  = {sequential},
+
+  dataset      = {},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {CPSR,Context-Aware POI Sequence Recommendation},
+
+  annotation   = {},
+}
+
+@article{bin2019personalized,
+  title={A personalized POI route recommendation system based on heterogeneous tourism data and sequential pattern mining},
+  author={Bin, Chenzhong and Gu, Tianlong and Sun, Yanpeng and Chang, Liang},
+  journal={Multimedia Tools and Applications},
+  volume={78},
+  number={24},
+  pages={35135--35156},
+  year={2019},
+  publisher={Springer},
+
+  problem      = {Tour,Req},
+  methodology  = {cf,PrefixSpan,DataMining},
+  information  = {user_pref,sequential,geographical,temporal,context},
+
+  dataset      = {},
+  metrics      = {precision},
+  baselines    = {MostPopular,Random,RandomNearest,CTM(CrowdTravel method)},
+  model_name   = {PV-PrefixSpan},
+
+  annotation   = {Cant find dataset and cant classify methodology},
+}
+
+@article{baral2019hirecs,
+  title={HiRecS: A Hierarchical Contextual Location Recommendation System},
+  author={Baral, Ramesh and Iyengar, SS and Zhu, Xiaolong and Li, Tao and Sniatala, Pawel},
+  journal={IEEE Transactions on Computational Social Systems},
+  volume={6},
+  number={5},
+  pages={1020--1037},
+  year={2019},
+  publisher={IEEE},
+  problem      = {poi_rec,successive},
+  methodology  = {cf},
+  information  = {geographical,category,temporal,user_pref},
+
+  dataset      = {gowalla,weeplace},
+  metrics      = {precision,recall,ndcg},
+  baselines    = {MostPopular,UCF,UCF+G,GeoMF,HSR,ASMF-LA,HGMF,Markov,TA-CF,HGMF,TA-TEM,RNN,ST-RNN},
+  model_name   = {HiRecS,Hierarchical Contextual Location Recommendation System},
+
+  annotation   = {Present a review of similar articles and the article itself},
+}
+
+@article{bewley2019tour,
+  title={On Tour: Harnessing Social Tourism Data for City and Point of Interest Recommendation},
+  author={Bewley, Tom and Carrascosa, Iv{\'a}n Palomares},
+  journal={Proceedings DSRS-Turing’19. London, 21-22nd Nov, 2019},
+  year={2019},
+  problem      = {GroupTour,CityGroup},
+  methodology  = {cf},
+  information  = {user_pref,social,geographical,temporal,category},
+
+  dataset      = {osm(OpenStreetMap),flickr},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {},
+
+  annotation   = {Simple article and baselines, low relevant article},
+  unique       = {True},
 }
