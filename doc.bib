@@ -1643,3 +1643,52 @@ little gains compared to other methods
 
   annotation = {Good experimentations in future visitor and next poi. Solves next_poi and future_visitor problem},
 }
+
+
+@article{huang2019dynamic,
+  title={Dynamic Recommendation of POI Sequence Responding to Historical Trajectory},
+  author={Huang, Jianfeng and Liu, Yuefeng and Chen, Yue and Jia, Chen},
+  journal={ISPRS International Journal of Geo-Information},
+  volume={8},
+  number={10},
+  pages={433},
+  year={2019},
+  publisher={Multidisciplinary Digital Publishing Institute},
+
+  problem      = {successive,Tour},
+  methodology  = {cf,Seq2Seq},
+  information  = {geographical,categorical,sequential},
+
+  dataset      = {weeplace},
+  metrics      = {AP,OSP},
+  baselines    = {Random,Add.Markov,LORE,LSTM-Seq2Seq},
+  model_name   = {DRPS,Dynamic Recommendation of POI Sequence},
+
+  annotation = {
+  propose new metrics to evaluate the recommendation accuracy of a POI sequence: Aligned Precision (AP) and Order-aware Sequence Precision (OSP)
+  },
+
+}
+
+
+@inproceedings{chen2019context,
+  title={Context-Aware Personalized POI Sequence Recommendation},
+  author={Chen, Jing and Jiang, Wenjun},
+  booktitle={International Conference on Smart City and Informatization},
+  pages={197--210},
+  year={2019},
+  organization={Springer},
+
+  problem      = {Tour,Req},
+  methodology  = {cf,hybrid,Monte Carlo Tree Search},
+  information  = {user_pref,sequential,social,geographical,temporal,contextual,weather},
+
+  dataset      = {weeplaces,darksky},
+  metrics      = {precision,recall,f1},
+  baselines    = {UBCF,PR(POI sequence recommendation),MostPopular,TAPR(Time-Aware POI sequence Recommendation)},
+  model_name   = {CAPR},
+
+  annotation = {},
+
+
+}
