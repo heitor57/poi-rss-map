@@ -5,44 +5,10 @@ import matplotlib.patheffects as path_effects
 import matplotlib.collections
 import bibtexparser
 from collections import defaultdict
+from lib.constants import *
 
 with open('../doc.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
-
-fields = ['problem',
-          'methodology',
-          'information']
-
-PRETTY_PROBLEM = {
-    'poi_rec': 'Poi rec.',
-    'time_aware': 'Time-aware',
-    'next_poi': 'Next Poi',
-    'in_out_town': 'In-/Out-of-town',
-    'others': 'Others',
-}
-PROBLEM_IDX = {j: i for i,j in enumerate(PRETTY_PROBLEM.keys())}
-
-PRETTY_METHODOLOGY = {
-    'link_based': 'Link-based',
-    'cf': 'CF',
-    'factorization': 'Factorization',
-    'probabilistic': 'Probabilistic',
-    'hybrid': 'Hybrid',
-    'others': 'Others'
-}
-
-METHODOLOGY_IDX = {j: i for i,j in enumerate(PRETTY_METHODOLOGY.keys())}
-
-PRETTY_INFORMATION = {
-    'user_pref': 'User Pref.',
-    'geographical': 'Geographical',
-    'social': 'Social',
-    'textual': 'Textual',
-    'categorical': 'Categorical',
-    'sequential': 'Sequential',
-    'temporal': 'Temporal',
-}
-INFORMATION_IDX = {j: i for i,j in enumerate(PRETTY_INFORMATION.keys())}
 
 methodologies = []
 informations = []
