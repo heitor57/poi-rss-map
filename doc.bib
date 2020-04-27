@@ -12,6 +12,84 @@
   month        = {-},
 }
 
+@inproceedings{tang12_locat_aware_collab_filter_qos,
+  author       = {Mingdong Tang and Yechun Jiang and Jianxun Liu and
+    Xiaoqing Liu},
+  title        = {Location-Aware Collaborative Filtering for QoS-Based
+    Service Recommendation},
+  booktitle    = {2012 IEEE 19th International Conference on Web
+    Services},
+  year         = 2012,
+  pages        = {nil},
+  doi          = {10.1109/icws.2012.61},
+  url          = {https://doi.org/10.1109/icws.2012.61},
+  date_added   = {Wed Jul 24 23:11:47 2019},
+  month        = 6,
+  _problem     = {['poi_rec']},
+  _methodology = {['cf',]},
+  _information = {['geographical','social','textual',]},
+}
+
+@inproceedings{exman14_locat_fast_recom_social_networ,
+  author       = {Iaakov Exman and Erez Nagar},
+  title        = {Location-based Fast Recommendation Social Network},
+  booktitle    = {Proceedings of the 5th International Workshop on
+    Software Knowledge},
+  year         = 2014,
+  pages        = {nil},
+  doi          = {10.5220/0005167600550062},
+  url          = {https://doi.org/10.5220/0005167600550062},
+  date_added   = {Wed Jul 24 23:17:41 2019},
+  month        = {-},
+}
+
+@inbook{liu15_mobil_travel_tour_recom,
+  date_added   = {Wed Jul 24 23:18:12 2019},
+  author       = {Qi Liu},
+  booktitle    = {Encyclopedia of GIS},
+  doi          = {10.1007/978-3-319-23519-6_1519-1},
+  pages        = {1-8},
+  publisher    = {Springer International Publishing},
+  series       = {Encyclopedia of GIS},
+  title        = {Mobile Travel Tour Recommendation},
+  url          = {https://doi.org/10.1007/978-3-319-23519-6_1519-1},
+  year         = 2015,
+}
+
+@article{anagnostopoulos16_tour_recom_group,
+  author       = {Aris Anagnostopoulos and Reem Atassi and Luca
+    Becchetti and Adriano Fazzone and Fabrizio Silvestri},
+  title        = {Tour Recommendation for Groups},
+  journal      = {Data Mining and Knowledge Discovery},
+  volume       = 31,
+  number       = 5,
+  pages        = {1157-1188},
+  year         = 2016,
+  doi          = {10.1007/s10618-016-0477-7},
+  url          = {https://doi.org/10.1007/s10618-016-0477-7},
+  date_added   = {Wed Jul 24 23:22:09 2019},
+  problem      = {next_poi,Tour,Group},
+  methodology  = {Greedy},
+  information  = {user_pref,geographical,social},
+
+  dataset      = {ficklr(custom)},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {},
+
+  annotation = {Evaluation was made with the problem definition models and objective functions and a bunch of heuristics to solve the problem},
+  unique = {true},
+}
+
+@article{liu2018user,
+  title={User modeling for point-of-interest recommendations in location-based social networks: The state of the art},
+  author={Liu, Shudong},
+  journal={Mobile Information Systems},
+  volume={2018},
+  year={2018},
+  publisher={Hindawi}
+}
+
 @article{xing17_point_of_inter_recom_based,
   author       = {Shuning Xing and Fangai Liu and Xiaohui Zhao and
     Tianlai Li},
@@ -396,23 +474,6 @@
   metrics      = {reward, dissimilarity, novelty, precision},
 }
 
-@inproceedings{tang12_locat_aware_collab_filter_qos,
-  author       = {Mingdong Tang and Yechun Jiang and Jianxun Liu and
-    Xiaoqing Liu},
-  title        = {Location-Aware Collaborative Filtering for QoS-Based
-    Service Recommendation},
-  booktitle    = {2012 IEEE 19th International Conference on Web
-    Services},
-  year         = 2012,
-  pages        = {nil},
-  doi          = {10.1109/icws.2012.61},
-  url          = {https://doi.org/10.1109/icws.2012.61},
-  date_added   = {Wed Jul 24 23:11:47 2019},
-  month        = 6,
-  _problem     = {['poi_rec']},
-  _methodology = {['cf',]},
-  _information = {['geographical','social','textual',]},
-}
 
 @article{17_social_recom_model_regul_with,
 },
@@ -924,18 +985,6 @@ this article has more evaluation in his field of problem (region)},
   annotation = {},
 }
 
-@inproceedings{exman14_locat_fast_recom_social_networ,
-  author       = {Iaakov Exman and Erez Nagar},
-  title        = {Location-based Fast Recommendation Social Network},
-  booktitle    = {Proceedings of the 5th International Workshop on
-    Software Knowledge},
-  year         = 2014,
-  pages        = {nil},
-  doi          = {10.5220/0005167600550062},
-  url          = {https://doi.org/10.5220/0005167600550062},
-  date_added   = {Wed Jul 24 23:17:41 2019},
-  month        = {-},
-}
 
 @article{yin17_spatial_aware_hierar_collab_deep,
   author       = {Hongzhi Yin and Weiqing Wang and Hao Wang and Ling
@@ -1007,7 +1056,7 @@ this article has more evaluation in his field of problem (region)},
   dataset      = {foursquare,gowalla},
   metrics      = {precision,recall,utility},
   baselines    = {USG,iGLSR,RankBoost,BPRMF,SBPR,GeoMF,LRT},
-  model_name   = {LURWA},
+  model_name   = {LURWA,LURA},
 
   annotation = {},
 }
@@ -1037,44 +1086,7 @@ this article has more evaluation in his field of problem (region)},
   annotation = {poor baselines},
 }
 
-@inbook{liu15_mobil_travel_tour_recom,
-  date_added   = {Wed Jul 24 23:18:12 2019},
-  author       = {Qi Liu},
-  booktitle    = {Encyclopedia of GIS},
-  doi          = {10.1007/978-3-319-23519-6_1519-1},
-  pages        = {1-8},
-  publisher    = {Springer International Publishing},
-  series       = {Encyclopedia of GIS},
-  title        = {Mobile Travel Tour Recommendation},
-  url          = {https://doi.org/10.1007/978-3-319-23519-6_1519-1},
-  year         = 2015,
-}
 
-@article{anagnostopoulos16_tour_recom_group,
-  author       = {Aris Anagnostopoulos and Reem Atassi and Luca
-    Becchetti and Adriano Fazzone and Fabrizio Silvestri},
-  title        = {Tour Recommendation for Groups},
-  journal      = {Data Mining and Knowledge Discovery},
-  volume       = 31,
-  number       = 5,
-  pages        = {1157-1188},
-  year         = 2016,
-  doi          = {10.1007/s10618-016-0477-7},
-  url          = {https://doi.org/10.1007/s10618-016-0477-7},
-  date_added   = {Wed Jul 24 23:22:09 2019},
-  problem      = {next_poi,Tour,Group},
-  methodology  = {Greedy},
-  information  = {user_pref,geographical,social},
-
-  dataset      = {ficklr(custom)},
-  metrics      = {},
-  baselines    = {},
-  model_name   = {},
-
-  annotation = {Evaluation was made with the problem definition models and objective functions and a bunch of heuristics to solve the problem},
-  unique = {true},
-
-}
 
 @inproceedings{han17_geogr_diver_poi_recom,
   author       = {Jungkyu Han and Hayato Yamana},
@@ -1545,3 +1557,73 @@ little gains compared to other methods
   methodology  = {hybrid},
   information  = {user_pref,geographical},
 }
+
+@inproceedings{meng2017dp,
+  title={DP-POIRS: A Diversified and Personalized Point-of-Interest Recommendation System},
+  author={Meng, Xiangfu and Tang, Yanhuan and Zhang, Xiaoyan},
+  booktitle={2017 IEEE International Conference on Data Science and Advanced Analytics (DSAA)},
+  pages={332--333},
+  year={2017},
+  organization={IEEE},
+
+  problem      = {poi_rec},
+  methodology  = {cf,hybrid},
+  information  = {user_pref,geographical,social},
+
+  dataset      = {},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {DP-POIRS},
+
+  annotation = {No evaluation},
+}
+
+@article{guo2019location,
+  title={Location perspective-based neighborhood-aware POI recommendation in location-based social networks},
+  author={Guo, Lei and Wen, Yufei and Liu, Fangai},
+  journal={Soft Computing},
+  volume={23},
+  number={22},
+  pages={11935--11945},
+  year={2019},
+  publisher={Springer},
+
+  problem      = {poi_rec},
+  methodology  = {probabilistic,factorization},
+  information  = {user_pref,},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  baselines    = {MostPopular,LRT,MGMPFM,iGSLR,BPRMF,WMF,L-WMF},
+  model_name   = {L-WMF},
+
+  annotation = {},
+
+}
+
+@article{zhou2019recommendations,
+  title={Recommendations based on user effective point-of-interest path},
+  author={Zhou, Guoqiang and Zhang, Shuai and Fan, Yi and Li, Jingjin and Yao, Wenbo and Liu, Hongfang},
+  journal={International Journal of Machine Learning and Cybernetics},
+  volume={10},
+  number={10},
+  pages={2887--2899},
+  year={2019},
+  publisher={Springer}
+
+  problem      = {poi_rec,effective,others},
+  methodology  = {cf,hybrid},
+  information  = {category,temporal},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {diversity,precision,recall},
+  baselines    = {UST,LC-POIs},
+  model_name   = {AKAWO},
+
+  annotation = {extremely equal to LC-POIs(2015) but it reformulates one more time the problem},
+
+  unique= {true},
+
+}
+
+
