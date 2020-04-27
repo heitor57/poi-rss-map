@@ -1127,8 +1127,23 @@ this article has more evaluation in his field of problem (region)},
   url          = {https://doi.org/10.1145/3308558.3314120},
   date_added   = {Wed Jul 24 23:25:03 2019},
   month        = {-},
-}
 
+  problem      = {next_poi},
+  methodology  = {factorization,Tensor},
+  information  = {geographical,categorical,temporal,review},
+
+  dataset      = {foursquare},
+  metrics      = {ndcg},
+  baselines    = {},
+  model_name   = {R2SIGTP},
+
+  annotation = {poor evaluation, no methods of other papers.
+"More specifically, the baseline method first ranks the recommendation POIs according to the preference ranking of the user’s in
+current time, and then sorts POIs that belong to the same preference
+in ascending order of their distance from the current location."
+},
+}
+% checkpoint (social)
 @article{qian19_spatiot_repres_learn_trans_based_poi_recom,
   author       = {Tieyun Qian and Bei Liu and Quoc Viet Hung Nguyen
     and Hongzhi Yin},
@@ -1143,8 +1158,14 @@ this article has more evaluation in his field of problem (region)},
   url          = {https://doi.org/10.1145/3295499},
   date_added   = {Wed Jul 24 23:25:18 2019},
   problem      = {poi_rec},
-  methodology  = {STA},
+  methodology  = {cf,STA},
   information  = {geographical,social,temporal},
+  dataset      = {foursquare,gowalla},
+  metrics      = {recall,ncdg,dcg},
+  baselines    = {USG,LRT,GeoMF,RankGeoMF,GE,TransRec,LORE,MGMPMF},
+  model_name   = {STA,STA-E,STA-H,spatiotemporal context-aware and translation-based recommender framework},
+
+  annotation = {good baselines},
 }
 
 @inbook{doan19_atten_spatio_tempor_neural_model,
