@@ -1211,16 +1211,16 @@ in ascending order of their distance from the current location."
   url          = {https://doi.org/10.1007/s11280-019-00681-1},
   date_added   = {Wed Jul 24 23:35:46 2019},
   problem      = {poi_rec},
-  methodology  = {cf},
-  information  = {geographical},
+  methodology  = {cf,factorization,hybrid},
+  information  = {user_pref,geographical},
 
 
-  dataset      = {},
-  metrics      = {},
-  baselines    = {},
-  model_name   = {},
+  dataset      = {foursquare,yelp},
+  metrics      = {recall,precision},
+  baselines    = {WMF,PFM,BPR,GeoMF,Rank-GeoFM},
+  model_name   = {LCR},
 
-  annotation = {},
+  annotation = {more model names not included},
 }
 
 @inproceedings{zhou19_adver_point_inter_recom,
@@ -1235,8 +1235,15 @@ in ascending order of their distance from the current location."
   date_added   = {Wed Jul 24 23:35:52 2019},
   month        = {-},
   problem      = {poi_rec},
-  methodology  = {AML},
-  information  = {geographical,social},
+  methodology  = {probabilistic,AML},
+  information  = {user_pref,geographical,social},
+
+  dataset      = {gowalla,foursquare,yelp},
+  metrics      = {precision,recall,ndcg,map},
+  baselines    = {USG,MGMPFM,LFBCA,iGSLR,LORE,IRenMF,GeoMF,RankGeoFM,GeoTeaser,PACE},
+  model_name   = {APOIR},
+
+  annotation = {excellent},
 }
 
 @inbook{zhao18_stell,
@@ -1267,7 +1274,14 @@ in ascending order of their distance from the current location."
   month        = {-},
   problem      = {poi_rec},
   methodology  = {cf},
-  information  = {geographical},
+  information  = {geographical,social},
+
+  dataset      = {gowalla},
+  metrics      = {precision,recall},
+  baselines    = {UBCF,G(particular of the article),USG,MGM},
+  model_name   = {UGR},
+
+  annotation = {weak},
 }
 
 @article{zhang18_fused_matrix_factor_with_multi,
@@ -1284,8 +1298,15 @@ in ascending order of their distance from the current location."
   url          = {https://doi.org/10.1007/s11280-018-0579-9},
   date_added   = {Wed Jul 24 23:36:49 2019},
   problem      = {poi_rec},
-  methodology  = {factorization},
-  information  = {geographical,social},
+  methodology  = {cf,factorization,hybrid},
+  information  = {geographical,category,social},
+  dataset      = {yelp},
+  metrics      = {recall,MAE,RMSE},
+  baselines    = {MF},
+  model_name   = {TSG-MF,T-MF,S-MF,G-MF},
+
+  annotation = {weak},
+
 }
 
 @article{wang18_protec_multi_party_privac_locat,
@@ -1317,8 +1338,16 @@ in ascending order of their distance from the current location."
   url          = {https://doi.org/10.1016/j.knosys.2018.08.031},
   date_added   = {Wed Jul 24 23:36:59 2019},
   problem      = {poi_rec},
-  methodology  = {cf,ML},
-  information  = {user_pref,geographical},
+  methodology  = {cf,probabilistic,ML},
+  information  = {user_pref,geographical,category,social},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall,MAE,fn},
+  baselines    = {SB,UBCF,UTE+SE,GTAG-BP,GT-BNMF,CTF-ARA,SK},
+  model_name   = {APRA-SA},
+
+  annotation = {social because of the POI popularity; category because of the POI features.
+  Ok results},
 }
 
 @article{aliannejadi19_joint_two_phase_time_sensit,
@@ -1336,10 +1365,18 @@ in ascending order of their distance from the current location."
   date_added   = {Wed Jul 24 23:37:12 2019},
   problem      = {poi_rec},
   methodology  = {cf},
-  information  = {geographical,social},
+  information  = {user_pref,geographical,social,temporal},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,ndcg},
+  baselines    = {WRMF,IRenMF,GeoMF,Rank-GeoFM,Rank-GeoFM-NoGeo,RH-Push,Inf-Push,P-Push},
+  model_name   = {JTCR,JTCR-Phase1,JTCR-NoVar,JTCR-NoGeo},
+
+  annotation = {},
 }
 
 @article{hosseini18_lever_multi_aspec_time_relat,
+% need check
   author       = {Saeid Hosseini and Hongzhi Yin and Xiaofang Zhou and
     Shazia Sadiq and Mohammad Reza Kangavari and Ngai-Man Cheung},
   title        = {Leveraging Multi-Aspect Time-Related Influence in
@@ -1355,6 +1392,13 @@ in ascending order of their distance from the current location."
   problem      = {poi_rec},
   methodology  = {probabilistic},
   information  = {user_pref,temporal},
+
+  dataset      = {foursquare,brightkite},
+  metrics      = {ndcg,f1},
+  baselines    = {UBCF,USG,USGT,UBCFT},
+  model_name   = {MATI},
+
+  annotation = {},
 }
 
 @inproceedings{kurilovas18_exper_center_vs_user_center,
@@ -1382,9 +1426,15 @@ in ascending order of their distance from the current location."
   doi          = {10.1007/s11280-018-0599-5},
   url          = {https://doi.org/10.1007/s11280-018-0599-5},
   date_added   = {Thu Jul 25 23:18:24 2019},
-  problem      = {others},
+  problem      = {successive,others},
   methodology  = {link_based,RNN},
   information  = {geographical,sequential},
+  dataset      = {},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {UGSE-LR,PEU-RNN},
+
+  annotation = {EdgePPR fusing preferences and RNN},
 }
 
 @inproceedings{Ma2018,
