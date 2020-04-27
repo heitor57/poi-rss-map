@@ -1427,17 +1427,19 @@ in ascending order of their distance from the current location."
   url          = {https://doi.org/10.1007/s11280-018-0599-5},
   date_added   = {Thu Jul 25 23:18:24 2019},
   problem      = {successive,others},
-  methodology  = {link_based,RNN},
-  information  = {geographical,sequential},
-  dataset      = {},
-  metrics      = {},
-  baselines    = {},
+  methodology  = {cf,link_based,hybrid,RNN},
+  information  = {user_pref,geographical,sequential},
+  dataset      = {gowalla,brightkite},
+  metrics      = {precision,recall},
+  baselines    = {FPMC,FPMC-LR,POI2VEC},
   model_name   = {UGSE-LR,PEU-RNN},
 
-  annotation = {EdgePPR fusing preferences and RNN},
+  annotation = {EdgePPR fusing preferences and RNN,
+  need to put references to articles that are used in baselines where year >= 2017},
 }
 
 @inproceedings{Ma2018,
+% need check
   doi          = {10.1145/3269206.3271733},
   url          = {https://doi.org/10.1145/3269206.3271733},
   year         = 2018,
@@ -1450,11 +1452,27 @@ in ascending order of their distance from the current location."
     Conference on Information and Knowledge Management - {CIKM}
     {\textquotesingle}18},
   problem      = {poi_rec},
-  methodology  = {NN,DL},
+  methodology  = {cf,NN,DL},
   information  = {user_pref,geographical},
+
+  dataset      = {gowalla,foursquare,yelp},
+  metrics      = {precision,recall,MAP},
+  baselines    = {WRMF,BPRMF,MGMMF,IRENMF,RankGeoFM,PACE,DeepAE},
+  model_name   = {SAE-NAD},
+
+  annotation = {SAE-NAD, which consists of a self-attentive encoder (SAE) and a neighbor-aware decoder (NAD).
+ "To incorporate the geographical context information, we propose
+a neighbor-aware decoder to make users’ reachability higher on
+the similar and nearby neighbors of checked-in POIs, which is
+achieved by the inner product of POI embeddings together with the
+radial basis function (RBF) kernel"
+
+little gains compared to other methods
+},
 }
 
 @article{Zhao2018WhereTG,
+%need check
   title        = {Where to Go Next: A Spatio-temporal LSTM model for
     Next POI Recommendation},
   author       = {Pengpeng Zhao and Haifeng Zhu and Yanchi Liu and
@@ -1462,9 +1480,16 @@ in ascending order of their distance from the current location."
   journal      = {ArXiv},
   year         = 2018,
   volume       = {abs/1806.06671},
-  problem      = {next_poi},
-  methodology  = {LSTM},
+  problem      = {poi_rec,next_poi},
+  methodology  = {cf,LSTM},
   information  = {geographical,sequential,temporal},
+
+  dataset      = {foursquare,gowalla,brightkite},
+  metrics      = {accuracy,MAP},
+  baselines    = {FPMC-LR,PRME-G,GE,RNN,LSTM,GRU,ST-RNN},
+  model_name   = {ST-LSTM,ST-CLSTM},
+
+  annotation = {},
 }
 
 @inproceedings{do2018coupled,
@@ -1481,6 +1506,7 @@ in ascending order of their distance from the current location."
 }
 
 @article{DBLP:journals/corr/abs-1805-06316,
+%need check
   author       = {Jing He and Xin Li and Lejian Liao and Williamb K.
     Cheung},
   title        = {Personalized Next Point-of-Interest Recommendation
@@ -1495,8 +1521,15 @@ in ascending order of their distance from the current location."
   biburl       = {https://dblp.org/rec/bib/journals/corr/abs-1805-06316},
   bibsource    = {dblp computer science bibliography, https://dblp.org},
   problem      = {next_poi},
-  methodology  = {factorization,TF,T},
+  methodology  = {probabilistic,factorization,TF,T},
   information  = {user_pref,geographical,categorical},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision},
+  baselines    = {MF,PMF,FPMC-LR,PRME-G},
+  model_name   = {GPDM,PPDM},
+
+  annotation = {},
 }
 
 @article{logesh2017learning,
