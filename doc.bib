@@ -1180,9 +1180,17 @@ in ascending order of their distance from the current location."
     Successive Point of Interest Recommendation},
   url          = {https://doi.org/10.1007/978-3-030-16142-2_27},
   year         = 2019,
-  problem      = {others},
-  methodology  = {RNN},
+  problem      = {successive},
+  methodology  = {cf,RNN},
   information  = {geographical,sequential,temporal},
+
+
+  dataset      = {},
+  metrics      = {recall,f1,roc},
+  baselines    = {MostPopular,Markov,LRLT,FPMC,PRME},
+  model_name   = {ASTEN},
+
+  annotation = {},
 }
 
 @article{liu19_mix_geogr_infor_into_local,
