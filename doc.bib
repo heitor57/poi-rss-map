@@ -885,8 +885,16 @@ the model performance?"
   date_added   = {Wed Jul 24 23:17:30 2019},
   month        = {-},
   problem      = {in_out_town},
-  methodology  = {probabilistic},
+  methodology  = {cf,probabilistic,Greedy},
   information  = {geographical},
+
+  dataset      = {foursquare,twitter},
+  metrics      = {hit,quality(particular of the article)},
+  baselines    = {Most_dense,Most_Freq,RegRS/E},
+  model_name   = {RegRS},
+
+  annotation = {region recommendation, difficult to categorize, is just a greedy algorithm based on the model formalized like a probability problem
+this article has more evaluation in his field of problem (region)},
 }
 
 @inproceedings{zhao17_exploit_hierar_struc_poi_recom,
@@ -905,6 +913,13 @@ the model performance?"
   problem      = {poi_rec},
   methodology  = {factorization},
   information  = {user_pref,geographical},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  baselines    = {UBCF,UBCF+G,GeoMF,HSR},
+  model_name   = {HGMF,HGMF-UV,HGMF-XY},
+
+  annotation = {},
 }
 
 @inproceedings{exman14_locat_fast_recom_social_networ,
@@ -933,9 +948,16 @@ the model performance?"
   doi          = {10.1109/tkde.2017.2741484},
   url          = {https://doi.org/10.1109/tkde.2017.2741484},
   date_added   = {Wed Jul 24 23:17:46 2019},
-  problem      = {poi_rec},
-  methodology  = {cf,DL},
-  information  = {user_pref,geographical,social},
+  problem      = {poi_rec,in_out_town},
+  methodology  = {cf,probabilistic,DL},
+  information  = {user_pref,geographical,sequential},
+
+  dataset      = {yelp,foursquare},
+  metrics      = {accuracy(recall),MAE},
+  baselines    = {DL-PMF,HLDBN,CDL,DCF,ST-LDA,ST-GLDA},
+  model_name   = {SH-CDL,Spatial-Aware Hierarchical Collaborative Deep Learning model},
+
+  annotation = {accuracy is a variation of recall, isnt exactly recall},
 }
 
 @article{ren17_contex_aware_probab_matrix_factor,
@@ -954,6 +976,13 @@ the model performance?"
   problem      = {poi_rec},
   methodology  = {factorization,probabilistic},
   information  = {geographical,social,textual,categorical},
+
+  dataset      = {foursquare,twitter},
+  metrics      = {precision,recall,RMSE,MAE},
+  baselines    = {LCARS,TL-PMF,ATCF,USG,ASMF,NCPD},
+  model_name   = {TGSC-PMF,GSC-PMF,TSC-PMF,TGC-PMF,TGS-PMF,TG-PMF,TS-PMF,TC-PMF},
+
+  annotation = {80\% 20\% train-test, good baselines},
 }
 
 @article{lu17_person_locat_recom_by_aggreg,
@@ -970,8 +999,15 @@ the model performance?"
   url          = {https://doi.org/10.1007/s10707-017-0298-x},
   date_added   = {Wed Jul 24 23:17:57 2019},
   problem      = {poi_rec},
-  methodology  = {cf,factorization,probabilistic},
+  methodology  = {cf,factorization,probabilistic,hybrid},
   information  = {user_pref,geographical,social,categorical,temporal},
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall,utility},
+  baselines    = {USG,iGLSR,RankBoost,BPRMF,SBPR,GeoMF,LRT},
+  model_name   = {LURWA},
+
+  annotation = {},
 }
 
 @inproceedings{oppokhonov17_curren_poi,
@@ -988,7 +1024,15 @@ the model performance?"
   month        = {-},
   problem      = {next_poi},
   methodology  = {cf},
-  information  = {geographical,social,sequential,temporal},
+  information  = {geographical,sequential,temporal},
+
+
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  baselines    = {UBCF,UTS},
+  model_name   = {CLB},
+
+  annotation = {poor baselines},
 }
 
 @inbook{liu15_mobil_travel_tour_recom,
@@ -1019,6 +1063,15 @@ the model performance?"
   problem      = {next_poi,Tour,Group},
   methodology  = {Greedy},
   information  = {user_pref,geographical,social},
+
+  dataset      = {ficklr(custom)},
+  metrics      = {},
+  baselines    = {},
+  model_name   = {},
+
+  annotation = {Evaluation was made with the problem definition models and objective functions and a bunch of heuristics to solve the problem},
+  unique = {true},
+
 }
 
 @inproceedings{han17_geogr_diver_poi_recom,
@@ -1033,7 +1086,7 @@ the model performance?"
   date_added   = {Wed Jul 24 23:22:18 2019},
   month        = {-},
   problem      = {poi_rec},
-  methodology  = {others},
+  methodology  = {hybrid,others},
   information  = {geographical},
 }
 
@@ -1050,9 +1103,15 @@ the model performance?"
   doi          = {10.4018/ijwp.2019010101},
   url          = {https://doi.org/10.4018/ijwp.2019010101},
   date_added   = {Wed Jul 24 23:24:56 2019},
-  problem      = {others},
-  methodology  = {hybrid},
-  information  = {geographical,temporal},
+  problem      = {Tour,others},
+  methodology  = {knowledge-based},
+  information  = {geographical,categorical,temporal},
+  dataset      = {},
+  metrics      = {hit,diversity},
+  baselines    = {},
+  model_name   = {HSTP},
+
+  annotation = {},
 }
 
 @inproceedings{jiao19_r2sig,
