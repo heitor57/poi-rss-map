@@ -42,15 +42,13 @@ table_string += r'\hline Related work & ' +\
 
 for i, entry in enumerate(bib_db.entries):
     if entry.get('problem',None):
-        table_string += r'\cite{%s}' % (entry['ID'])
+        table_string += r'\citeauthor{%s} \cite{%s}' % (entry['ID'],entry['ID'])
         table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['problem'] else '' for j in PRETTY_PROBLEM.keys()])
         table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['methodology'] else '' for j in PRETTY_METHODOLOGY.keys()]) 
         table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['information'] else '' for j in PRETTY_INFORMATION.keys()])
-        print(i)
-        print(table_string.split('\n')[-1])
         table_string += r'\\\hline'+'\n'
         
 
 table_string += r'\end{longtable}' + '\n'
 
-open('data/teste.tex','w').write(latex_header+table_string+latex_foot)
+open('map_table.tex','w').write(table_string)
