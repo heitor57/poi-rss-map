@@ -1,3 +1,17 @@
+@Comment @inbook{zhao18_geo_teaser,
+@Comment   date_added   = {Wed Jul 24 23:16:24 2019},
+@Comment   author       = {Shenglin Zhao and Michael R. Lyu and Irwin King},
+@Comment   booktitle    = {SpringerBriefs in Computer Science},
+@Comment   doi          = {10.1007/978-981-13-1349-3_4},
+@Comment   pages        = {57-78},
+@Comment   publisher    = {Springer Singapore},
+@Comment   series       = {SpringerBriefs in Computer Science},
+@Comment   title        = {Geo-Teaser: Geo-Temporal Sequential Embedding Rank
+@Comment     for POI Recommendation},
+@Comment   url          = {https://doi.org/10.1007/978-981-13-1349-3_4},
+@Comment   year         = 2018,
+@Comment }
+
 @article{he2019research,
   title={Research on comprehensive point of interest (POI) recommendation based on spark},
   author={He, Fangcheng and Wei, Pengcheng},
@@ -142,6 +156,7 @@
 
   annotation = {Evaluation was made with the problem definition models and objective functions and a bunch of heuristics to solve the problem},
   unique = {true},
+  num_citations= {30},
 }
 
 
@@ -162,6 +177,9 @@
   methodology  = {factorization,probabilistic,CNN},
   information  = {user_pref,geographical,social},
   baselines    = {LCARS,CoRe,GeoMF,DRW,NCPD},
+  metrics      = {precision,recall},
+  model_name   = {ReGS,Review Geographical Social},
+  num_citations= {14},
 }
 
 @inproceedings{wang18_exploit_poi_specif_geogr_influen,
@@ -181,6 +199,7 @@
   methodology  = {SGA},
   information  = {user_pref,geographical},
   baselines    = {UCF+G,MGM+PFM,GeoMF,RankGeoFM,Geo-Teaser},
+  num_citations= {25},
 }
 
 @inproceedings{chang18_conten_aware_hierar_point_inter,
@@ -200,6 +219,7 @@
   methodology  = {OP},
   information  = {geographical,textual},
   baselines    = {STELLAR,LSTM,GRU,ST-RNN,Random,SG,POI2Vec,Geo-Teaser},
+  num_citations= {40},
 }
 
 @article{zhao17_aggreg_tempor_tensor_factor_model,
@@ -220,6 +240,7 @@
   annotation   = {periodicity, consecutiveness, and non-uniformness},
   model_name   = {ATTF},
   baselines    = {WRMF,BPR-MF,LRT,FPMC-LR},
+  num_citations= {11},
 }
 
 @article{cai17_integ_spatial_tempor_contex_into,
@@ -239,6 +260,7 @@
   methodology  = {factorization},
   information  = {geographical,temporal},
   baselines    = {MF-0/1,MF-Freq,WMF,Rank-GeoFM},
+  num_citations= {16},
 }
 
 @article{lim17_person_trip_recom_touris_based,
@@ -259,6 +281,7 @@
   methodology  = {cf},
   information  = {user_pref,geographical,temporal,sequential,categorical},
   baselines    = {CF-Pho,CF-Bin,GNear,GPop,Rand},
+  num_citations= {44},
 }
 
 @inproceedings{yao18_exploit_human_mobil_patter_point_inter_recom,
@@ -278,6 +301,7 @@
   information  = {categorical,social,temporal},
   model_name   = {TM-PFM},
   baselines    = {PMF,NMF,BPTF,LRT},
+  num_citations= {7},
 }
 
 @article{gao18_person_point_of_inter_recom,
@@ -298,6 +322,7 @@
   information  = {user_pref,geographical,social},
   model_name   = {GeoEISo},
   baselines    = {USG,IRenMF,MGM,CoReSo,SVD++,TrustMF,iGSLR,UA,DRW,NCP},
+  num_citations= {20},
 }
 
 @article{ding18_recnet,
@@ -318,6 +343,7 @@
   information  = {user_pref,geographical,categorical,sequential},
   baselines    = {WRMF,BPR-MF,USG,GeoMF,Rank-GeoFM,ARMF},
   model_name   = {RecNet},
+  num_citations= {14},
 }
 
 @article{chen18_exploit_spatial_tempor_point_inter_recom,
@@ -337,6 +363,7 @@
   methodology  = {cf,probabilistic,hybrid},
   information  = {user_pref,geographical,temporal},
   baselines    = {UBCF,USG,LRT,UTE-SE,STELLAR,FPMC,TRM,TICRec},
+  num_citations= {5},
 }
 
 @article{huang19_atten_based_spatiot_lstm_networ,
@@ -357,6 +384,7 @@
   information  = {geographical,temporal},
   model_name   = {ST-LSTM,ASST-LSTM},
   baselines    = {no access to article},
+  num_citations= {4},
 }
 
 @article{zhao17_novel_recom_system_locat_based,
@@ -376,6 +404,7 @@
   information  = {geographical,social},
   model_name   = {GR-DELM},
   baselines    = {UCFR,EPR,HGSMR,EFR},
+  num_citations= {7},
 }
 
 @article{zhu18_contex_aware_group_recom_point_of_inter,
@@ -396,6 +425,7 @@
   information  = {geographical,categorical,social},
   baselines    = {UMEAN,IMEAN,UBCF,ReRex},
   metrics      = {MAE,RMSE,MD},
+  num_citations= {9},
 }
 
 @inproceedings{li18_next_point_inter_recom_tempor,
@@ -416,6 +446,7 @@
   baselines    = {Popu,FPMC,PRME,RNN,LSTM,TMCA-n,TMCA-ca,TMCA-ta},
   model_name   = {TMCA},
   metrics      = {recall,ndcg},
+  num_citations= {11},
 }
 
 @inproceedings{migliorini18_adapt_trip_recom_system,
@@ -435,6 +466,7 @@
   methodology  = {cf},
   information  = {geographical,temporal,sequential,social},
   baselines    = {not clear what baseline is},
+  num_citations= {5},
 }
 
 @article{aliannejadi18_person_contex_aware_point_inter_recom,
@@ -453,6 +485,7 @@
   methodology  = {probabilistic},
   information  = {geographical,categorical,textual},
   baselines    = {LinearCatRev,GeoSoCa,nDTF,UT-ML,UT-CRF,UT-SVM},
+  num_citations= {31},
 }
 
 @inproceedings{debnath18_prefer_aware_travel_route_recom_tempor_influen,
@@ -475,6 +508,7 @@
   metrics      = {trecall,tprecision,tf1},
   baselines    = {NearestPOI,MostPopular,MostPreferred,Forward},
   annotation = {uses social info because use some mostpopular score inside the method}
+  num_citations= {3},
 }
 
 @article{liu18_self_adapt_point_of_inter,
@@ -494,6 +528,7 @@
   information  = {user_pref,geographical,sequential,temporal},
   metrics      = {precision, recall,fn},
   baselines    = {LORE,Rank-GeoFM,HSMM},
+  num_citations= {7},
 }
 
 @inproceedings{massimo18_harnes_poi,
@@ -513,6 +548,7 @@
   information  = {user_pref,categorical,sequential},
   baselines    = {kNN,ALMM},
   metrics      = {reward, dissimilarity, novelty, precision},
+  num_citations= {9},
 }
 
 
@@ -528,6 +564,7 @@
   doi          = {10.21275/art20174948},
   url          = {https://doi.org/10.21275/art20174948},
   date_added   = {Wed Jul 24 23:11:53 2019},
+  num_citations= {0},
 }
 
 @article{guo18_locat_regul_based_poi_recom,
@@ -547,6 +584,7 @@
   information  = {user_pref,geographical},
   metrics      = {precision, recall},
   baselines    = {MostPopular,WRMF,GeoMF,BPRMF,IRenMF,WBPR-F,NBPR},
+  num_citations= {6},
 }
 
 @article{ding18_spatial_tempor_distan_metric_embed,
@@ -566,6 +604,7 @@
   information  = {user_pref,geographical,sequential,temporal},
   baselines    = {Time-Pop,BPR-MF,UTS,Rank-GeoFM,GE,STELLAR},
   metrics      = {accuracy,hit,MMR},
+  num_citations= {5},
 }
 
 @article{ying18_time_aware_metric_embed_with,
@@ -587,6 +626,7 @@
   baselines    = {MostPopular,BPR,FPMC,PRME},
   metrics      = {precision, recall},
   model_name   = {MEAP-T},
+  num_citations= {11},
 }
 
 @article{zhao18_gener_model_approac_geo_social_group_recom,
@@ -608,6 +648,7 @@
   information  = {user_pref,geographical,categorical,social},
   metrics      = {precision, recall},
   baselines    = {CFA,CFL,CFR,SIG,PIT,COM},
+  num_citations= {7},
 }
 
 @inproceedings{liao18_poi_recom_locat_based_social,
@@ -629,6 +670,7 @@
   metrics      = {precision, recall, map},
   baselines    = {TLA,CMF,ULT},
   model_name   = {UZT},
+  num_citations= {6},
 }
 
 @article{he18_next_point_of_inter_recom,
@@ -650,6 +692,7 @@
   baselines    = {MF,PMF,FPMC,PRME},
   model_name   = {LBPR,LBPR-M,LBPR-N},
   annotation = {no sequential information?},
+  num_citations= {2},
 }
 
 @article{liao18_improv_poi_recom_via_dynam_tensor_compl,
@@ -673,6 +716,7 @@
   metrics      = {precision},
   baselines    = {MF,PMF,FPMC,CD,TD,TA-FBMC,TAD-FMPC},
   model_name   = {Prido,s-Prido},
+  num_citations= {2},
 }
 
 @inproceedings{baral18_close,
@@ -695,6 +739,7 @@
   metrics      = {diversity,pair-f1,ndcg},
   baselines    = {MostPopular,MarkovChain,Apriori,HITS},
   model_name   = {CLoSe,CLoSe-LSTM,CLoSe-RNN},
+  num_citations= {7},
 }
 
 @inproceedings{liang18_top_route_searc_submod_model,
@@ -718,6 +763,7 @@
   baselines    = {BF,PACER+1,PACER+2,PACER-SC,GR,AP,A*},
   model_name   = {PACER},
   unique = {true},
+  num_citations= {10},
 }
 
 @article{logesh17_reliab_point_inter_recom_based,
@@ -742,6 +788,7 @@
   model_name   = {},
 
   annotation = {model name?,bad article, bad model presentation, bad baselines and other things},
+  num_citations= {44},
 }
 
 @article{si17_ctf_ara,
@@ -765,6 +812,7 @@
   baselines    = {UBCF,LRT,UTE,CTAG-BPP,},
   model_name   = {FSUA,CTF-ARA},
   annotation = {uses social because of the ubcf},
+  num_citations= {20},
 }
 
 @article{ying17_tempor_aware_poi_recom_system,
@@ -785,10 +833,11 @@
 
   dataset      = {foursquare},
   metrics      = {precision,recall},
-  baselines    = {TD-CF, LP-CF,HITS},
-  model_name   = {TAP w/o TI(without temporal influence), TAP(without friendship), TAP-F},
+  baselines    = {TD-CF,LP-CF,HITS},
+  model_name   = {TAP w/o TI(without temporal influence),TAP(without friendship),TAP-F},
 
   annotation = {confuse reading article, but it is ok to use},
+  num_citations= {18},
 
 }
 
@@ -816,20 +865,17 @@
 
   annotation = {only one baseline, social because of the preference correlation between users},
 
+  num_citations= {35},
 }
 
-@inbook{zhao18_geo_teaser,
-  date_added   = {Wed Jul 24 23:16:24 2019},
-  author       = {Shenglin Zhao and Michael R. Lyu and Irwin King},
-  booktitle    = {SpringerBriefs in Computer Science},
-  doi          = {10.1007/978-981-13-1349-3_4},
-  pages        = {57-78},
-  publisher    = {Springer Singapore},
-  series       = {SpringerBriefs in Computer Science},
-  title        = {Geo-Teaser: Geo-Temporal Sequential Embedding Rank
-    for POI Recommendation},
-  url          = {https://doi.org/10.1007/978-981-13-1349-3_4},
-  year         = 2018,
+
+@inproceedings{zhao2017geo,
+  title={Geo-teaser: Geo-temporal sequential embedding rank for point-of-interest recommendation},
+  author={Zhao, Shenglin and Zhao, Tong and King, Irwin and Lyu, Michael R},
+  booktitle={Proceedings of the 26th international conference on world wide web companion},
+  pages={153--162},
+  year={2017},
+
   problem      = {poi_rec},
   methodology  = {cf,SGD},
   information  = {user_pref,geographical,sequential,temporal},
@@ -849,6 +895,7 @@ geographical influence) affects the model performance? (3) how the parameters af
 the model performance?"
 },
 
+  num_citations= {98},
 }
 
 @inproceedings{wang17_what_your_images_reveal,
@@ -874,6 +921,7 @@ the model performance?"
   model_name   = {VPOI, Visual Content Enhanced POI recommendation},
 
   annotation = {N(metric list size) 5,10},
+  num_citations= {128},
 }
 
 
@@ -911,6 +959,7 @@ the model performance?"
   [5], users and POIs with less than 10 reviews are filtered out"
   
   },
+  num_citations= {17},
 
 }
 
@@ -936,6 +985,7 @@ the model performance?"
   baselines    = {Random Multinomial Choice,Markov,Photographer Behavior Model},
   model_name   = {SSTREC},
   annotation = {success is a particular metric from the article},
+  num_citations= {19},
 }
 
 @inproceedings{yang17_bridg_collab_filter_semi_super_learn,
@@ -960,6 +1010,7 @@ the model performance?"
   baselines    = {IRenMF,LOCABAL,USG,iGSLR,LORE,ASMF,ARMF},
   model_name   = {PACE},
   annotation = {},
+  num_citations= {128},
 }
 
 @inproceedings{pham17_gener_model_out_region_recom,
@@ -985,6 +1036,7 @@ the model performance?"
 
   annotation = {region recommendation, difficult to categorize, is just a greedy algorithm based on the model formalized like a probability problem
 this article has more evaluation in his field of problem (region)},
+  num_citations= {20},
 }
 
 @inproceedings{zhao17_exploit_hierar_struc_poi_recom,
@@ -1010,6 +1062,7 @@ this article has more evaluation in his field of problem (region)},
   model_name   = {HGMF,HGMF-UV,HGMF-XY},
 
   annotation = {},
+  num_citations= {18},
 }
 
 
@@ -1036,6 +1089,7 @@ this article has more evaluation in his field of problem (region)},
   model_name   = {SH-CDL,Spatial-Aware Hierarchical Collaborative Deep Learning model},
 
   annotation = {accuracy is a variation of recall, isnt exactly recall},
+  num_citations= {103},
 }
 
 @article{ren17_contex_aware_probab_matrix_factor,
@@ -1061,6 +1115,7 @@ this article has more evaluation in his field of problem (region)},
   model_name   = {TGSC-PMF,GSC-PMF,TSC-PMF,TGC-PMF,TGS-PMF,TG-PMF,TS-PMF,TC-PMF},
 
   annotation = {80\% 20\% train-test, good baselines},
+  num_citations= {50},
 }
 
 @article{lu17_person_locat_recom_by_aggreg,
@@ -1086,6 +1141,7 @@ this article has more evaluation in his field of problem (region)},
   model_name   = {LURWA,LURA},
 
   annotation = {},
+  num_citations= {19},
 }
 
 @inproceedings{oppokhonov17_curren_poi,
@@ -1111,6 +1167,8 @@ this article has more evaluation in his field of problem (region)},
   model_name   = {CLB},
 
   annotation = {poor baselines},
+
+  num_citations= {7},
 }
 
 
@@ -1129,6 +1187,7 @@ this article has more evaluation in his field of problem (region)},
   problem      = {poi_rec},
   methodology  = {hybrid,others},
   information  = {geographical},
+  num_citations= {7},
 }
 
 @article{vijayakumar19_effec_knowl_based_recom_system,
@@ -1153,6 +1212,7 @@ this article has more evaluation in his field of problem (region)},
   model_name   = {HSTP},
 
   annotation = {},
+  num_citations= {36},
 }
 
 @inproceedings{jiao19_r2sig,
@@ -1183,6 +1243,7 @@ this article has more evaluation in his field of problem (region)},
 current time, and then sorts POIs that belong to the same preference
 in ascending order of their distance from the current location."
 },
+  num_citations= {3},
 }
 % checkpoint (social)
 @article{qian19_spatiot_repres_learn_trans_based_poi_recom,
@@ -1207,6 +1268,7 @@ in ascending order of their distance from the current location."
   model_name   = {STA,STA-E,STA-H,spatiotemporal context-aware and translation-based recommender framework},
 
   annotation = {good baselines},
+  num_citations= {18},
 }
 
 @inbook{doan19_atten_spatio_tempor_neural_model,
@@ -1232,6 +1294,7 @@ in ascending order of their distance from the current location."
   model_name   = {ASTEN},
 
   annotation = {},
+  num_citations= {1},
 }
 
 
@@ -1260,6 +1323,7 @@ in ascending order of their distance from the current location."
   model_name   = {LCR},
 
   annotation = {more model names not included},
+  num_citations= {3},
 }
 
 @inproceedings{zhou19_adver_point_inter_recom,
@@ -1283,6 +1347,7 @@ in ascending order of their distance from the current location."
   model_name   = {APOIR},
 
   annotation = {excellent},
+  num_citations= {12},
 }
 
 @inbook{zhao18_stell,
@@ -1308,6 +1373,7 @@ in ascending order of their distance from the current location."
   model_name   = {STELLAR,TLAR,SLAR},
 
   annotation   = {"FPMC-LR is the state-of-the-art"},
+  num_citations= {132},
 
 }
 
@@ -1333,6 +1399,7 @@ in ascending order of their distance from the current location."
   model_name   = {UGR},
 
   annotation = {weak},
+  num_citations= {0},
 }
 
 @article{zhang18_fused_matrix_factor_with_multi,
@@ -1357,6 +1424,7 @@ in ascending order of their distance from the current location."
   model_name   = {TSG-MF,T-MF,S-MF,G-MF},
 
   annotation = {weak},
+  num_citations= {8},
 
 }
 
@@ -1385,6 +1453,7 @@ in ascending order of their distance from the current location."
 
   annotation = {social because of the POI popularity; category because of the POI features.
   Ok results},
+  num_citations= {6},
 }
 
 @article{aliannejadi19_joint_two_phase_time_sensit,
@@ -1410,6 +1479,7 @@ in ascending order of their distance from the current location."
   model_name   = {JTCR,JTCR-Phase1,JTCR-NoVar,JTCR-NoGeo},
 
   annotation = {},
+  num_citations= {7},
 }
 
 % need check
@@ -1436,6 +1506,7 @@ in ascending order of their distance from the current location."
   model_name   = {MATI},
 
   annotation = {},
+  num_citations= {8},
 }
 
 
@@ -1461,6 +1532,7 @@ in ascending order of their distance from the current location."
 
   annotation = {EdgePPR fusing preferences and RNN,
   need to put references to articles that are used in baselines where year >= 2017},
+  num_citations= {2},
 }
 
 % need check
@@ -1494,6 +1566,7 @@ radial basis function (RBF) kernel"
 
 little gains compared to other methods
 },
+  num_citations= {22},
 }
 
 %need check
@@ -1515,6 +1588,7 @@ little gains compared to other methods
   model_name   = {ST-LSTM,ST-CLSTM},
 
   annotation = {},
+  num_citations= {13},
 }
 
 @inproceedings{do2018coupled,
@@ -1528,6 +1602,7 @@ little gains compared to other methods
   problem      = {Not POI},
   methodology  = {factorization,CPF},
   information = {},
+  num_citations= {10},
 }
 
 %need check
@@ -1555,6 +1630,7 @@ little gains compared to other methods
   model_name   = {GPDM,PPDM},
 
   annotation = {},
+  num_citations= {2},
 }
 
 @article{logesh2017learning,
@@ -1569,6 +1645,7 @@ little gains compared to other methods
   problem      = {poi_rec},
   methodology  = {hybrid},
   information  = {user_pref,geographical},
+  num_citations= {37},
 }
 
 @inproceedings{meng2017dp,
@@ -1589,6 +1666,7 @@ little gains compared to other methods
   model_name   = {DP-POIRS},
 
   annotation = {No evaluation},
+  num_citations= {0},
 }
 
 @article{guo2019location,
@@ -1611,6 +1689,7 @@ little gains compared to other methods
   model_name   = {L-WMF},
 
   annotation = {},
+  num_citations= {6},
 
 }
 
@@ -1635,6 +1714,7 @@ little gains compared to other methods
   annotation = {extremely equal to LC-POIs(2015) but it reformulates one more time the problem},
 
   unique= {true},
+  num_citations= {0},
 
 }
 
@@ -1654,6 +1734,7 @@ little gains compared to other methods
   model_name   = {POI2Vec},
 
   annotation = {Good experimentations in future visitor and next poi. Solves next_poi and future_visitor problem},
+  num_citations= {81},
 }
 
 
@@ -1679,6 +1760,7 @@ little gains compared to other methods
   annotation = {
   propose new metrics to evaluate the recommendation accuracy of a POI sequence: Aligned Precision (AP) and Order-aware Sequence Precision (OSP)
   },
+  num_citations= {0},
 
 }
 
@@ -1700,6 +1782,7 @@ little gains compared to other methods
   model_name   = {CAPR},
 
   annotation = {},
+  num_citations= {0},
 }
 
 @article{huang2019context,
@@ -1718,6 +1801,7 @@ little gains compared to other methods
   model_name   = {CPSR,Context-Aware POI Sequence Recommendation},
 
   annotation   = {},
+  num_citations= {0},
 }
 
 @article{bin2019personalized,
@@ -1740,6 +1824,7 @@ little gains compared to other methods
   model_name   = {PV-PrefixSpan},
 
   annotation   = {Cant find dataset and cant classify methodology},
+  num_citations= {1},
 }
 
 @article{baral2019hirecs,
@@ -1761,6 +1846,7 @@ little gains compared to other methods
   model_name   = {HiRecS,Hierarchical Contextual Location Recommendation System},
 
   annotation   = {Present a review of similar articles and the article itself},
+  num_citations= {1},
 }
 
 @article{bewley2019tour,
@@ -1779,4 +1865,5 @@ little gains compared to other methods
 
   annotation   = {Simple article and baselines, low relevant article},
   unique       = {True},
+  num_citations= {0},
 }
