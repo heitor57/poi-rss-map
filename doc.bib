@@ -1,16 +1,16 @@
-@Comment @inbook{zhao18_geo_teaser,
-@Comment   date_added   = {Wed Jul 24 23:16:24 2019},
-@Comment   author       = {Shenglin Zhao and Michael R. Lyu and Irwin King},
-@Comment   booktitle    = {SpringerBriefs in Computer Science},
-@Comment   doi          = {10.1007/978-981-13-1349-3_4},
-@Comment   pages        = {57-78},
-@Comment   publisher    = {Springer Singapore},
-@Comment   series       = {SpringerBriefs in Computer Science},
-@Comment   title        = {Geo-Teaser: Geo-Temporal Sequential Embedding Rank
-@Comment     for POI Recommendation},
-@Comment   url          = {https://doi.org/10.1007/978-981-13-1349-3_4},
-@Comment   year         = 2018,
-@Comment }
+@inbook{zhao18_geo_teaser,
+  date_added   = {Wed Jul 24 23:16:24 2019},
+  author       = {Shenglin Zhao and Michael R. Lyu and Irwin King},
+  booktitle    = {SpringerBriefs in Computer Science},
+  doi          = {10.1007/978-981-13-1349-3_4},
+  pages        = {57-78},
+  publisher    = {Springer Singapore},
+  series       = {SpringerBriefs in Computer Science},
+  title        = {Geo-Teaser: Geo-Temporal Sequential Embedding Rank
+    for POI Recommendation},
+  url          = {https://doi.org/10.1007/978-981-13-1349-3_4},
+  year         = 2018,
+}
 
 @article{he2019research,
   title={Research on comprehensive point of interest (POI) recommendation based on spark},
@@ -215,7 +215,7 @@
   url          = {https://doi.org/10.24963/ijcai.2018/458},
   date_added   = {Wed Jul 24 23:10:08 2019},
   month        = 7,
-  problem      = {next_poi},
+  problem      = {successive,next_poi},
   methodology  = {OP},
   information  = {geographical,textual},
   baselines    = {STELLAR,LSTM,GRU,ST-RNN,Random,SG,POI2Vec,Geo-Teaser},
@@ -507,7 +507,7 @@
   information  = {user_pref,geographical,categorical,temporal,sequential,social},
   metrics      = {trecall,tprecision,tf1},
   baselines    = {NearestPOI,MostPopular,MostPreferred,Forward},
-  annotation = {uses social info because use some mostpopular score inside the method}
+  annotation = {uses social info because use some mostpopular score inside the method},
   num_citations= {3},
 }
 
@@ -547,7 +547,7 @@
   methodology  = {cf,hybrid,IRL,Markov,Factorization},
   information  = {user_pref,categorical,sequential},
   baselines    = {kNN,ALMM},
-  metrics      = {reward, dissimilarity, novelty, precision},
+  metrics      = {reward,dissimilarity,novelty,precision},
   num_citations= {9},
 }
 
@@ -731,7 +731,7 @@
   url          = {https://doi.org/10.1145/3240323.3240410},
   date_added   = {Wed Jul 24 23:14:39 2019},
   month        = {-},
-  problem      = {ContSeq},
+  problem      = {Tour,ContSeq},
   methodology  = {cf,LSTM,RNN},
   information  = {user_pref,geographical,social,categorical,temporal},
 
@@ -1026,7 +1026,7 @@ the model performance?"
   date_added   = {Wed Jul 24 23:17:30 2019},
   month        = {-},
   problem      = {in_out_town},
-  methodology  = {cf,probabilistic,Greedy},
+  methodology  = {probabilistic,Greedy,others},
   information  = {geographical},
 
   dataset      = {foursquare,twitter},
@@ -1079,7 +1079,7 @@ this article has more evaluation in his field of problem (region)},
   doi          = {10.1109/tkde.2017.2741484},
   url          = {https://doi.org/10.1109/tkde.2017.2741484},
   date_added   = {Wed Jul 24 23:17:46 2019},
-  problem      = {poi_rec,in_out_town},
+  problem      = {in_out_town},
   methodology  = {cf,probabilistic,DL},
   information  = {user_pref,geographical,sequential,social},
 
@@ -1283,7 +1283,7 @@ in ascending order of their distance from the current location."
     Successive Point of Interest Recommendation},
   url          = {https://doi.org/10.1007/978-3-030-16142-2_27},
   year         = 2019,
-  problem      = {successive},
+  problem      = {next_poi,successive},
   methodology  = {cf,RNN},
   information  = {geographical,sequential,temporal},
 
@@ -1363,16 +1363,16 @@ in ascending order of their distance from the current location."
   url          = {https://doi.org/10.1007/978-981-13-1349-3_5},
   year         = 2018,
 
-  problem      = {successive},
-  methodology  = {cf,factorization,tensor},
-  information  = {user_pref,temporal,},
+  problem      = {next_poi,successive},
+  methodology  = {factorization},
+  information  = {user_pref,temporal,sequential},
 
   dataset      = {foursquare,gowalla},
   metrics      = {precision,recall},
   baselines    = {WRMF,BPRMF,LRT,FPMC-LR},
   model_name   = {STELLAR,TLAR,SLAR},
 
-  annotation   = {"FPMC-LR is the state-of-the-art"},
+  annotation   = {"FPMC-LR is the state-of-the-art", TENSOR},
   num_citations= {132},
 
 }
@@ -1522,7 +1522,7 @@ in ascending order of their distance from the current location."
   doi          = {10.1007/s11280-018-0599-5},
   url          = {https://doi.org/10.1007/s11280-018-0599-5},
   date_added   = {Thu Jul 25 23:18:24 2019},
-  problem      = {successive,others},
+  problem      = {next_poi,successive,others},
   methodology  = {cf,link_based,hybrid,RNN},
   information  = {user_pref,geographical,sequential},
   dataset      = {gowalla,brightkite},
@@ -1702,7 +1702,7 @@ little gains compared to other methods
   pages={2887--2899},
   year={2019},
   publisher={Springer},
-  problem      = {poi_rec,effective,others},
+  problem      = {poi_rec,effective_path,others},
   methodology  = {cf,hybrid},
   information  = {category,temporal},
 
@@ -1724,7 +1724,7 @@ little gains compared to other methods
   booktitle={Thirty-First AAAI Conference on Artificial Intelligence},
   year={2017},
 
-  problem      = {poi_rec,next_poi,future_visitor},
+  problem      = {next_poi,future_visitor},
   methodology  = {probabilistic,SGD},
   information  = {user_pref,sequential,geographical,temporal},
 
@@ -1748,7 +1748,7 @@ little gains compared to other methods
   year={2019},
   publisher={Multidisciplinary Digital Publishing Institute},
 
-  problem      = {successive,Tour},
+  problem      = {next_poi,successive,Tour},
   methodology  = {cf,Seq2Seq},
   information  = {geographical,categorical,sequential},
 
@@ -1836,7 +1836,7 @@ little gains compared to other methods
   pages={1020--1037},
   year={2019},
   publisher={IEEE},
-  problem      = {poi_rec,successive},
+  problem      = {poi_rec,next_poi,successive},
   methodology  = {cf},
   information  = {geographical,category,temporal,user_pref},
 
@@ -1866,4 +1866,68 @@ little gains compared to other methods
   annotation   = {Simple article and baselines, low relevant article},
   unique       = {True},
   num_citations= {0},
+}
+
+@inproceedings{wang2017location,
+  title={A location-sentiment-aware recommender system for both home-town and out-of-town users},
+  author={Wang, Hao and Fu, Yanmei and Wang, Qinyong and Yin, Hongzhi and Du, Changying and Xiong, Hui},
+  booktitle={Proceedings of the 23rd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages={1135--1143},
+  year={2017},
+  problem      = {poi_rec,in_out_town},
+  methodology  = {probabilistic},
+  information  = {user_pref,geographical,sequential,social,textual},
+
+  dataset      = {yelp,foursquare},
+  metrics      = {precision,accuracy},
+  baselines    = {CKNN,UPS-CF,CAPRF,GCF,LCA-LDA,JIM},
+  model_name   = {LSARS},
+
+  annotation   = {},
+  num_citations= {38},
+
+}
+
+
+@article{logesh2019efficient,
+  title={Efficient user profiling based intelligent travel recommender system for individual and group of users},
+  author={Logesh, R and Subramaniyaswamy, V and Vijayakumar, V and Li, Xiong},
+  journal={Mobile Networks and Applications},
+  volume={24},
+  number={3},
+  pages={1018--1033},
+  year={2019},
+  publisher={Springer},
+
+  problem      = {Tour,GroupTour},
+  methodology  = {hybrid},
+  information  = {user_pref,social},
+
+  dataset      = {yelp,tripadvisor},
+  metrics      = {precision,hit,MAE},
+  baselines    = {UBCF,ICF,TBCF,GeoTeCS,ICGS,DCR,DCW,K-Means,PSO,DPSOHiK},
+  model_name   = {ABiPRS,Behavior induced Personalized Recommender System},
+
+  annotation   = {Uses several recommenders systems, but it will not be included in information because is not part of the method and i could not find it in the article},
+  num_citations= {20},
+}
+
+@incollection{logesh2019exploring,
+  title={Exploring hybrid recommender systems for personalized travel applications},
+  author={Logesh, R and Subramaniyaswamy, V},
+  booktitle={Cognitive informatics and soft computing},
+  pages={535--544},
+  year={2019},
+  publisher={Springer},
+  problem      = {Tour},
+  methodology  = {hybrid},
+  information  = {textual,temporal,geographical,context},
+
+  dataset      = {yelp,tripadvisor},
+  metrics      = {RMSE,coverage,f1},
+  baselines    = {},
+  model_name   = {PCAHTRS,Personalized Context-Aware Hybrid Travel Recommender System},
+
+  annotation   = {confuse baselines, simple model but it is interesting},
+  num_citations= {20},
 }
