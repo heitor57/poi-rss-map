@@ -1,3 +1,19 @@
+@inproceedings{zhang2015geosoca,
+  title={GeoSoCa: Exploiting geographical, social and categorical correlations for point-of-interest recommendations},
+  author={Zhang, Jia-Dong and Chow, Chi-Yin},
+  booktitle={Proceedings of the 38th international ACM SIGIR conference on research and development in information retrieval},
+  pages={443--452},
+  year={2015}
+}
+
+@inproceedings{ye2011exploiting,
+  title={Exploiting geographical influence for collaborative point-of-interest recommendation},
+  author={Ye, Mao and Yin, Peifeng and Lee, Wang-Chien and Lee, Dik-Lun},
+  booktitle={Proceedings of the 34th international ACM SIGIR conference on Research and development in Information Retrieval},
+  pages={325--334},
+  year={2011}
+}
+
 @inbook{zhao18_geo_teaser,
   date_added   = {Wed Jul 24 23:16:24 2019},
   author       = {Shenglin Zhao and Michael R. Lyu and Irwin King},
@@ -756,7 +772,7 @@
   month        = {-},
   problem      = {Req,Trip,Tour},
   methodology  = {cf},
-  information  = {user_pref,geographical,category,textual,sequential},
+  information  = {user_pref,geographical,categorical,textual,sequential},
 
   dataset = {foursquare,singapore,gowalla,austin},
   metrics      = {gain for effectiveness,runtime,search space},
@@ -829,7 +845,7 @@
   date_added   = {Wed Jul 24 23:16:14 2019},
   problem      = {poi_rec,time_aware},
   methodology  = {link_based,factorization,hybrid,TF},
-  information  = {user_pref,geographical,category,social,textual,temporal},
+  information  = {user_pref,geographical,categorical,social,textual,temporal},
 
   dataset      = {foursquare},
   metrics      = {precision,recall},
@@ -940,7 +956,7 @@ the model performance?"
   month        = {-},
   problem      = {poi_rec},
   methodology  = {link_based},
-  information  = {geographical,category,social,textual,sequential},
+  information  = {geographical,categorical,social,textual,sequential},
 
 
   dataset      = {yelp},
@@ -1363,7 +1379,7 @@ in ascending order of their distance from the current location."
   url          = {https://doi.org/10.1007/978-981-13-1349-3_5},
   year         = 2018,
 
-  problem      = {next_poi,successive},
+  problem      = {time_aware,next_poi,successive},
   methodology  = {factorization},
   information  = {user_pref,temporal,sequential},
 
@@ -1417,7 +1433,7 @@ in ascending order of their distance from the current location."
   date_added   = {Wed Jul 24 23:36:49 2019},
   problem      = {poi_rec},
   methodology  = {cf,factorization,hybrid},
-  information  = {geographical,category,social},
+  information  = {geographical,categorical,social},
   dataset      = {yelp},
   metrics      = {recall,MAE,RMSE},
   baselines    = {MF},
@@ -1444,7 +1460,7 @@ in ascending order of their distance from the current location."
   date_added   = {Wed Jul 24 23:36:59 2019},
   problem      = {poi_rec},
   methodology  = {cf,probabilistic,ML},
-  information  = {user_pref,geographical,category,social},
+  information  = {user_pref,geographical,categorical,social},
 
   dataset      = {foursquare,gowalla},
   metrics      = {precision,recall,MAE,fn},
@@ -1505,7 +1521,7 @@ in ascending order of their distance from the current location."
   baselines    = {UBCF,USG,USGT,UBCFT},
   model_name   = {MATI},
 
-  annotation = {},
+  annotation = {This model has a part named MATI model that can incorporates any},
   num_citations= {8},
 }
 
@@ -1704,7 +1720,7 @@ little gains compared to other methods
   publisher={Springer},
   problem      = {poi_rec,effective_path,others},
   methodology  = {cf,hybrid},
-  information  = {category,temporal},
+  information  = {categorical},
 
   dataset      = {foursquare,gowalla},
   metrics      = {diversity,precision,recall},
@@ -1838,7 +1854,7 @@ little gains compared to other methods
   publisher={IEEE},
   problem      = {poi_rec,next_poi,successive},
   methodology  = {cf},
-  information  = {geographical,category,temporal,user_pref},
+  information  = {geographical,categorical,temporal,user_pref},
 
   dataset      = {gowalla,weeplace},
   metrics      = {precision,recall,ndcg},
@@ -1856,7 +1872,7 @@ little gains compared to other methods
   year={2019},
   problem      = {GroupTour,CityGroup},
   methodology  = {cf},
-  information  = {user_pref,social,geographical,temporal,category},
+  information  = {user_pref,social,geographical,temporal,categorical},
 
   dataset      = {osm(OpenStreetMap),flickr},
   metrics      = {},
@@ -1930,4 +1946,55 @@ little gains compared to other methods
 
   annotation   = {confuse baselines, simple model but it is interesting},
   num_citations= {20},
+}
+
+@inproceedings{lee2009slaw,
+  title={Slaw: A new mobility model for human walks},
+  author={Lee, Kyunghan and Hong, Seongik and Kim, Seong Joon and Rhee, Injong and Chong, Song},
+  booktitle={IEEE INFOCOM 2009},
+  pages={855--863},
+  year={2009},
+  organization={IEEE}
+}
+
+@article{gonzalez2008understanding,
+  title={Understanding individual human mobility patterns},
+  author={Gonzalez, Marta C and Hidalgo, Cesar A and Barabasi, Albert-Laszlo},
+  journal={nature},
+  volume={453},
+  number={7196},
+  pages={779--782},
+  year={2008},
+  publisher={Nature publishing group}
+}
+
+
+@inproceedings{McNee2006AccurateIN,
+  title={Accurate is not always good: How Accuracy Metrics have hurt Recommender Systems},
+  author={Sean M. McNee and John Thomas Riedl and Joseph A. Konstan},
+  year={2006}
+}
+@article{wu2019recent,
+  title={Recent advances in diversified recommendation},
+  author={Wu, Qiong and Liu, Yong and Miao, Chunyan and Zhao, Yin and Guan, Lu and Tang, Haihong},
+  journal={arXiv preprint arXiv:1905.06589},
+  year={2019}
+}
+
+@inproceedings{zhang2008avoiding,
+  title={Avoiding monotony: improving the diversity of recommendation lists},
+  author={Zhang, Mi and Hurley, Neil},
+  booktitle={Proceedings of the 2008 ACM conference on Recommender systems},
+  pages={123--130},
+  year={2008},
+  organization={ACM}
+}
+
+@inproceedings{smyth2001similarity,
+  title={Similarity vs. diversity},
+  author={Smyth, Barry and McClave, Paul},
+  booktitle={International Conference on Case-Based Reasoning},
+  pages={347--361},
+  year={2001},
+  organization={Springer}
 }

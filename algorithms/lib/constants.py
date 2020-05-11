@@ -7,7 +7,7 @@ PRETTY_PROBLEM = {
     'poi_rec': 'Poi rec.',
     'time_aware': 'Time-aware',
     'next_poi': 'Next Poi',
-    'in_out_town': 'In-/Out-of-town',
+    'in_out_town': 'In/Out-of-town',
     'others': 'Others',
 }
 
