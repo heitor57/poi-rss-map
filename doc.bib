@@ -192,6 +192,7 @@
   problem      = {poi_rec},
   methodology  = {factorization,probabilistic,CNN},
   information  = {user_pref,geographical,social},
+  dataset      = {foursquare(NYC,Los Angeles)},
   baselines    = {LCARS,CoRe,GeoMF,DRW,NCPD},
   metrics      = {precision,recall},
   model_name   = {ReGS,Review Geographical Social},
@@ -254,6 +255,8 @@
   methodology  = {factorization,TF,SGD},
   information  = {temporal},
   annotation   = {periodicity, consecutiveness, and non-uniformness},
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall,f1},
   model_name   = {ATTF},
   baselines    = {WRMF,BPR-MF,LRT,FPMC-LR},
   num_citations= {11},
@@ -318,6 +321,9 @@
   model_name   = {TM-PFM},
   baselines    = {PMF,NMF,BPTF,LRT},
   num_citations= {7},
+  dataset      = {foursquare(NYC,human mobility from taxi trip records)},
+  metrics      = {fm(beta=0.5)},
+  annotation   = {},
 }
 
 @article{gao18_person_point_of_inter_recom,
@@ -339,6 +345,8 @@
   model_name   = {GeoEISo},
   baselines    = {USG,IRenMF,MGM,CoReSo,SVD++,TrustMF,iGSLR,UA,DRW,NCP},
   num_citations= {20},
+  dataset      = {foursquare(NYC,LA)},
+  metrics      = {precision,recall},
 }
 
 @article{ding18_recnet,
@@ -360,6 +368,8 @@
   baselines    = {WRMF,BPR-MF,USG,GeoMF,Rank-GeoFM,ARMF},
   model_name   = {RecNet},
   num_citations= {14},
+  dataset      = {foursquare(tokyo),gowalla(NYC)},
+  metrics      = {precision,recall,mrr},
 }
 
 @article{chen18_exploit_spatial_tempor_point_inter_recom,
@@ -399,8 +409,11 @@
   methodology  = {cf,LSTM},
   information  = {geographical,temporal},
   model_name   = {ST-LSTM,ASST-LSTM},
-  baselines    = {no access to article},
+  baselines    = {PMF,FPMC-LR,PRME-G,Rank-GeoFM,RNN,LSTM,ST-RNN,MANN},
   num_citations= {4},
+  dataset      = {gowalla,brightkite},
+  metrics      = {precision,recall,f1},
+  annotation   = {no access to article//found article in github of the first author},
 }
 
 @article{zhao17_novel_recom_system_locat_based,
@@ -421,6 +434,8 @@
   model_name   = {GR-DELM},
   baselines    = {UCFR,EPR,HGSMR,EFR},
   num_citations= {7},
+  dataset      = {gowalla,brightkite},
+  metrics      = {precision,recall,f1},
 }
 
 @article{zhu18_contex_aware_group_recom_point_of_inter,
@@ -463,6 +478,8 @@
   model_name   = {TMCA},
   metrics      = {recall,ndcg},
   num_citations= {11},
+  dataset      = {gowalla,yelp},
+  metrics      = {recall,ndcg},
 }
 
 @inproceedings{migliorini18_adapt_trip_recom_system,
@@ -542,7 +559,7 @@
   problem      = {poi_rec},
   methodology  = {cf,hybrid,Markov},
   information  = {user_pref,geographical,sequential,temporal},
-  metrics      = {precision, recall,fn},
+  metrics      = {precision, recall,fm},
   baselines    = {LORE,Rank-GeoFM,HSMM},
   num_citations= {7},
 }
@@ -640,8 +657,9 @@
   methodology  = {probabilistic,Markov},
   information  = {geographical,sequential,temporal},
   baselines    = {MostPopular,BPR,FPMC,PRME},
+  dataset      = {foursquare,gowalla},
   metrics      = {precision, recall},
-  model_name   = {MEAP-T},
+  model_name   = {MEAP,MEAP-T},
   num_citations= {11},
 }
 
@@ -683,7 +701,8 @@
   problem      = {poi_rec},
   methodology  = {factorization,probabilistic,hybrid,TF},
   information  = {user_pref,textual,categorical,temporal},
-  metrics      = {precision, recall, map},
+  dataset      = {world_wide(WW,World-Wide)},
+  metrics      = {precision,recall,map},
   baselines    = {TLA,CMF,ULT},
   model_name   = {UZT},
   num_citations= {6},
@@ -704,7 +723,8 @@
   problem      = {next_poi},
   methodology  = {factorization,probabilistic},
   information  = {geographical,categorical},
-  metrics      = {precision},
+  dataset      = {foursquare(LA,NYC)},
+  metrics      = {precision,precision_poi,precision_new_poi},
   baselines    = {MF,PMF,FPMC,PRME},
   model_name   = {LBPR,LBPR-M,LBPR-N},
   annotation = {no sequential information?},
@@ -727,7 +747,7 @@
   problem      = {poi_rec,time_aware},
   methodology  = {factorization,TF,T},
   information  = {user_pref,geographical,categorical,sequential,temporal},
-  dataset = {foursquare,newyork,losangeles},
+  dataset = {foursquare(newyork,losangeles)},
 
   metrics      = {precision},
   baselines    = {MF,PMF,FPMC,CD,TD,TA-FBMC,TAD-FMPC},
@@ -774,7 +794,7 @@
   methodology  = {cf},
   information  = {user_pref,geographical,categorical,textual,sequential},
 
-  dataset = {foursquare,singapore,gowalla,austin},
+  dataset = {foursquare(singapore),gowalla(austin)},
   metrics      = {gain for effectiveness,runtime,search space},
   baselines    = {BF,PACER+1,PACER+2,PACER-SC,GR,AP,A*},
   model_name   = {PACER},
@@ -1224,7 +1244,7 @@ this article has more evaluation in his field of problem (region)},
   information  = {geographical,categorical,temporal},
   dataset      = {},
   metrics      = {hit,diversity},
-  baselines    = {},
+  baselines    = {multiple(not specified)},
   model_name   = {HSTP},
 
   annotation = {},
@@ -1303,10 +1323,9 @@ in ascending order of their distance from the current location."
   methodology  = {cf,RNN},
   information  = {geographical,sequential,temporal},
 
-
-  dataset      = {},
+  dataset      = {foursquare(Europe and US),gowalla},
   metrics      = {recall,f1,roc},
-  baselines    = {MostPopular,Markov,LRLT,FPMC,PRME},
+  baselines    = {MostPopular(TOP),Markov(MC),LRLT,FPMC,PRME,RNN,ST-RNN},
   model_name   = {ASTEN},
 
   annotation = {},
@@ -1463,7 +1482,7 @@ in ascending order of their distance from the current location."
   information  = {user_pref,geographical,categorical,social},
 
   dataset      = {foursquare,gowalla},
-  metrics      = {precision,recall,MAE,fn},
+  metrics      = {precision,recall,MAE,fm},
   baselines    = {SB,UBCF,UTE+SE,GTAG-BP,GT-BNMF,CTF-ARA,SK},
   model_name   = {APRA-SA},
 
@@ -1834,12 +1853,12 @@ little gains compared to other methods
   methodology  = {cf,PrefixSpan,DataMining},
   information  = {user_pref,sequential,geographical,temporal,context},
 
-  dataset      = {},
-  metrics      = {precision},
+  dataset      = {guilin},
+  metrics      = {precision(not directly in article),APR,Type_Pre,Season_Pre,PVD_AR},
   baselines    = {MostPopular,Random,RandomNearest,CTM(CrowdTravel method)},
   model_name   = {PV-PrefixSpan},
 
-  annotation   = {Cant find dataset and cant classify methodology},
+  annotation   = {///Cant find dataset and cant classify methodology},
   num_citations= {1},
 }
 
