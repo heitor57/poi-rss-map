@@ -1,4 +1,5 @@
 from lib.constants import *
+import re
 def format_entries(bib_db):
 
     to_maintain = []
@@ -14,6 +15,7 @@ def format_entries(bib_db):
 
             entry['baselines'] = entry.get('baselines','').split(',')
             entry['metrics'] = entry.get('metrics','').split(',')
+            entry['dataset'] = re.sub(r'\([^)]*\)','',entry.get('dataset','')).split(',')
             to_maintain.append(i)
     bib_db.entries = [bib_db.entries[i] for i in to_maintain]
         
