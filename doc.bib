@@ -575,7 +575,7 @@
   problem      = {poi_rec},
   methodology  = {cf,hybrid,Markov},
   information  = {user_pref,geographical,sequential,temporal},
-  metrics      = {precision, recall,fm},
+  metrics      = {precision,recall,fm},
   baselines    = {LORE,Rank-GeoFM,HSMM},
   num_citations= {7},
 }
@@ -631,7 +631,7 @@
   problem      = {poi_rec},
   methodology  = {probabilistic},
   information  = {user_pref,geographical},
-  metrics      = {precision, recall},
+  metrics      = {precision,recall},
   baselines    = {MostPopular,WRMF,GeoMF,BPRMF,IRenMF,WBPR-F,NBPR},
   num_citations= {6},
 }
@@ -674,7 +674,7 @@
   information  = {geographical,sequential,temporal},
   baselines    = {MostPopular,BPR,FPMC,PRME},
   dataset      = {foursquare,gowalla},
-  metrics      = {precision, recall},
+  metrics      = {precision,recall},
   model_name   = {MEAP,MEAP-T},
   num_citations= {11},
 }
@@ -696,7 +696,7 @@
   problem      = {poi_rec,Group},
   methodology  = {probabilistic},
   information  = {user_pref,geographical,categorical,social},
-  metrics      = {precision, recall},
+  metrics      = {precision,recall},
   baselines    = {CFA,CFL,CFR,SIG,PIT,COM},
   num_citations= {7},
 }
@@ -1085,7 +1085,7 @@ the model performance?"
   information  = {geographical},
 
   dataset      = {foursquare,twitter},
-  metrics      = {one_hit(named as hit),quality(particular of the article)},
+  metrics      = {hit(one_hit)(named as hit),quality(particular of the article)},
   baselines    = {Most_dense,Most_Freq,RegRS/E},
   model_name   = {RegRS},
 
@@ -1191,7 +1191,7 @@ this article has more evaluation in his field of problem (region)},
   information  = {user_pref,geographical,social,categorical,temporal},
 
   dataset      = {foursquare,gowalla},
-  metrics      = {precision,recall,one_hit(original name is utility. A recommendation is considered useful for a user u if it contains at least one location that u likes)},
+  metrics      = {precision,recall,hit(one_hit)(original name is utility. A recommendation is considered useful for a user u if it contains at least one location that u likes)},
   baselines    = {USG,iGLSR,RankBoost,BPRMF,SBPR,GeoMF,LRT},
   model_name   = {LURWA,LURA},
 
@@ -1641,7 +1641,7 @@ little gains compared to other methods
   information  = {geographical,sequential,temporal},
 
   dataset      = {foursquare,gowalla,brightkite},
-  metrics      = {one_hit(accuracy),MAP},
+  metrics      = {hit(one_hit)(accuracy),MAP},
   baselines    = {FPMC-LR,PRME-G,GE,RNN,LSTM,GRU,ST-RNN},
   model_name   = {ST-LSTM,ST-CLSTM},
 
@@ -1936,7 +1936,7 @@ little gains compared to other methods
   information  = {user_pref,geographical,sequential,social,textual},
 
   dataset      = {yelp,foursquare},
-  metrics      = {precision,one_hit(accuracy)},
+  metrics      = {precision,hit(one_hit)(accuracy)},
   baselines    = {CKNN,UPS-CF,CAPRF,GCF,LCA-LDA,JIM},
   model_name   = {LSARS},
 

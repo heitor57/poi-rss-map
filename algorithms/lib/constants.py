@@ -44,11 +44,24 @@ PRETTY_DATASET = {
     'weeplaces': 'Weeplaces',
     'twitter': 'Twitter',
     'tripadvisor': 'TripAdvisor',
-    'world_wide': 'World-Wide',
-    'weibo': 'Weibo',
-    'dianping': 'DianPing',
+    # 'world_wide': 'World-Wide',
+    # 'weibo': 'Weibo',
+    # 'dianping': 'DianPing',
     'instagram': 'Instagram',
     'ctrip': 'Ctrip',
-    'flickr': 'Flickr',
+    # 'flickr': 'Flickr',
+    'others': 'Others',
+}
+
+PRETTY_METRIC = {
+    'precision': 'Precision',
+    'recall': 'Recall',
+    'fm': 'F-measure',
+    'ndcg': 'nDCG',
+    'mae': 'MAE',
+    'rmse': 'RMSE',
+    'map': 'MAP',
+    'hit': 'Hit Rate',
+    'ild': 'ILD',
     'others': 'Others',
 }

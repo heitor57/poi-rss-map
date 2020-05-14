@@ -4,7 +4,7 @@ from lib.constants import *
 from lib.util import *
 import collections
 import matplotlib.pyplot as plt
-plt.rcParams['font.size'] = 14
+plt.rcParams['font.size'] = 20
 
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
@@ -18,12 +18,11 @@ for c,i in enumerate(bib_db.entries):
                 cnt_datasets[dataset] += 1
     except:
         continue
-
+print(len(cnt_datasets.keys()))
 for dataset in cnt_datasets.copy().keys():
     if dataset not in PRETTY_DATASET:
         print('removing',dataset,'and putting in others')
-        del cnt_datasets[dataset]
-        cnt_datasets['others'] += 1
+        cnt_datasets['others'] += cnt_datasets.pop(dataset)
 # print
 # cnt_datasets = dict(reversed(sorted(cnt_datasets,key=lambda i: print(i))))
 cnt_datasets = {k: v for k, v in
@@ -40,8 +39,9 @@ for x, y in zip(xs, ys):
     ax.annotate(str(y),xy=(x,y),ha='center',va='bottom')
 ax.set_ylabel('#Articles')
 # ax.set_ylim(min(ys),max(ys))
-ax.set_ylim(top=max(ys)+2)
+ax.set_ylim(top=max(ys)+4)
 fig.savefig('datasets_count.png',bbox_inches='tight')
+fig.savefig('datasets_count.eps',bbox_inches='tight')
 # plt.show()
 
 # table_string = ''
