@@ -14,7 +14,7 @@ def format_entries(bib_db):
             entry['problem'] = list(set([j if j in PRETTY_PROBLEM else 'others' for j in entry['problem'].split(',')]))
 
             entry['baselines'] = entry.get('baselines','').split(',')
-            entry['metrics'] = entry.get('metrics','').split(',')
+            entry['metrics'] = re.sub(r'\([^)]*\)','',entry.get('metrics','')).lower().split(',')
             entry['dataset'] = re.sub(r'\([^)]*\)','',entry.get('dataset','')).split(',')
             to_maintain.append(i)
     bib_db.entries = [bib_db.entries[i] for i in to_maintain]

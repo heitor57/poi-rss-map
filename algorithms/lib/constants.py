@@ -36,3 +36,17 @@ METHODOLOGY_IDX = {j: i for i,j in enumerate(PRETTY_METHODOLOGY.keys())}
 
 INFORMATION_IDX = {j: i for i,j in enumerate(PRETTY_INFORMATION.keys())}
 
+PRETTY_DATASET = {
+    'foursquare': 'Foursquare',
+    'gowalla': 'Gowalla',
+    'yelp': 'Yelp',
+    'brightkite': 'Brightkite',
+    'weeplaces': 'Weeplaces',
+    'twitter': 'Twitter',
+    'tripadvisor': 'TripAdvisor',
+    'world_wide': 'World-Wide',
+    'weibo': 'Weibo',
+    'dianping': 'DianPing',
+    'instagram': 'Instagram',
+    'ctrip': 'Ctrip',
+}

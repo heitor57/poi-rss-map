@@ -1242,9 +1242,9 @@ this article has more evaluation in his field of problem (region)},
   problem      = {Tour,others},
   methodology  = {knowledge-based},
   information  = {geographical,categorical,temporal},
-  dataset      = {},
+  dataset      = {multiple(not specified)},
   metrics      = {hit,diversity},
-  baselines    = {multiple(not specified)},
+  baselines    = {no baseline},
   model_name   = {HSTP},
 
   annotation = {},
@@ -1787,7 +1787,7 @@ little gains compared to other methods
   methodology  = {cf,Seq2Seq},
   information  = {geographical,categorical,sequential},
 
-  dataset      = {weeplace},
+  dataset      = {weeplaces},
   metrics      = {AP,OSP},
   baselines    = {Random,Add.Markov,LORE,LSTM-Seq2Seq},
   model_name   = {DRPS,Dynamic Recommendation of POI Sequence},
@@ -1853,7 +1853,7 @@ little gains compared to other methods
   methodology  = {cf,PrefixSpan,DataMining},
   information  = {user_pref,sequential,geographical,temporal,context},
 
-  dataset      = {guilin},
+  dataset      = {ctrip(guilin),baidu_baike},
   metrics      = {precision(not directly in article),APR,Type_Pre,Season_Pre,PVD_AR},
   baselines    = {MostPopular,Random,RandomNearest,CTM(CrowdTravel method)},
   model_name   = {PV-PrefixSpan},
@@ -1875,7 +1875,7 @@ little gains compared to other methods
   methodology  = {cf},
   information  = {geographical,categorical,temporal,user_pref},
 
-  dataset      = {gowalla,weeplace},
+  dataset      = {gowalla,weeplaces},
   metrics      = {precision,recall,ndcg},
   baselines    = {MostPopular,UCF,UCF+G,GeoMF,HSR,ASMF-LA,HGMF,Markov,TA-CF,HGMF,TA-TEM,RNN,ST-RNN},
   model_name   = {HiRecS,Hierarchical Contextual Location Recommendation System},
