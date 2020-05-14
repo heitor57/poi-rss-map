@@ -13,7 +13,7 @@ format_entries(bib_db)
 cnt_datasets = collections.defaultdict(int)
 for c,i in enumerate(bib_db.entries):
     try:
-        if i.get('model_name',None):
+        if i.get('problem',None):
             for dataset in i['dataset']:
                 cnt_datasets[dataset] += 1
     except:

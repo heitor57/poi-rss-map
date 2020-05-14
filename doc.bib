@@ -194,7 +194,7 @@
   information  = {user_pref,geographical,social},
   dataset      = {foursquare(NYC,Los Angeles)},
   baselines    = {LCARS,CoRe,GeoMF,DRW,NCPD},
-  metrics      = {precision,recall},
+  metrics      = {precision,recall,RMSE},
   model_name   = {ReGS,Review Geographical Social},
   num_citations= {14},
 }
@@ -214,6 +214,8 @@
   month        = 7,
   problem      = {poi_rec},
   methodology  = {SGA},
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
   information  = {user_pref,geographical},
   baselines    = {UCF+G,MGM+PFM,GeoMF,RankGeoFM,Geo-Teaser},
   num_citations= {25},
@@ -256,7 +258,7 @@
   information  = {temporal},
   annotation   = {periodicity, consecutiveness, and non-uniformness},
   dataset      = {foursquare,gowalla},
-  metrics      = {precision,recall,f1},
+  metrics      = {precision,recall,fm(f1)},
   model_name   = {ATTF},
   baselines    = {WRMF,BPR-MF,LRT,FPMC-LR},
   num_citations= {11},
@@ -412,7 +414,7 @@
   baselines    = {PMF,FPMC-LR,PRME-G,Rank-GeoFM,RNN,LSTM,ST-RNN,MANN},
   num_citations= {4},
   dataset      = {gowalla,brightkite},
-  metrics      = {precision,recall,f1},
+  metrics      = {precision,recall,fm(f1)},
   annotation   = {no access to article//found article in github of the first author},
 }
 
@@ -435,7 +437,7 @@
   baselines    = {UCFR,EPR,HGSMR,EFR},
   num_citations= {7},
   dataset      = {gowalla,brightkite},
-  metrics      = {precision,recall,f1},
+  metrics      = {precision,recall,fm(f1)},
 }
 
 @article{zhu18_contex_aware_group_recom_point_of_inter,
@@ -538,7 +540,7 @@
   problem      = {time_aware,Tour,Trip},
   methodology  = {cf,hybrid},
   information  = {user_pref,geographical,categorical,temporal,sequential,social},
-  metrics      = {trecall,tprecision,tf1},
+  metrics      = {trecall,tprecision,tfm(tf1)},
   baselines    = {NearestPOI,MostPopular,MostPreferred,Forward},
   annotation = {uses social info because use some mostpopular score inside the method},
   num_citations= {3},
@@ -772,10 +774,13 @@
   information  = {user_pref,geographical,social,categorical,temporal},
 
   dataset = {weeplaces,gowalla},
-  metrics      = {diversity,pair-f1,ndcg},
+  metrics      = {ild(named as diversity),pair-fm(pair-f1),ndcg},
   baselines    = {MostPopular,MarkovChain,Apriori,HITS},
   model_name   = {CLoSe,CLoSe-LSTM,CLoSe-RNN},
   num_citations= {7},
+  annotate = {The pairs-F1 metrics [22]("Learning points and routes
+to recommend trajectories") evaluates the correctness of sequence by
+using the F1 score of every pair of POIs in a sequence},
 }
 
 @inproceedings{liang18_top_route_searc_submod_model,
@@ -819,7 +824,7 @@
   information  = {social,categorical},
 
   dataset = {foursquare,gowalla,jiepang,britekite},
-  metrics      = {rmse,coverage,precision,f1,doa,map,averageprecision},
+  metrics      = {rmse,coverage,precision,fm(f1),doa,map,averageprecision},
   baselines    = {TidalTrust,MoleTrust,TrustWalker,RelevantTrustWalker,SocialPertinentTrustWalker},
   model_name   = {},
 
@@ -844,7 +849,7 @@
   information  = {geographical,social,sequential,temporal},
 
   dataset = {foursquare,gowalla},
-  metrics      = {precision,recall},
+  metrics      = {precision(temporal slots),recall(temporal slots)},
   baselines    = {UBCF,LRT,UTE,CTAG-BPP,},
   model_name   = {FSUA,CTF-ARA},
   annotation = {uses social because of the ubcf},
@@ -1066,7 +1071,7 @@ the model performance?"
   information  = {geographical},
 
   dataset      = {foursquare,twitter},
-  metrics      = {hit,quality(particular of the article)},
+  metrics      = {one_hit(named as hit),quality(particular of the article)},
   baselines    = {Most_dense,Most_Freq,RegRS/E},
   model_name   = {RegRS},
 
@@ -1120,7 +1125,7 @@ this article has more evaluation in his field of problem (region)},
   information  = {user_pref,geographical,sequential,social},
 
   dataset      = {yelp,foursquare},
-  metrics      = {accuracy(recall),MAE},
+  metrics      = {recall(named accuracy in article),MAE},
   baselines    = {DL-PMF,HLDBN,CDL,DCF,ST-LDA,ST-GLDA},
   model_name   = {SH-CDL,Spatial-Aware Hierarchical Collaborative Deep Learning model},
 
@@ -1172,7 +1177,7 @@ this article has more evaluation in his field of problem (region)},
   information  = {user_pref,geographical,social,categorical,temporal},
 
   dataset      = {foursquare,gowalla},
-  metrics      = {precision,recall,utility},
+  metrics      = {precision,recall,one_hit(original name is utility. A recommendation is considered useful for a user u if it contains at least one location that u likes)},
   baselines    = {USG,iGLSR,RankBoost,BPRMF,SBPR,GeoMF,LRT},
   model_name   = {LURWA,LURA},
 
@@ -1243,7 +1248,7 @@ this article has more evaluation in his field of problem (region)},
   methodology  = {knowledge-based},
   information  = {geographical,categorical,temporal},
   dataset      = {multiple(not specified)},
-  metrics      = {hit,diversity},
+  metrics      = {hit,diversity(not specified but it sems to be like ild but with pearson correlation for similarity)},
   baselines    = {no baseline},
   model_name   = {HSTP},
 
@@ -1324,7 +1329,7 @@ in ascending order of their distance from the current location."
   information  = {geographical,sequential,temporal},
 
   dataset      = {foursquare(Europe and US),gowalla},
-  metrics      = {recall,f1,roc},
+  metrics      = {recall,fm(f1),roc},
   baselines    = {MostPopular(TOP),Markov(MC),LRLT,FPMC,PRME,RNN,ST-RNN},
   model_name   = {ASTEN},
 
@@ -1536,7 +1541,7 @@ in ascending order of their distance from the current location."
   information  = {user_pref,temporal},
 
   dataset      = {foursquare,brightkite},
-  metrics      = {ndcg,f1},
+  metrics      = {ndcg,fm(f1)},
   baselines    = {UBCF,USG,USGT,UBCFT},
   model_name   = {MATI},
 
@@ -1618,7 +1623,7 @@ little gains compared to other methods
   information  = {geographical,sequential,temporal},
 
   dataset      = {foursquare,gowalla,brightkite},
-  metrics      = {accuracy,MAP},
+  metrics      = {one_hit(accuracy),MAP},
   baselines    = {FPMC-LR,PRME-G,GE,RNN,LSTM,GRU,ST-RNN},
   model_name   = {ST-LSTM,ST-CLSTM},
 
@@ -1742,7 +1747,7 @@ little gains compared to other methods
   information  = {categorical},
 
   dataset      = {foursquare,gowalla},
-  metrics      = {diversity,precision,recall},
+  metrics      = {diversity(formula not specified),precision,recall},
   baselines    = {UST,LC-POIs},
   model_name   = {AKAWO},
 
@@ -1812,7 +1817,7 @@ little gains compared to other methods
   information  = {user_pref,sequential,social,geographical,temporal,contextual,weather},
 
   dataset      = {weeplaces,darksky},
-  metrics      = {precision,recall,f1},
+  metrics      = {precision,recall,fm(f1)},
   baselines    = {UBCF,PR(POI sequence recommendation),MostPopular,TAPR(Time-Aware POI sequence Recommendation)},
   model_name   = {CAPR},
 
@@ -1914,7 +1919,7 @@ little gains compared to other methods
   information  = {user_pref,geographical,sequential,social,textual},
 
   dataset      = {yelp,foursquare},
-  metrics      = {precision,accuracy},
+  metrics      = {precision,one_hit(accuracy)},
   baselines    = {CKNN,UPS-CF,CAPRF,GCF,LCA-LDA,JIM},
   model_name   = {LSARS},
 
@@ -1959,7 +1964,7 @@ little gains compared to other methods
   information  = {textual,temporal,geographical,context},
 
   dataset      = {yelp,tripadvisor},
-  metrics      = {RMSE,coverage,f1},
+  metrics      = {RMSE,coverage,fm(f1)},
   baselines    = {},
   model_name   = {PCAHTRS,Personalized Context-Aware Hybrid Travel Recommender System},
 

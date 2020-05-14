@@ -11,10 +11,14 @@ with open('../doc.bib') as bibtex_file:
 
 format_entries(bib_db)
 
+num_valid = 0
 for c,i in enumerate(bib_db.entries):
     try:
-        if i.get('model_name',None):
-            print(i['title'])
-            print(i['metrics'])
+        if i.get('problem',None):
+            # if not(len({'precision','recall','accuracy'} & set(i['metrics'])) > 0):
+            print(i['ID'],i['metrics'])
+            num_valid += 1
     except:
         continue
+
+print(num_valid)
