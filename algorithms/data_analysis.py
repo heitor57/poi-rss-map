@@ -28,36 +28,31 @@ format_entries(bib_db)
 # plt.ylabel('#Articles')
 # plt.show()
 
-TRADITIONAL_MODELS = """USG
-MGMPFM
-LRT
-iGSLR
-LFBCA
-LORE
-IRenMF
-GeoMF
-RankGeoFM
-GeoPFM
-GeoSoCa
-ASMF
-CoRe
-FPMC-LR
-LOCABAL""".split('\n')
-TRADITIONAL_MODELS = set(TRADITIONAL_MODELS)
-
-problems = []
-new_models = []
+# TRADITIONAL_MODELS = """USG
+# MGMPFM
+# LRT
+# iGSLR
+# LFBCA
+# LORE
+# IRenMF
+# GeoMF
+# RankGeoFM
+# GeoPFM
+# GeoSoCa
+# ASMF
+# CoRe
+# FPMC-LR
+# LOCABAL""".split('\n')
+# TRADITIONAL_MODELS = set(TRADITIONAL_MODELS)
+years_count = Counter()
 for c,i in enumerate(bib_db.entries):
     try:
-        problems.extend(i['problem'])
-        if i.get('model_name',None):
-            new_models.extend(i['model_name'].split(','))
+        if i.get('problem',None):
+            years_count[i['year']] += 1
     except:
         continue
-new_models = set(new_models)
 # print(new_models)
-problems = set(problems)
-print(problems)
+print(years_count)
 
 # for c,i in enumerate(bib_db.entries):
 #     # if 'social' in i['information']:

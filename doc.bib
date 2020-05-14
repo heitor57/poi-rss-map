@@ -165,7 +165,7 @@
   _methodology  = {Greedy},
   _information  = {user_pref,geographical,social},
 
-  dataset      = {ficklr(custom)},
+  dataset      = {flickr(custom)},
   metrics      = {},
   baselines    = {},
   model_name   = {},
@@ -837,7 +837,7 @@ using the F1 score of every pair of POIs in a sequence},
   methodology  = {factorization},
   information  = {social,categorical},
 
-  dataset = {foursquare,gowalla,jiepang,britekite},
+  dataset = {foursquare,gowalla,jiepang,brightkite(britekite)},
   metrics      = {rmse,coverage,precision,fm(f1),doa,map,averageprecision},
   baselines    = {TidalTrust,MoleTrust,TrustWalker,RelevantTrustWalker,SocialPertinentTrustWalker},
   model_name   = {},
@@ -1648,20 +1648,19 @@ little gains compared to other methods
   annotation = {},
   num_citations= {13},
 }
-
-@Comment @inproceedings{do2018coupled,
-@Comment   title        = {Coupled poisson factorization integrated with
-@Comment     user/item metadata for modeling popular and sparse ratings in
-@Comment     scalable recommendation},
-@Comment   author       = {Do, Trong Dinh Thac and Cao, Longbing},
-@Comment   booktitle    = {Thirty-Second AAAI Conference on Artificial
-@Comment     Intelligence},
-@Comment   year         = 2018,
-@Comment   problem      = {not POI},
-@Comment   methodology  = {factorization,CPF},
-@Comment   information = {},
-@Comment   num_citations= {10},
-@Comment }
+%not poi
+@inproceedings{do2018coupled,
+  title        = {Coupled poisson factorization integrated with
+    user/item metadata for modeling popular and sparse ratings in
+    scalable recommendation},
+  author       = {Do, Trong Dinh Thac and Cao, Longbing},
+  booktitle    = {Thirty-Second AAAI Conference on Artificial
+    Intelligence},
+  year         = 2018,
+  methodology  = {factorization,CPF},
+  information = {},
+  num_citations= {10},
+}
 
 %need check
 @article{DBLP:journals/corr/abs-1805-06316,

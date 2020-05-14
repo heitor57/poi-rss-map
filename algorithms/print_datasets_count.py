@@ -21,12 +21,14 @@ for c,i in enumerate(bib_db.entries):
 
 for dataset in cnt_datasets.copy().keys():
     if dataset not in PRETTY_DATASET:
+        print('removing',dataset,'and putting in others')
         del cnt_datasets[dataset]
-
+        cnt_datasets['others'] += 1
 # print
 # cnt_datasets = dict(reversed(sorted(cnt_datasets,key=lambda i: print(i))))
 cnt_datasets = {k: v for k, v in
                 reversed(sorted(cnt_datasets.items(), key=lambda item: item[1]))}
+cnt_datasets['others'] = cnt_datasets.pop('others')
 fig, ax = plt.subplots()
 xs = list(map(PRETTY_DATASET.get,cnt_datasets.keys()))
 ys = cnt_datasets.values()

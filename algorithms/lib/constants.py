@@ -49,4 +49,6 @@ PRETTY_DATASET = {
     'dianping': 'DianPing',
     'instagram': 'Instagram',
     'ctrip': 'Ctrip',
+    'flickr': 'Flickr',
+    'others': 'Others',
 }
