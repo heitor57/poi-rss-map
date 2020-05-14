@@ -239,6 +239,8 @@
   information  = {geographical,textual},
   baselines    = {STELLAR,LSTM,GRU,ST-RNN,Random,SG,POI2Vec,Geo-Teaser},
   num_citations= {40},
+  dataset      = {instagram(NYC)},
+  metrics      = {recall,mrr},
 }
 
 @article{zhao17_aggreg_tempor_tensor_factor_model,
@@ -281,6 +283,9 @@
   methodology  = {factorization},
   information  = {geographical,temporal},
   baselines    = {MF-0/1,MF-Freq,WMF,Rank-GeoFM},
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
+  model_name   = {FSS-FM},
   num_citations= {16},
 }
 
@@ -302,6 +307,8 @@
   methodology  = {cf},
   information  = {user_pref,geographical,temporal,sequential,categorical},
   baselines    = {CF-Pho,CF-Bin,GNear,GPop,Rand},
+  dataset      = {ficklr(yahoo 100m)},
+  metrics      = {tour_recall,tour_precision,tour_fm(f1),rmse_pvd(rmse of poi visiting duration),tour_popularity,tour_interest},
   num_citations= {44},
 }
 
@@ -391,6 +398,8 @@
   methodology  = {cf,probabilistic,hybrid},
   information  = {user_pref,geographical,temporal},
   baselines    = {UBCF,USG,LRT,UTE-SE,STELLAR,FPMC,TRM,TICRec},
+  dataset      = {foursquare,gowalla},
+  metrics      = {precision,recall},
   num_citations= {5},
 }
 
@@ -500,7 +509,9 @@
   problem      = {Tour,Trip},
   methodology  = {cf},
   information  = {geographical,temporal,sequential,social},
-  baselines    = {not clear what baseline is},
+  baselines    = {(not clear what baseline is)},
+  dataset      = {verona_card("VeronaCard")},
+  metrics      = {(full custom, cant classify)},
   num_citations= {5},
 }
 
@@ -519,7 +530,10 @@
   problem      = {poi_rec},
   methodology  = {probabilistic},
   information  = {geographical,categorical,textual},
+  dataset      = {trec_cs(trec-cs 2015 and 2016)},
+  metrics      = {precision,ndcg,mrr,fm(f1)},
   baselines    = {LinearCatRev,GeoSoCa,nDTF,UT-ML,UT-CRF,UT-SVM},
+  model_name   = {},
   num_citations= {31},
 }
 
@@ -1228,6 +1242,10 @@ this article has more evaluation in his field of problem (region)},
   problem      = {poi_rec},
   methodology  = {hybrid,others},
   information  = {geographical},
+  dataset      = {yelp(phoenix,las vegas)},
+  metrics      = {recall,ild(cat,geo),epc,prg,prg-r},
+  baselines    = {Random,MostPopular,USG,Binom,PM2,LD-cat,LD-geo},
+  model_name   = {Geo-Div},
   num_citations= {7},
 }
 
@@ -1639,7 +1657,7 @@ little gains compared to other methods
   booktitle    = {Thirty-Second AAAI Conference on Artificial
     Intelligence},
   year         = 2018,
-  problem      = {Not POI},
+  problem      = {},
   methodology  = {factorization,CPF},
   information = {},
   num_citations= {10},
