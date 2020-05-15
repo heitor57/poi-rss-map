@@ -14,7 +14,7 @@ LFBCA
 LORE
 IRenMF
 GeoMF
-RankGeoFM
+Rank-GeoFM
 GeoPFM
 GeoSoCa
 ASMF
@@ -34,11 +34,7 @@ for c,i in enumerate(bib_db.entries):
         continue
 new_models = set(new_models)
 
-
-
 format_entries(bib_db)
-
-
 
 for c,i in enumerate(bib_db.entries):
     baselines = i.get('baselines')
@@ -47,6 +43,12 @@ for c,i in enumerate(bib_db.entries):
     i['score'] = len(baselines) + len(bl_new_models) + len(bl_trad_models)
 
 bib_db.entries = reversed(sorted(bib_db.entries, key=lambda k: k['score']))
+
+for c,i in enumerate(bib_db.entries):
+    print('score',i['score'],'num_citations',i['num_citations'],i['title'])
+    print(i['baselines'])
+
+raise SystemExit
 
 table_string = ''
 
@@ -57,37 +59,40 @@ latex_header = r'''\documentclass{article}
 \usepackage{amssymb}
 \usepackage{array,multirow,graphicx}
 \usepackage{textcomp}
+\usepackage[numbers]{natbib}
+
 \begin{document}
 
 \section{Introduction}
 '''
 
-latex_foot = r'''\bibliographystyle{plain}
+latex_foot = r'''\bibliographystyle{plainnat}
 \bibliography{../../doc}
 \end{document}'''
 
-table_string += r'\begin{longtable}{%s}' % ('|l|l|'+ 'l|'*(len(PRETTY_PROBLEM)+len(PRETTY_METHODOLOGY)+len(PRETTY_INFORMATION))) + '\n'
+table_string += r'\begin{tabular}{%s}' % ('|l|l|l|'+ 'l|'*(len(PRETTY_PROBLEM)+len(PRETTY_METHODOLOGY)+len(PRETTY_INFORMATION))) + '\n'
 
 
-table_string += r'\hline \multicolumn{2}{|c|}{Related work} & \multicolumn{%d}{c|}{Problem}' % (len(PRETTY_PROBLEM)) +\
+table_string += r'\hline \multicolumn{3}{|c|}{Related work} & \multicolumn{%d}{c|}{Problem}' % (len(PRETTY_PROBLEM)) +\
     r'& \multicolumn{%d}{c|}{Methodology}' % (len(PRETTY_METHODOLOGY)) +\
     r'& \multicolumn{%d}{c|}{Information-used}' % (len(PRETTY_INFORMATION)) +\
     r'\\' + '\n'
 
-table_string += r'\hline Reference & \rotatebox[origin=c]{90}{\#Citations} &' +\
+table_string += r'\hline Reference & \rotatebox[origin=c]{90}{\#Citations} & \rotatebox[origin=c]{90}{Score(r)} &' +\
     '&'.join(map(lambda x: r'\rotatebox[origin=c]{90}{%s}' % (x),
                  tuple(PRETTY_PROBLEM.values())+tuple(PRETTY_METHODOLOGY.values())+tuple(PRETTY_INFORMATION.values()))) + r'\\\hline' + '\n'
     
 
 for i, entry in enumerate(bib_db.entries):
     if entry.get('problem',None):
-        table_string += r'\citeauthor{%s} \cite{%s} & %d' % (entry['ID'],entry['ID'],int(entry['num_citations']))
+        # print(entry['ID'],entry['num_citations'])
+        table_string += r'\citeauthor{%s} \cite{%s} & %d & %d' % (entry['ID'],entry['ID'],int(entry['num_citations']),entry['score'])
         table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['problem'] else '' for j in PRETTY_PROBLEM.keys()])
         table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['methodology'] else '' for j in PRETTY_METHODOLOGY.keys()]) 
         table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['information'] else '' for j in PRETTY_INFORMATION.keys()])
         table_string += r'\\\hline'+'\n'
         
 
-table_string += r'\end{longtable}' + '\n'
+table_string += r'\end{tabular}' + '\n'
 
 open('map_table.tex','w').write(table_string)

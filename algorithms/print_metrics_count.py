@@ -4,7 +4,9 @@ from lib.constants import *
 from lib.util import *
 import collections
 import matplotlib.pyplot as plt
-plt.rcParams['font.size'] = 20
+import numpy as np
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+plt.rcParams['font.size'] = 18
 
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
@@ -25,6 +27,9 @@ for c,i in enumerate(bib_db.entries):
                 cnt_metrics[metric] += 1
     except:
         continue
+
+print(len(cnt_metrics.keys()))
+old_cnt_values = np.array(list(cnt_metrics.copy().values()))
 for metric in cnt_metrics.copy().keys():
     if metric not in PRETTY_METRIC:
         print('removing',metric,'and putting in others')
@@ -34,7 +39,7 @@ cnt_metrics = {k: v for k, v in
                 reversed(sorted(cnt_metrics.items(), key=lambda item: item[1]))}
 
 cnt_metrics['others'] = cnt_metrics.pop('others')
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(8.4,4.8))
 xs = list(map(PRETTY_METRIC.get,cnt_metrics.keys()))
 ys = cnt_metrics.values()
 bars = ax.bar(xs,ys,color='k')
@@ -46,6 +51,17 @@ for x, y in zip(xs, ys):
 ax.set_ylabel('#Articles')
 # ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys)+5)
+ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
+    np.median(old_cnt_values),
+    np.percentile(old_cnt_values,75),
+),
+            xy=(0.82,0.82),xycoords='axes fraction')
+
+sub_ax = inset_axes(ax,
+                    width="50%", # width = 30% of parent_bbox
+                    height=3., # height : 1 inch
+                    loc='upper center')
+sub_ax.pie([40,30,20],labels=['precision','diversity','novelty'])
 fig.savefig('metrics_count.png',bbox_inches='tight')
 fig.savefig('metrics_count.eps',bbox_inches='tight')
 

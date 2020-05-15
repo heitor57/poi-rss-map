@@ -4,7 +4,8 @@ from lib.constants import *
 from lib.util import *
 import collections
 import matplotlib.pyplot as plt
-plt.rcParams['font.size'] = 20
+import numpy as np
+plt.rcParams['font.size'] = 18
 
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
@@ -19,6 +20,7 @@ for c,i in enumerate(bib_db.entries):
     except:
         continue
 print(len(cnt_datasets.keys()))
+old_cnt_values = np.array(list(cnt_datasets.copy().values()))
 for dataset in cnt_datasets.copy().keys():
     if dataset not in PRETTY_DATASET:
         print('removing',dataset,'and putting in others')
@@ -28,7 +30,7 @@ for dataset in cnt_datasets.copy().keys():
 cnt_datasets = {k: v for k, v in
                 reversed(sorted(cnt_datasets.items(), key=lambda item: item[1]))}
 cnt_datasets['others'] = cnt_datasets.pop('others')
-fig, ax = plt.subplots()
+fig, ax = plt.subplots(figsize=(8.4,4.8))
 xs = list(map(PRETTY_DATASET.get,cnt_datasets.keys()))
 ys = cnt_datasets.values()
 bars = ax.bar(xs,ys,color='k')
@@ -40,6 +42,13 @@ for x, y in zip(xs, ys):
 ax.set_ylabel('#Articles')
 # ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys)+4)
+
+ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
+    np.median(old_cnt_values),
+    np.percentile(old_cnt_values,75),
+),
+            xy=(0.37,0.82),xycoords='axes fraction')
+
 fig.savefig('datasets_count.png',bbox_inches='tight')
 fig.savefig('datasets_count.eps',bbox_inches='tight')
 # plt.show()

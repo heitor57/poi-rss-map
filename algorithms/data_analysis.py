@@ -17,7 +17,7 @@ with open('../doc.bib') as bibtex_file:
 #         pass
 # print(Counter(problems))
     
-format_entries(bib_db)
+# format_entries(bib_db)
 
 # df = pd.DataFrame(bib_db.entries)
 
@@ -44,15 +44,20 @@ format_entries(bib_db)
 # FPMC-LR
 # LOCABAL""".split('\n')
 # TRADITIONAL_MODELS = set(TRADITIONAL_MODELS)
-years_count = Counter()
+# years_count = Counter()
+# dsc = Counter()
 for c,i in enumerate(bib_db.entries):
     try:
-        if i.get('problem',None):
-            years_count[i['year']] += 1
+        print(i['num_citations'])
+        # print(i.get('problem',None))
+
+            # for dataset in i['dataset'].split(','):
+            #     dsc[dataset] += 1
     except:
         continue
 # print(new_models)
-print(years_count)
+# print(years_count)
+# print(dsc)
 
 # for c,i in enumerate(bib_db.entries):
 #     # if 'social' in i['information']:

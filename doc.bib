@@ -307,7 +307,7 @@
   methodology  = {cf},
   information  = {user_pref,geographical,temporal,sequential,categorical},
   baselines    = {CF-Pho,CF-Bin,GNear,GPop,Rand},
-  dataset      = {ficklr(yahoo 100m)},
+  dataset      = {flickr(yahoo 100m)},
   metrics      = {tour_recall,tour_precision,tour_fm(f1),rmse_pvd(rmse of poi visiting duration),tour_popularity,tour_interest},
   num_citations= {44},
 }
@@ -554,10 +554,11 @@
   problem      = {time_aware,Tour,Trip},
   methodology  = {cf,hybrid},
   information  = {user_pref,geographical,categorical,temporal,sequential,social},
+  dataset  = {foursquare},
   metrics      = {trecall,tprecision,tfm(tf1)},
   baselines    = {NearestPOI,MostPopular,MostPreferred,Forward},
   annotation = {uses social info because use some mostpopular score inside the method},
-  num_citations= {3},
+  num_citations = {3},
 }
 
 @article{liu18_self_adapt_point_of_inter,
@@ -596,7 +597,7 @@
   methodology  = {cf,hybrid,IRL,Markov,Factorization},
   information  = {user_pref,categorical,sequential},
   baselines    = {kNN,ALMM},
-  metrics      = {reward,dissimilarity,novelty,precision},
+  metrics      = {reward,dissimilarity,epc(named as novelty),precision},
   num_citations= {9},
 }
 
@@ -652,7 +653,7 @@
   methodology  = {cf,probabilistic,hybrid,ML},
   information  = {user_pref,geographical,sequential,temporal},
   baselines    = {Time-Pop,BPR-MF,UTS,Rank-GeoFM,GE,STELLAR},
-  metrics      = {accuracy,hit,MMR},
+  metrics      = {accuracy,hit,MRR},
   num_citations= {5},
 }
 
@@ -822,7 +823,7 @@ using the F1 score of every pair of POIs in a sequence},
 }
 
 @article{logesh17_reliab_point_inter_recom_based,
-  author       = {R. Logesh and V. Subramaniyaswamy},
+  author       = {R. Logesh and V. Subramaniyaswamy and },
   title        = {A Reliable Point of Interest Recommendation Based on
     Trust Relevancy Between Users},
   journal      = {Wireless Personal Communications},
@@ -1226,8 +1227,6 @@ this article has more evaluation in his field of problem (region)},
   num_citations= {7},
 }
 
-
-
 @inproceedings{han17_geogr_diver_poi_recom,
   author       = {Jungkyu Han and Hayato Yamana},
   title        = {Geographical Diversification in POI Recommendation},
@@ -1322,7 +1321,7 @@ in ascending order of their distance from the current location."
   methodology  = {cf,STA},
   information  = {geographical,social,temporal},
   dataset      = {foursquare,gowalla},
-  metrics      = {recall,ncdg,dcg},
+  metrics      = {recall,ndcg,dcg},
   baselines    = {USG,LRT,GeoMF,RankGeoMF,GE,TransRec,LORE,MGMPMF},
   model_name   = {STA,STA-E,STA-H,spatiotemporal context-aware and translation-based recommender framework},
 
@@ -2038,4 +2037,11 @@ little gains compared to other methods
   pages={347--361},
   year={2001},
   organization={Springer}
+}
+
+@inproceedings{cheng2011exploring,
+  title={Exploring millions of footprints in location sharing services},
+  author={Cheng, Zhiyuan and Caverlee, James and Lee, Kyumin and Sui, Daniel Z},
+  booktitle={Fifth International AAAI Conference on Weblogs and Social Media},
+  year={2011}
 }
