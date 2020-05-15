@@ -217,7 +217,7 @@
   dataset      = {foursquare,gowalla},
   metrics      = {precision,recall},
   information  = {user_pref,geographical},
-  baselines    = {UCF+G,MGM+PFM,GeoMF,RankGeoFM,Geo-Teaser},
+  baselines    = {UCF+G,MGMPMF(MGM+PFM),GeoMF,Rank-GeoFM,Geo-Teaser},
   num_citations= {25},
 }
 
@@ -1400,7 +1400,7 @@ in ascending order of their distance from the current location."
 
   dataset      = {gowalla,foursquare,yelp},
   metrics      = {precision,recall,ndcg,map},
-  baselines    = {USG,MGMPFM,LFBCA,iGSLR,LORE,IRenMF,GeoMF,RankGeoFM,GeoTeaser,PACE},
+  baselines    = {USG,MGMPFM,LFBCA,iGSLR,LORE,IRenMF,GeoMF,Rank-GeoFM,Geo-Teaser,PACE},
   model_name   = {APOIR},
 
   annotation = {excellent},
@@ -1611,7 +1611,7 @@ in ascending order of their distance from the current location."
 
   dataset      = {gowalla,foursquare,yelp},
   metrics      = {precision,recall,MAP},
-  baselines    = {WRMF,BPRMF,MGMMF,IRENMF,RankGeoFM,PACE,DeepAE},
+  baselines    = {WRMF,BPRMF,MGMMF,IRENMF,Rank-GeoFM,PACE,DeepAE},
   model_name   = {SAE-NAD},
 
   annotation = {SAE-NAD, which consists of a self-attentive encoder (SAE) and a neighbor-aware decoder (NAD).
