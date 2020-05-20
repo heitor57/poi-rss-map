@@ -39,7 +39,7 @@ for tick in ax.get_xticklabels():
     tick.set_horizontalalignment('right')
 for x, y in zip(xs, ys):
     ax.annotate(str(y),xy=(x,y),ha='center',va='bottom')
-ax.set_ylabel('#Articles')
+ax.set_ylabel('Number of Distinct Studies')
 # ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys)+4)
 
@@ -47,7 +47,7 @@ ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
     np.median(old_cnt_values),
     np.percentile(old_cnt_values,75),
 ),
-            xy=(0.37,0.82),xycoords='axes fraction')
+            xy=(0.82,0.82),xycoords='axes fraction')
 
 fig.savefig('datasets_count.png',bbox_inches='tight')
 fig.savefig('datasets_count.eps',bbox_inches='tight')

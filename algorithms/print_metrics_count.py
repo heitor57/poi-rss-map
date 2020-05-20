@@ -42,13 +42,17 @@ cnt_metrics['others'] = cnt_metrics.pop('others')
 fig, ax = plt.subplots(figsize=(8.4,4.8))
 xs = list(map(PRETTY_METRIC.get,cnt_metrics.keys()))
 ys = cnt_metrics.values()
+
 bars = ax.bar(xs,ys,color='k')
+for x, bar in zip(xs,bars):
+    if x in 'Coverage,ILD,EPC,PRg':
+        bar.set_color('grey')
 for tick in ax.get_xticklabels():
     tick.set_rotation(45)
     tick.set_horizontalalignment('right')
 for x, y in zip(xs, ys):
     ax.annotate(str(y),xy=(x,y),ha='center',va='bottom')
-ax.set_ylabel('#Articles')
+ax.set_ylabel('Number of Distinct Studies')
 # ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys)+5)
 ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
@@ -57,11 +61,11 @@ ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
 ),
             xy=(0.82,0.82),xycoords='axes fraction')
 
-sub_ax = inset_axes(ax,
-                    width="50%", # width = 30% of parent_bbox
-                    height=3., # height : 1 inch
-                    loc='upper center')
-sub_ax.pie([40,30,20],labels=['precision','diversity','novelty'])
+# sub_ax = inset_axes(ax,
+#                     width="50%", # width = 30% of parent_bbox
+#                     height=3., # height : 1 inch
+#                     loc='upper center')
+# sub_ax.pie([40,30,20],labels=['precision','diversity','novelty'])
 fig.savefig('metrics_count.png',bbox_inches='tight')
 fig.savefig('metrics_count.eps',bbox_inches='tight')
 

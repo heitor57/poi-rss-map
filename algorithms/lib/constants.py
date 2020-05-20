@@ -5,29 +5,29 @@ FIELDS = ['problem',
 
 PRETTY_PROBLEM = {
     'poi_rec': 'Poi rec.',
-    'time_aware': 'Time-aware',
     'next_poi': 'Next Poi',
+    'time_aware': 'Time-aware',
     'in_out_town': 'In/Out-of-town',
     'others': 'Others',
 }
 
 PRETTY_METHODOLOGY = {
-    'link_based': 'Link-based',
     'cf': 'CF',
     'factorization': 'Factorization',
     'probabilistic': 'Probabilistic',
     'hybrid': 'Hybrid',
+    'link_based': 'Link-based',
     'others': 'Others'
 }
 
 PRETTY_INFORMATION = {
-    'user_pref': 'User Pref.',
     'geographical': 'Geographical',
+    'user_pref': 'User Pref.',
+    'temporal': 'Temporal',
     'social': 'Social',
-    'textual': 'Textual',
     'categorical': 'Categorical',
     'sequential': 'Sequential',
-    'temporal': 'Temporal',
+    'textual': 'Textual',
 }
 
 PROBLEM_IDX = {j: i for i,j in enumerate(PRETTY_PROBLEM.keys())}
@@ -62,7 +62,7 @@ PRETTY_METRIC = {
     'mae': 'MAE',
     'rmse': 'RMSE',
     'map': 'MAP',
-    'averageprecision': 'AP',
+    # 'averageprecision': 'AP',
     'hit': 'Hit Rate',
     'epc': 'EPC',
     'dcg': 'DCG',

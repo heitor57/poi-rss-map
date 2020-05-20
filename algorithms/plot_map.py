@@ -135,7 +135,7 @@ for tick in yticks:
     ax.hlines(tick,*ax.get_xlim(),linestyles='dashed',linewidth=1,zorder=0)
 # ax.set_xlabel('Problem-Methodology')
 
-ax.annotate('Label\n#Articles (Percentage of #articles)',(0,0.3),weight='bold',ha='center',va='center')
+# ax.annotate('Label\n#Articles (Percentage of #articles)',(0,0.3),weight='bold',ha='center',va='center')
 # plt.show()
 fig.savefig('map.png', bbox_inches='tight')
 fig.savefig('map.eps', bbox_inches='tight')
