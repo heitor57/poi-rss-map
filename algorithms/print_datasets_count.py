@@ -5,6 +5,7 @@ from lib.util import *
 import collections
 import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.ticker as mtick
 plt.rcParams['font.size'] = 18
 
 with open('../doc.bib') as bibtex_file:
@@ -19,6 +20,8 @@ for c,i in enumerate(bib_db.entries):
                 cnt_datasets[dataset] += 1
     except:
         continue
+print(cnt_datasets)
+cnt_datasets.pop('')
 print(len(cnt_datasets.keys()))
 old_cnt_values = np.array(list(cnt_datasets.copy().values()))
 for dataset in cnt_datasets.copy().keys():
@@ -32,22 +35,24 @@ cnt_datasets = {k: v for k, v in
 cnt_datasets['others'] = cnt_datasets.pop('others')
 fig, ax = plt.subplots(figsize=(8.4,4.8))
 xs = list(map(PRETTY_DATASET.get,cnt_datasets.keys()))
-ys = cnt_datasets.values()
+ys = np.array(list(cnt_datasets.values()))
+ys = 100*ys / len(bib_db.entries)
 bars = ax.bar(xs,ys,color='k')
 for tick in ax.get_xticklabels():
     tick.set_rotation(45)
     tick.set_horizontalalignment('right')
 for x, y in zip(xs, ys):
-    ax.annotate(str(y),xy=(x,y),ha='center',va='bottom')
-ax.set_ylabel('Number of Distinct Studies')
+    ax.annotate("%d"%(y),xy=(x,y),ha='center',va='bottom')
+ax.set_ylabel('Percentage of Studies')
 # ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys)+4)
 
-ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
-    np.median(old_cnt_values),
-    np.percentile(old_cnt_values,75),
-),
-            xy=(0.82,0.82),xycoords='axes fraction')
+ax.yaxis.set_major_formatter(mtick.PercentFormatter())
+# ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
+#     np.median(old_cnt_values),
+#     np.percentile(old_cnt_values,75),
+# ),
+#             xy=(0.82,0.82),xycoords='axes fraction')
 
 fig.savefig('datasets_count.png',bbox_inches='tight')
 fig.savefig('datasets_count.eps',bbox_inches='tight')

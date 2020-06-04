@@ -1701,6 +1701,10 @@ little gains compared to other methods
   problem      = {poi_rec},
   methodology  = {hybrid},
   information  = {user_pref,geographical},
+  dataset      = {yelp,tripadvisor},
+  metrics      = {hit,precision,recall,fm,roc},
+  baselines    = {Random,BPR,UBCF,ICF,TBCF},
+  model_name   = {},
   num_citations= {37},
 }
 
@@ -2045,3 +2049,44 @@ little gains compared to other methods
   booktitle={Fifth International AAAI Conference on Weblogs and Social Media},
   year={2011}
 }
+
+@inproceedings{liu2016predicting,
+	author = {Liu, Qiang and Wu, Shu and Wang, Liang and Tan, Tieniu},
+	title = {Predicting the next Location: A Recurrent Model with Spatial and Temporal Contexts},
+	year = {2016},
+	publisher = {AAAI Press},
+	booktitle = {Proceedings of the Thirtieth AAAI Conference on Artificial Intelligence},
+	pages = {194–200},
+	numpages = {7},
+	location = {Phoenix, Arizona},
+	series = {AAAI’16}
+}
+
+@article{huang2016ttention,
+	author = {Huang, Liwei and Ma, Yutao and Wang, Shibo and Liu, Yanbo},
+	year = {2019},
+	month = {05},
+	pages = {1-1},
+	title = {An Attention-based Spatiotemporal LSTM Network for Next POI Recommendation},
+	volume = {PP},
+	journal = {IEEE Transactions on Services Computing},
+	doi = {10.1109/TSC.2019.2918310}
+}
+
+@inproceedings{pham2017ouoftown,
+	author = {Pham, Tuan-Anh Nguyen and Li, Xutao and Cong, Gao},
+	title = {A General Model for Out-of-Town Region Recommendation},
+	year = {2017},
+	isbn = {9781450349130},
+	publisher = {International World Wide Web Conferences Steering Committee},
+	address = {Republic and Canton of Geneva, CHE},
+	url = {https://doi.org/10.1145/3038912.3052667},
+	doi = {10.1145/3038912.3052667},
+	booktitle = {Proceedings of the 26th International Conference on World Wide Web},
+	pages = {401–410},
+	numpages = {10},
+	keywords = {region recommendation, out-of-town recommendation, location-based social networks},
+	location = {Perth, Australia},
+	series = {WWW ’17}
+}
+

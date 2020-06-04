@@ -44,11 +44,11 @@ for c,i in enumerate(bib_db.entries):
 
 bib_db.entries = reversed(sorted(bib_db.entries, key=lambda k: k['score']))
 
-for c,i in enumerate(bib_db.entries):
-    print('score',i['score'],'num_citations',i['num_citations'],i['title'])
-    print(i['baselines'])
+# for c,i in enumerate(bib_db.entries):
+#     print('score',i['score'],'num_citations',i['num_citations'],i['title'])
+#     print(i['baselines'])
 
-raise SystemExit
+# raise SystemExit
 
 table_string = ''
 

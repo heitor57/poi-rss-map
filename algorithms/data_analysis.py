@@ -6,9 +6,11 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from collections import Counter
+import collections
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
+format_entries(bib_db)
 # problems = []
 # for c,i in enumerate(bib_db.entries):
 #     try:
@@ -46,15 +48,15 @@ with open('../doc.bib') as bibtex_file:
 # TRADITIONAL_MODELS = set(TRADITIONAL_MODELS)
 # years_count = Counter()
 # dsc = Counter()
-for c,i in enumerate(bib_db.entries):
-    try:
-        print(i['num_citations'])
-        # print(i.get('problem',None))
+# for c,i in enumerate(bib_db.entries):
+#     try:
+#         print(i['num_citations'])
+#         # print(i.get('problem',None))
 
-            # for dataset in i['dataset'].split(','):
-            #     dsc[dataset] += 1
-    except:
-        continue
+#             # for dataset in i['dataset'].split(','):
+#             #     dsc[dataset] += 1
+#     except:
+#         continue
 # print(new_models)
 # print(years_count)
 # print(dsc)
@@ -84,4 +86,22 @@ for c,i in enumerate(bib_db.entries):
 #     if 'social' in i['information']:
 #         print(i['score'],i['title'],i['num_citations'],i['year'])
 
+cnt_datasets = collections.Counter()
+for c,i in enumerate(bib_db.entries):
+    try:
+        if i.get('problem',None):
+            for dataset in i['metrics']:
+                if dataset == '':
+                    print(i['ID'])
+                cnt_datasets[dataset] += 1
+    except:
+        continue
 
+
+# print(cnt_datasets.keys())
+# unique, count = np.unique(list(cnt_datasets.values()),return_counts=True)
+# print(len(cnt_datasets.keys()))
+
+# print(unique,count)
+# print(count[0]/np.sum(count))
+# print(1-count[0]/np.sum(count))

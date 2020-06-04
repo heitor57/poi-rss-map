@@ -6,6 +6,7 @@ import collections
 import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+import matplotlib.ticker as mtick
 plt.rcParams['font.size'] = 18
 
 with open('../doc.bib') as bibtex_file:
@@ -37,29 +38,31 @@ for metric in cnt_metrics.copy().keys():
 
 cnt_metrics = {k: v for k, v in
                 reversed(sorted(cnt_metrics.items(), key=lambda item: item[1]))}
-
+print("Number of articles", len(bib_db.entries))
 cnt_metrics['others'] = cnt_metrics.pop('others')
 fig, ax = plt.subplots(figsize=(8.4,4.8))
 xs = list(map(PRETTY_METRIC.get,cnt_metrics.keys()))
-ys = cnt_metrics.values()
+ys = np.array(list(cnt_metrics.values()))
+ys = 100*ys / len(bib_db.entries)
 
 bars = ax.bar(xs,ys,color='k')
 for x, bar in zip(xs,bars):
-    if x in 'Coverage,ILD,EPC,PRg':
+    if x in 'Coverage,ILD,EPC,PRg,Others':
         bar.set_color('grey')
 for tick in ax.get_xticklabels():
     tick.set_rotation(45)
     tick.set_horizontalalignment('right')
 for x, y in zip(xs, ys):
-    ax.annotate(str(y),xy=(x,y),ha='center',va='bottom')
-ax.set_ylabel('Number of Distinct Studies')
+    ax.annotate("%d"%(y),xy=(x,y),ha='center',va='bottom')
+ax.set_ylabel('Percentage of Studies')
 # ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys)+5)
-ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
-    np.median(old_cnt_values),
-    np.percentile(old_cnt_values,75),
-),
-            xy=(0.82,0.82),xycoords='axes fraction')
+ax.yaxis.set_major_formatter(mtick.PercentFormatter())
+# ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
+#     np.median(old_cnt_values),
+#     np.percentile(old_cnt_values,75),
+# ),
+#             xy=(0.82,0.82),xycoords='axes fraction')
 
 # sub_ax = inset_axes(ax,
 #                     width="50%", # width = 30% of parent_bbox
