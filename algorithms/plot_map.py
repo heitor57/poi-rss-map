@@ -6,6 +6,7 @@ import matplotlib.collections
 import bibtexparser
 from collections import defaultdict
 from lib.constants import *
+import re
 
 with open('../doc.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
@@ -97,10 +98,16 @@ degree = 315
 unit_vector = np.array([np.cos(np.pi*degree/180),np.sin(np.pi*degree/180)])
 
 for r, c, v,norm, value_radius in zip(index_row, index_col, values,norms, values_radii):
-    ax.annotate(f'{100*v/norm:.2f}%',
-                np.array([c,r])+
-                +(value_radius+0.25)*unit_vector,
-                ha='center',va='center')
+    if LANG == 'br':
+        ax.annotate(re.sub("\.", ",", f'{100*v/norm:.2f}%'),
+                    np.array([c,r])+
+                    +(value_radius+0.25)*unit_vector,
+                    ha='center',va='center')
+    else:
+        ax.annotate(f'{100*v/norm:.2f}%',
+                    np.array([c,r])+
+                    +(value_radius+0.25)*unit_vector,
+                    ha='center',va='center')
     
 
 # [[for j in range]]
