@@ -40,7 +40,7 @@ elif LANG == 'br':
     }
 
     PRETTY_METHODOLOGY = {
-        'cf': 'FC',
+        'cf': 'CF',
         'factorization': 'Fatoração',
         'probabilistic': 'Probabilístico',
         'hybrid': 'Híbrido',

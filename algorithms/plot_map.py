@@ -8,6 +8,9 @@ from collections import defaultdict
 from lib.constants import *
 import re
 
+plt.rcParams['font.size']=12
+plt.rcParams['xtick.labelsize']=11
+
 with open('../doc.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
@@ -130,16 +133,16 @@ ax.set_yticks(yticks)
 ax.get_yaxis().set_visible(False)
 
 for tick,label in zip(yticks,yticklabels):
-    ax.annotate(label,(0,tick),ha='center')
+    ax.annotate(label,(0,tick),ha='center',fontsize=plt.rcParams['xtick.labelsize'])
 ax.yaxis.tick_left()
 
 ax.set_ylim(0,len(PRETTY_INFORMATION)+0.5)
 ax.set_xlim(np.min(xticks)-0.5,np.max(xticks)+0.5)
 for tick in xticks:
-    ax.vlines(tick,*ax.get_ylim(),linestyles='dashed',linewidth=1,zorder=0)
+    ax.vlines(tick,*ax.get_ylim(),linestyles='dashed',linewidth=1,zorder=0,color='k')
 
 for tick in yticks:
-    ax.hlines(tick,*ax.get_xlim(),linestyles='dashed',linewidth=1,zorder=0)
+    ax.hlines(tick,*ax.get_xlim(),linestyles='dashed',linewidth=1,zorder=0,color='k')
 # ax.set_xlabel('Problem-Methodology')
 
 # ax.annotate('Label\n#Articles (Percentage of #articles)',(0,0.3),weight='bold',ha='center',va='center')
