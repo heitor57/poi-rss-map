@@ -6,7 +6,7 @@ import collections
 import matplotlib.pyplot as plt
 import numpy as np
 import matplotlib.ticker as mtick
-plt.rcParams['font.size'] = 18
+plt.rcParams['font.size'] = 22
 
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
@@ -56,6 +56,8 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter())
 #     np.percentile(old_cnt_values,75),
 # ),
 #             xy=(0.82,0.82),xycoords='axes fraction')
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
 
 fig.savefig('datasets_count.png',bbox_inches='tight')
 fig.savefig('datasets_count.eps',bbox_inches='tight')

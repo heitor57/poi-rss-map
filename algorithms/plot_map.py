@@ -9,7 +9,7 @@ from lib.constants import *
 import re
 
 plt.rcParams['font.size']=12
-plt.rcParams['xtick.labelsize']=11
+plt.rcParams['xtick.labelsize']=10
 
 with open('../doc.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)

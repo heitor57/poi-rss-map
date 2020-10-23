@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import matplotlib.ticker as mtick
-plt.rcParams['font.size'] = 18
+plt.rcParams['font.size'] = 22
 
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
@@ -73,6 +73,9 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter())
 #                     height=3., # height : 1 inch
 #                     loc='upper center')
 # sub_ax.pie([40,30,20],labels=['precision','diversity','novelty'])
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
 fig.savefig('metrics_count.png',bbox_inches='tight')
 fig.savefig('metrics_count.eps',bbox_inches='tight')
 
