@@ -68,10 +68,8 @@
 }
 
 @article{liu17_exper_evaluat_point_of_inter,
-  author       = {Yiding Liu and Tuan-Anh Nguyen Pham and Gao Cong and
-    Quan Yuan},
-  title        = {An Experimental Evaluation of Point-Of-Interest
-    Recommendation in Location-Based Social Networks},
+  author       = {Yiding Liu and Tuan-Anh Nguyen Pham and Gao Cong and Quan Yuan},
+  title        = {An Experimental Evaluation of Point-Of-Interest Recommendation in Location-Based Social Networks},
   journal      = {Proceedings of the VLDB Endowment},
   volume       = 10,
   number       = 10,
@@ -2090,3 +2088,22 @@ little gains compared to other methods
 	series = {WWW ’17}
 }
 
+@inproceedings{herzog2019user,
+  title={User-centered evaluation of strategies for recommending sequences of points of interest to groups},
+  author={Herzog, Daniel and W{\"o}rndl, Wolfgang},
+  booktitle={Proceedings of the 13th ACM Conference on Recommender Systems},
+  pages={96--100},
+  year={2019},
+  problem      = {GroupTour,Req},
+  methodology  = {others},
+  information  = {user_pref,geographical,temporal,sequential},
+
+  dataset      = {TourRec(custom)},
+  metrics      = {adapted ResQue questionnaire},
+  baselines    = {Average,Average without Misery,Most Pleasure,aggregating recommendations},
+  model_name   = {Split Group,Connect Segments},
+
+  annotation   = {statistical test (friedman), online eval},
+  num_citations= {1},
+
+}
