@@ -6,6 +6,10 @@ import matplotlib.collections
 import bibtexparser
 from collections import defaultdict
 from lib.constants import *
+import re
+
+plt.rcParams['font.size']=12
+plt.rcParams['xtick.labelsize']=10
 
 with open('../doc.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
@@ -97,10 +101,16 @@ degree = 315
 unit_vector = np.array([np.cos(np.pi*degree/180),np.sin(np.pi*degree/180)])
 
 for r, c, v,norm, value_radius in zip(index_row, index_col, values,norms, values_radii):
-    ax.annotate(f'{100*v/norm:.2f}%',
-                np.array([c,r])+
-                +(value_radius+0.25)*unit_vector,
-                ha='center',va='center')
+    if LANG == 'br':
+        ax.annotate(re.sub("\.", ",", f'{100*v/norm:.2f}%'),
+                    np.array([c,r])+
+                    +(value_radius+0.25)*unit_vector,
+                    ha='center',va='center')
+    else:
+        ax.annotate(f'{100*v/norm:.2f}%',
+                    np.array([c,r])+
+                    +(value_radius+0.25)*unit_vector,
+                    ha='center',va='center')
     
 
 # [[for j in range]]
@@ -123,16 +133,16 @@ ax.set_yticks(yticks)
 ax.get_yaxis().set_visible(False)
 
 for tick,label in zip(yticks,yticklabels):
-    ax.annotate(label,(0,tick),ha='center')
+    ax.annotate(label,(0,tick),ha='center',fontsize=plt.rcParams['xtick.labelsize'])
 ax.yaxis.tick_left()
 
 ax.set_ylim(0,len(PRETTY_INFORMATION)+0.5)
 ax.set_xlim(np.min(xticks)-0.5,np.max(xticks)+0.5)
 for tick in xticks:
-    ax.vlines(tick,*ax.get_ylim(),linestyles='dashed',linewidth=1,zorder=0)
+    ax.vlines(tick,*ax.get_ylim(),linestyles='dashed',linewidth=1,zorder=0,color='k')
 
 for tick in yticks:
-    ax.hlines(tick,*ax.get_xlim(),linestyles='dashed',linewidth=1,zorder=0)
+    ax.hlines(tick,*ax.get_xlim(),linestyles='dashed',linewidth=1,zorder=0,color='k')
 # ax.set_xlabel('Problem-Methodology')
 
 # ax.annotate('Label\n#Articles (Percentage of #articles)',(0,0.3),weight='bold',ha='center',va='center')

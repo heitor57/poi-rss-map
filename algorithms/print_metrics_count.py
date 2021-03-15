@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import matplotlib.ticker as mtick
-plt.rcParams['font.size'] = 18
+plt.rcParams['font.size'] = 22
 
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
@@ -47,14 +47,18 @@ ys = 100*ys / len(bib_db.entries)
 
 bars = ax.bar(xs,ys,color='k')
 for x, bar in zip(xs,bars):
-    if x in 'Coverage,ILD,EPC,PRg,Others':
+    if x in 'Coverage,ILD,EPC,PRg,Others,Outros':
         bar.set_color('grey')
 for tick in ax.get_xticklabels():
     tick.set_rotation(45)
     tick.set_horizontalalignment('right')
 for x, y in zip(xs, ys):
     ax.annotate("%d"%(y),xy=(x,y),ha='center',va='bottom')
-ax.set_ylabel('Percentage of Studies')
+
+if LANG == 'en':
+    ax.set_ylabel('Percentage of Studies')
+elif LANG == 'br':
+    ax.set_ylabel('Porcentagem de Estudos')
 # ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys)+5)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter())
@@ -69,6 +73,9 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter())
 #                     height=3., # height : 1 inch
 #                     loc='upper center')
 # sub_ax.pie([40,30,20],labels=['precision','diversity','novelty'])
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
 fig.savefig('metrics_count.png',bbox_inches='tight')
 fig.savefig('metrics_count.eps',bbox_inches='tight')
 
