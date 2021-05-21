@@ -1,7 +1,12 @@
 import bibtexparser
+import argparse
 from collections import defaultdict
 from lib.constants import *
 from lib.util import *
+
+argparse = argparse.ArgumentParser()
+argparse.add_argument('-c',action='store_true')
+args=  argparse.parse_args()
 
 with open('../doc.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
@@ -52,22 +57,25 @@ bib_db.entries = reversed(sorted(bib_db.entries, key=lambda k: k['score']))
 
 table_string = ''
 
-latex_header = r'''\documentclass{article}
-
+# \documentclass{standalone}
+latex_header = r'''
+\documentclass{article}
 \usepackage{longtable}
 \usepackage{rotating}
 \usepackage{amssymb}
 \usepackage{array,multirow,graphicx}
 \usepackage{textcomp}
 \usepackage[numbers]{natbib}
+\usepackage[a4paper, margin=0.5cm]{geometry}
 
 \begin{document}
-
-\section{Introduction}
+{\tiny
 '''
 
-latex_foot = r'''\bibliographystyle{plainnat}
-\bibliography{../../doc}
+latex_foot = r'''
+}
+\bibliographystyle{plainnat}
+\bibliography{../doc.bib}
 \end{document}'''
 
 table_string += r'\begin{tabular}{%s}' % ('|l|l|l|'+ 'l|'*(len(PRETTY_PROBLEM)+len(PRETTY_METHODOLOGY)+len(PRETTY_INFORMATION))) + '\n'
@@ -96,3 +104,10 @@ for i, entry in enumerate(bib_db.entries):
 table_string += r'\end{tabular}' + '\n'
 
 open('map_table.tex','w').write(table_string)
+
+fname_full_table= 'map_table_full.tex'
+open(fname_full_table,'w').write(latex_header+table_string+latex_foot)
+if args.c:
+    import os
+    os.system(
+        f"latexmk -pdflatex=xelatex -pdf -interaction=nonstopmode {fname_full_table}")
