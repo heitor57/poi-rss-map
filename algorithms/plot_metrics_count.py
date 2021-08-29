@@ -9,7 +9,7 @@ from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import matplotlib.ticker as mtick
 plt.rcParams['font.size'] = 22
 
-with open('../doc.bib') as bibtex_file:
+with open('../map.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
 format_entries(bib_db)
@@ -76,7 +76,7 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter())
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 
-fig.savefig('metrics_count.png',bbox_inches='tight')
-fig.savefig('metrics_count.eps',bbox_inches='tight')
+fig.savefig('data/metrics_count.png',bbox_inches='tight')
+fig.savefig('data/metrics_count.eps',bbox_inches='tight')
 
 # print(cnt_metrics.most_common(13))

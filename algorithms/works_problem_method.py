@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 from collections import Counter
-with open('../doc.bib') as bibtex_file:
+with open('../map.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
 format_entries(bib_db)

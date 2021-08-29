@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib.ticker as mtick
 plt.rcParams['font.size'] = 22
 
-with open('../doc.bib') as bibtex_file:
+with open('../map.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
 format_entries(bib_db)
@@ -59,8 +59,8 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter())
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 
-fig.savefig('datasets_count.png',bbox_inches='tight')
-fig.savefig('datasets_count.eps',bbox_inches='tight')
+fig.savefig('data/datasets_count.png',bbox_inches='tight')
+fig.savefig('data/datasets_count.eps',bbox_inches='tight')
 # plt.show()
 
 # table_string = ''

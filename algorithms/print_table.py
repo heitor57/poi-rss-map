@@ -8,7 +8,7 @@ argparse = argparse.ArgumentParser()
 argparse.add_argument('-c',action='store_true')
 args=  argparse.parse_args()
 
-with open('../doc.bib') as bibtex_file:
+with open('../map.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
 TRADITIONAL_MODELS = """USG
@@ -75,7 +75,7 @@ latex_header = r'''
 latex_foot = r'''
 }
 \bibliographystyle{plainnat}
-\bibliography{../doc.bib}
+\bibliography{../../map.bib}
 \end{document}'''
 
 table_string += r'\begin{tabular}{%s}' % ('|l|l|l|'+ 'l|'*(len(PRETTY_PROBLEM)+len(PRETTY_METHODOLOGY)+len(PRETTY_INFORMATION))) + '\n'
@@ -103,9 +103,9 @@ for i, entry in enumerate(bib_db.entries):
 
 table_string += r'\end{tabular}' + '\n'
 
-open('map_table.tex','w').write(table_string)
+open('data/map_table.tex','w').write(table_string)
 
-fname_full_table= 'map_table_full.tex'
+fname_full_table= 'data/map_table_full.tex'
 open(fname_full_table,'w').write(latex_header+table_string+latex_foot)
 if args.c:
     import os

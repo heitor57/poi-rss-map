@@ -11,7 +11,7 @@ import re
 plt.rcParams['font.size']=12
 plt.rcParams['xtick.labelsize']=10
 
-with open('../doc.bib') as bibtex_file:
+with open('../map.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 methodologies = []
@@ -147,5 +147,5 @@ for tick in yticks:
 
 # ax.annotate('Label\n#Articles (Percentage of #articles)',(0,0.3),weight='bold',ha='center',va='center')
 # plt.show()
-fig.savefig('map.png', bbox_inches='tight')
-fig.savefig('map.eps', bbox_inches='tight')
+fig.savefig('data/map.png', bbox_inches='tight')
+fig.savefig('data/map.eps', bbox_inches='tight')
