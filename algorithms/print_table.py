@@ -5,10 +5,10 @@ from lib.constants import *
 from lib.util import *
 
 argparse = argparse.ArgumentParser()
-argparse.add_argument('-c',action='store_true')
-args=  argparse.parse_args()
+argparse.add_argument('-c', action='store_true')
+args = argparse.parse_args()
 
-with open('../doc.bib') as bibtex_file:
+with open('../map.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
 TRADITIONAL_MODELS = """USG
@@ -30,18 +30,18 @@ LOCABAL""".split('\n')
 TRADITIONAL_MODELS = set(TRADITIONAL_MODELS)
 
 new_models = []
-for c,i in enumerate(bib_db.entries):
+for c, i in enumerate(bib_db.entries):
     try:
         problems.extend(i['problem'])
-        if i.get('model_name',None):
+        if i.get('model_name', None):
             new_models.extend(i['model_name'].split(','))
     except:
         continue
 new_models = set(new_models)
 
-format_entries(bib_db)
+bib_db.entries = format_entries(bib_db)
 
-for c,i in enumerate(bib_db.entries):
+for c, i in enumerate(bib_db.entries):
     baselines = i.get('baselines')
     bl_new_models = set(baselines) & new_models
     bl_trad_models = set(baselines) & TRADITIONAL_MODELS
@@ -75,10 +75,13 @@ latex_header = r'''
 latex_foot = r'''
 }
 \bibliographystyle{plainnat}
-\bibliography{../doc.bib}
+\bibliography{../../map.bib}
 \end{document}'''
 
-table_string += r'\begin{tabular}{%s}' % ('|l|l|l|'+ 'l|'*(len(PRETTY_PROBLEM)+len(PRETTY_METHODOLOGY)+len(PRETTY_INFORMATION))) + '\n'
+table_string += r'\begin{tabular}{%s}' % (
+    '|l|l|l|' + 'l|' *
+    (len(PRETTY_PROBLEM) + len(PRETTY_METHODOLOGY) + len(PRETTY_INFORMATION))
+) + '\n'
 
 
 table_string += r'\hline \multicolumn{3}{|c|}{Related work} & \multicolumn{%d}{c|}{Problem}' % (len(PRETTY_PROBLEM)) +\
@@ -89,25 +92,35 @@ table_string += r'\hline \multicolumn{3}{|c|}{Related work} & \multicolumn{%d}{c
 table_string += r'\hline Reference & \rotatebox[origin=c]{90}{\#Citations} & \rotatebox[origin=c]{90}{Score(r)} &' +\
     '&'.join(map(lambda x: r'\rotatebox[origin=c]{90}{%s}' % (x),
                  tuple(PRETTY_PROBLEM.values())+tuple(PRETTY_METHODOLOGY.values())+tuple(PRETTY_INFORMATION.values()))) + r'\\\hline' + '\n'
-    
 
 for i, entry in enumerate(bib_db.entries):
-    if entry.get('problem',None):
+    if entry.get('problem', None):
         # print(entry['ID'],entry['num_citations'])
-        table_string += r'\citeauthor{%s} \cite{%s} & %d & %d' % (entry['ID'],entry['ID'],int(entry['num_citations']),entry['score'])
-        table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['problem'] else '' for j in PRETTY_PROBLEM.keys()])
-        table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['methodology'] else '' for j in PRETTY_METHODOLOGY.keys()]) 
-        table_string += ' & ' + ' & '.join([r'\(\checkmark\)' if j in entry['information'] else '' for j in PRETTY_INFORMATION.keys()])
-        table_string += r'\\\hline'+'\n'
-        
+        table_string += r'\citeauthor{%s} \cite{%s} & %d & %d' % (
+            entry['ID'], entry['ID'], int(
+                entry['num_citations']), entry['score'])
+        table_string += ' & ' + ' & '.join([
+            r'\(\checkmark\)' if j in entry['problem'] else ''
+            for j in PRETTY_PROBLEM.keys()
+        ])
+        table_string += ' & ' + ' & '.join([
+            r'\(\checkmark\)' if j in entry['methodology'] else ''
+            for j in PRETTY_METHODOLOGY.keys()
+        ])
+        table_string += ' & ' + ' & '.join([
+            r'\(\checkmark\)' if j in entry['information'] else ''
+            for j in PRETTY_INFORMATION.keys()
+        ])
+        table_string += r'\\\hline' + '\n'
 
 table_string += r'\end{tabular}' + '\n'
 
-open('map_table.tex','w').write(table_string)
+open('data/map_table.tex', 'w').write(table_string)
 
-fname_full_table= 'map_table_full.tex'
-open(fname_full_table,'w').write(latex_header+table_string+latex_foot)
+fname_full_table = 'data/map_table_full.tex'
+open(fname_full_table, 'w').write(latex_header + table_string + latex_foot)
 if args.c:
     import os
     os.system(
-        f"latexmk -pdflatex=xelatex -pdf -interaction=nonstopmode {fname_full_table}")
+        f"latexmk -pdflatex=xelatex -pdf -interaction=nonstopmode {fname_full_table}"
+    )

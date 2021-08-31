@@ -1,7 +1,5 @@
 LANG = 'en'
-FIELDS = ['problem',
-          'methodology',
-          'information']
+FIELDS = ['problem', 'methodology', 'information']
 
 if LANG == 'en':
     PRETTY_PROBLEM = {
@@ -58,11 +56,11 @@ elif LANG == 'br':
         'textual': 'Textual',
     }
 
-PROBLEM_IDX = {j: i for i,j in enumerate(PRETTY_PROBLEM.keys())}
+PROBLEM_IDX = {j: i for i, j in enumerate(PRETTY_PROBLEM.keys())}
 
-METHODOLOGY_IDX = {j: i for i,j in enumerate(PRETTY_METHODOLOGY.keys())}
+METHODOLOGY_IDX = {j: i for i, j in enumerate(PRETTY_METHODOLOGY.keys())}
 
-INFORMATION_IDX = {j: i for i,j in enumerate(PRETTY_INFORMATION.keys())}
+INFORMATION_IDX = {j: i for i, j in enumerate(PRETTY_INFORMATION.keys())}
 
 PRETTY_DATASET = {
     'foursquare': 'Foursquare',
@@ -86,7 +84,6 @@ if LANG == 'en':
     PRETTY_DATASET['others'] = 'Others'
 elif LANG == 'br':
     PRETTY_DATASET['others'] = 'Outros'
-    
 
 if LANG == 'en':
     PRETTY_METRIC = {
