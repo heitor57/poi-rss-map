@@ -40,8 +40,6 @@ for i, information in enumerate(informations.copy()):
     informations[i] = [
         inf for inf in information if inf in PRETTY_INFORMATION.keys()
     ]
-    # if not informations[i]:
-    #     informations[i] = ['others']
     for j in informations[i]:
         count_informations[j] += 1
 
@@ -90,7 +88,6 @@ norms = np.append(
 for xi, yi, value in zip(index_col, index_row, values):
     ax.annotate(int(value), (xi, yi), ha='center', va='center')
 
-# ax.scatter(index_col, index_row, values*RATIO_SIZE_CIRCLE, **style)
 values_areas = 2.5 * (values / np.max(values))
 values_radii = np.sqrt(values_areas) / np.pi
 
@@ -118,14 +115,12 @@ for r, c, v, norm, value_radius in zip(index_row, index_col, values, norms,
                     ha='center',
                     va='center')
 
-# [[for j in range]]
 ax.spines['left'].set_position(('data', 0))
 ax.spines['right'].set_color('none')
 ax.spines['top'].set_color('none')
 xticks = np.append(
     np.arange(len(PRETTY_METHODOLOGY)) + 1,
     -1 * np.arange(len(PRETTY_PROBLEM)) - 1)
-# _xticklabels = list(PRETTY_METHODOLOGY.keys())+list(PRETTY_PROBLEM.keys())
 
 xticklabels = [
     f'{PRETTY_METHODOLOGY[label]}\n{count_methodologies[label]} ({100*count_methodologies[label]/num_articles:.0f}%)'
@@ -134,7 +129,6 @@ xticklabels = [
     f'{PRETTY_PROBLEM[label]}\n{count_problems[label]} ({100*count_problems[label]/num_articles:.0f}%)'
     for label in PRETTY_PROBLEM.keys()
 ]
-# xticklabels = list(PRETTY_METHODOLOGY.values())+list(PRETTY_PROBLEM.values())
 yticks = np.arange(len(PRETTY_INFORMATION)) + 1
 
 yticklabels = [
@@ -171,9 +165,5 @@ for tick in yticks:
               linewidth=1,
               zorder=0,
               color='k')
-# ax.set_xlabel('Problem-Methodology')
-
-# ax.annotate('Label\n#Articles (Percentage of #articles)',(0,0.3),weight='bold',ha='center',va='center')
-# plt.show()
 fig.savefig('data/map.png', bbox_inches='tight')
 fig.savefig('data/map.eps', bbox_inches='tight')

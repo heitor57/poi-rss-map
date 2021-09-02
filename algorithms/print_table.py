@@ -49,15 +49,8 @@ for c, i in enumerate(bib_db.entries):
 
 bib_db.entries = reversed(sorted(bib_db.entries, key=lambda k: k['score']))
 
-# for c,i in enumerate(bib_db.entries):
-#     print('score',i['score'],'num_citations',i['num_citations'],i['title'])
-#     print(i['baselines'])
-
-# raise SystemExit
-
 table_string = ''
 
-# \documentclass{standalone}
 latex_header = r'''
 \documentclass{article}
 \usepackage{longtable}
@@ -95,7 +88,6 @@ table_string += r'\hline Reference & \rotatebox[origin=c]{90}{\#Citations} & \ro
 
 for i, entry in enumerate(bib_db.entries):
     if entry.get('problem', None):
-        # print(entry['ID'],entry['num_citations'])
         table_string += r'\citeauthor{%s} \cite{%s} & %d & %d' % (
             entry['ID'], entry['ID'], int(
                 entry['num_citations']), entry['score'])

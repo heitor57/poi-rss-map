@@ -56,7 +56,6 @@ if LANG == 'en':
     ax.set_ylabel('Percentage of Studies')
 elif LANG == 'br':
     ax.set_ylabel('Porcentagem de Estudos')
-# ax.set_ylim(min(ys),max(ys))
 ax.set_ylim(top=max(ys) + 5)
 ax.yaxis.set_major_formatter(mtick.PercentFormatter())
 ax.spines['top'].set_visible(False)

@@ -54,22 +54,8 @@ elif LANG == "br":
 ax.set_ylim(top=max(ys) + 4)
 
 ax.yaxis.set_major_formatter(mtick.PercentFormatter())
-# ax.annotate('$\\tilde{x}$ %.2f\n$Q_3$ %.2f'%(
-#     np.median(old_cnt_values),
-#     np.percentile(old_cnt_values,75),
-# ),
-#             xy=(0.82,0.82),xycoords='axes fraction')
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 
 fig.savefig("data/datasets_count.png", bbox_inches="tight")
 fig.savefig("data/datasets_count.eps", bbox_inches="tight")
-# plt.show()
-
-# table_string = ''
-# table_string += r'\begin{table}{%s}' % ('l'*len(cnt_datasets)) + '\n'
-# table_string += ' & '.join(xs) + r'\\\hline'+'\n'
-# table_string += ' & '.join(map(str,ys)) + r'\\\hline'+'\n'
-# table_string += r'\end{table}' + '\n'
-
-# open('dataset_count_table.tex','w').write(table_string)
