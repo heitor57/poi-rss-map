@@ -1,7 +1,8 @@
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import bibtexparser
-from collections import defaultdict
-from lib.constants import *
-from lib.util import *
+from utility_library.constants import *
+from utility_library.util import *
 import collections
 import matplotlib.pyplot as plt
 import numpy as np
@@ -9,7 +10,7 @@ from mpl_toolkits.axes_grid1.inset_locator import inset_axes
 import matplotlib.ticker as mtick
 plt.rcParams['font.size'] = 22
 
-with open('../map.bib') as bibtex_file:
+with open('../../map.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
 bib_db.entries = format_entries(bib_db)
@@ -61,5 +62,5 @@ ax.yaxis.set_major_formatter(mtick.PercentFormatter())
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 
-fig.savefig('data/metrics_count.png', bbox_inches='tight')
-fig.savefig('data/metrics_count.eps', bbox_inches='tight')
+fig.savefig('../../results/metrics_count.png', bbox_inches='tight')
+fig.savefig('../../results/metrics_count.eps', bbox_inches='tight')

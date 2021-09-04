@@ -1,14 +1,15 @@
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import bibtexparser
 import argparse
-from collections import defaultdict
-from lib.constants import *
-from lib.util import *
+from utility_library.constants import *
+from utility_library.util import *
 
 argparse = argparse.ArgumentParser()
-argparse.add_argument('-c', action='store_true')
+argparse.add_argument('-c', action='store_false',default=True)
 args = argparse.parse_args()
 
-with open('../map.bib') as bibtex_file:
+with open('../../map.bib') as bibtex_file:
     bib_db = bibtexparser.load(bibtex_file)
 
 TRADITIONAL_MODELS = """USG
@@ -68,7 +69,7 @@ latex_header = r'''
 latex_foot = r'''
 }
 \bibliographystyle{plainnat}
-\bibliography{../../map.bib}
+\bibliography{../map.bib}
 \end{document}'''
 
 table_string += r'\begin{tabular}{%s}' % (
@@ -107,12 +108,12 @@ for i, entry in enumerate(bib_db.entries):
 
 table_string += r'\end{tabular}' + '\n'
 
-open('data/map_table.tex', 'w').write(table_string)
+open('../../results/map_table.tex', 'w').write(table_string)
 
-fname_full_table = 'data/map_table_full.tex'
+fname_full_table = '../../results/map_table_full.tex'
 open(fname_full_table, 'w').write(latex_header + table_string + latex_foot)
 if args.c:
     import os
     os.system(
-        f"latexmk -pdflatex=xelatex -pdf -interaction=nonstopmode {fname_full_table}"
+        f"cd ../../results && latexmk -pdflatex=xelatex -pdf -interaction=nonstopmode map_table_full.tex"
     )

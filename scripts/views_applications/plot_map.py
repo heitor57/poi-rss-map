@@ -1,17 +1,16 @@
-import math
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 import numpy as np
 import matplotlib.pyplot as plt
-import matplotlib.patheffects as path_effects
-import matplotlib.collections
 import bibtexparser
 from collections import defaultdict
-from lib.constants import *
+from utility_library.constants import *
 import re
 
 plt.rcParams['font.size'] = 12
 plt.rcParams['xtick.labelsize'] = 10
 
-with open('../map.bib') as bibtex_file:
+with open('../../map.bib') as bibtex_file:
     bib_database = bibtexparser.load(bibtex_file)
 
 methodologies = []
@@ -165,5 +164,5 @@ for tick in yticks:
               linewidth=1,
               zorder=0,
               color='k')
-fig.savefig('data/map.png', bbox_inches='tight')
-fig.savefig('data/map.eps', bbox_inches='tight')
+fig.savefig('../../results/map.png', bbox_inches='tight')
+fig.savefig('../../results/map.eps', bbox_inches='tight')
