@@ -1,4 +1,4 @@
-from lib.constants import *
+from .constants import *
 import re
 
 
