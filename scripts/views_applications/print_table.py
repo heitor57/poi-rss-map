@@ -115,5 +115,5 @@ open(fname_full_table, 'w').write(latex_header + table_string + latex_foot)
 if args.c:
     import os
     os.system(
-        f"cd ../../results && latexmk -pdflatex=xelatex -pdf -interaction=nonstopmode map_table_full.tex"
+        f"cd ../../results && latexmk -pdf -interaction=nonstopmode map_table_full.tex"
     )
