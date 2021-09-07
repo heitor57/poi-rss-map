@@ -146,7 +146,7 @@
   baselines    = {},
   model_name   = {},
 
-  annotation = {Evaluation was made with the problem definition models and objective functions and a bunch of heuristics to solve the problem},
+  
   unique = {true},
   num_citations= {30},
 }
@@ -224,7 +224,7 @@
   problem      = {poi_rec},
   methodology  = {factorization,TF,SGD},
   information  = {temporal},
-  annotation   = {periodicity, consecutiveness, and non-uniformness},
+  
   dataset      = {foursquare,gowalla},
   metrics      = {precision,recall,fm(f1)},
   model_name   = {ATTF},
@@ -291,7 +291,7 @@
   num_citations= {7},
   dataset      = {foursquare(NYC,human mobility from taxi trip records)},
   metrics      = {fm(beta=0.5)},
-  annotation   = {},
+  
 }
 
 @article{gao18_person_point_of_inter_recom,
@@ -375,7 +375,7 @@
   num_citations= {4},
   dataset      = {gowalla,brightkite},
   metrics      = {precision,recall,fm(f1)},
-  annotation   = {no access to article//found article in github of the first author},
+  
 }
 
 @article{zhao17_novel_recom_system_locat_based,
@@ -493,7 +493,7 @@
   dataset  = {foursquare},
   metrics      = {trecall,tprecision,tfm(tf1)},
   baselines    = {NearestPOI,MostPopular,MostPreferred,Forward},
-  annotation = {uses social info because use some mostpopular score inside the method},
+  
   num_citations = {3},
 }
 
@@ -660,7 +660,7 @@
   metrics      = {precision,precision_poi,precision_new_poi},
   baselines    = {MF,PMF,FPMC,PRME},
   model_name   = {LBPR,LBPR-M,LBPR-N},
-  annotation = {no sequential information?},
+  
   num_citations= {2},
 }
 
@@ -704,9 +704,6 @@
   baselines    = {MostPopular,MarkovChain,Apriori,HITS},
   model_name   = {CLoSe,CLoSe-LSTM,CLoSe-RNN},
   num_citations= {7},
-  annotate = {The pairs-F1 metrics [22]("Learning points and routes
-to recommend trajectories") evaluates the correctness of sequence by
-using the F1 score of every pair of POIs in a sequence},
 }
 
 @inproceedings{liang18_top_route_searc_submod_model,
@@ -749,7 +746,7 @@ using the F1 score of every pair of POIs in a sequence},
   baselines    = {TidalTrust,MoleTrust,TrustWalker,RelevantTrustWalker,SocialPertinentTrustWalker},
   model_name   = {},
 
-  annotation = {model name?,bad article, bad model presentation, bad baselines and other things},
+  
   num_citations= {44},
 }
 
@@ -771,7 +768,7 @@ using the F1 score of every pair of POIs in a sequence},
   metrics      = {precision(temporal slots),recall(temporal slots)},
   baselines    = {UBCF,LRT,UTE,CTAG-BPP,},
   model_name   = {FSUA,CTF-ARA},
-  annotation = {uses social because of the ubcf},
+  
   num_citations= {20},
 }
 
@@ -794,7 +791,7 @@ using the F1 score of every pair of POIs in a sequence},
   baselines    = {TD-CF,LP-CF,HITS},
   model_name   = {TAP w/o TI(without temporal influence),TAP(without friendship),TAP-F},
 
-  annotation = {confuse reading article, but it is ok to use},
+  
   num_citations= {18},
 
 }
@@ -819,7 +816,7 @@ using the F1 score of every pair of POIs in a sequence},
   baselines    = {TMF},
   model_name   = {CTF,PCTF},
 
-  annotation = {only one baseline, social because of the preference correlation between users},
+  
 
   num_citations= {35},
 }
@@ -840,16 +837,6 @@ using the F1 score of every pair of POIs in a sequence},
   metrics      = {precision,recall},
   baselines    = {BPRMF,WRMF,LRT,LORE,Rank-GeoFM,SG-CWARP},
   model_name   = {Geo-Teaser},
-
-  annotation = {
- 80\% train and 20\% test
-  word2vec,
-  "(1) how
-the Geo-Teaser model performs comparing with state-of-the-art recommendation
-methods? (2) how each component (i.e., the various temporal characteristics and
-geographical influence) affects the model performance? (3) how the parameters affect
-the model performance?"
-},
 
   num_citations= {98},
 }
@@ -873,7 +860,7 @@ the model performance?"
   baselines    = {UBCF,VUCF,NMF,PMF,VBPR},
   model_name   = {VPOI, Visual Content Enhanced POI recommendation},
 
-  annotation = {N(metric list size) 5,10},
+  
   num_citations= {128},
 }
 
@@ -898,17 +885,6 @@ the model performance?"
   baselines    = {Random,UBCF,IBCF,PMF,ItemRank,Personalized PageRank(PPR),LFBCA,TriRank},
   model_name   = {AGSG,Aspect-aware Geo-Social Influence Graph},
 
-  annotation = {sequential because use dist of two pois
-  uses 5-fold cross validation
-  list size 5, 10, 20
-  good baselines
-  Phoenix, Las Vegas and Charlotte
-
-  "Following the preprocessing
-  practice for evaluating the performance of recommender systems
-  [5], users and POIs with less than 10 reviews are filtered out"
-  
-  },
   num_citations= {17},
 
 }
@@ -931,7 +907,7 @@ the model performance?"
   metrics      = {precision,recall,success,dcg},
   baselines    = {Random Multinomial Choice,Markov,Photographer Behavior Model},
   model_name   = {SSTREC},
-  annotation = {success is a particular metric from the article},
+  
   num_citations= {19},
 }
 
@@ -953,7 +929,7 @@ the model performance?"
   metrics      = {precision,recall,ndcg,map},
   baselines    = {IRenMF,LOCABAL,USG,iGSLR,LORE,ASMF,ARMF},
   model_name   = {PACE},
-  annotation = {},
+  
   num_citations= {128},
 }
 
@@ -975,8 +951,6 @@ the model performance?"
   baselines    = {Most_dense,Most_Freq,RegRS/E},
   model_name   = {RegRS},
 
-  annotation = {region recommendation, difficult to categorize, is just a greedy algorithm based on the model formalized like a probability problem
-this article has more evaluation in his field of problem (region)},
   num_citations= {20},
 }
 
@@ -999,7 +973,7 @@ this article has more evaluation in his field of problem (region)},
   baselines    = {UBCF,UBCF+G,GeoMF,HSR},
   model_name   = {HGMF,HGMF-UV,HGMF-XY},
 
-  annotation = {},
+  
   num_citations= {18},
 }
 
@@ -1024,7 +998,7 @@ this article has more evaluation in his field of problem (region)},
   baselines    = {DL-PMF,HLDBN,CDL,DCF,ST-LDA,ST-GLDA},
   model_name   = {SH-CDL,Spatial-Aware Hierarchical Collaborative Deep Learning model},
 
-  annotation = {accuracy is a variation of recall, isnt exactly recall},
+  
   num_citations= {103},
 }
 
@@ -1046,7 +1020,7 @@ this article has more evaluation in his field of problem (region)},
   metrics      = {precision,recall,RMSE,MAE},
   baselines    = {LCARS,TL-PMF,ATCF,USG,ASMF,NCPD},
   model_name   = {TGSC-PMF,GSC-PMF,TSC-PMF,TGC-PMF,TGS-PMF,TG-PMF,TS-PMF,TC-PMF},
-  annotation = {80\% 20\% train-test, good baselines},
+  
   num_citations= {50},
 }
 
@@ -1070,7 +1044,7 @@ this article has more evaluation in his field of problem (region)},
   baselines    = {USG,iGLSR,RankBoost,BPRMF,SBPR,GeoMF,LRT},
   model_name   = {LURWA,LURA},
 
-  annotation = {},
+  
   num_citations= {19},
 }
 
@@ -1093,7 +1067,7 @@ this article has more evaluation in his field of problem (region)},
   baselines    = {UBCF,UTS},
   model_name   = {CLB},
 
-  annotation = {poor baselines},
+  
 
   num_citations= {7},
 }
@@ -1135,7 +1109,7 @@ this article has more evaluation in his field of problem (region)},
   baselines    = {no baseline},
   model_name   = {HSTP},
 
-  annotation = {},
+  
   num_citations= {36},
 }
 
@@ -1159,11 +1133,6 @@ this article has more evaluation in his field of problem (region)},
   baselines    = {},
   model_name   = {R2SIGTP},
 
-  annotation = {poor evaluation, no methods of other papers.
-"More specifically, the baseline method first ranks the recommendation POIs according to the preference ranking of the user’s in
-current time, and then sorts POIs that belong to the same preference
-in ascending order of their distance from the current location."
-},
   num_citations= {3},
 }
 % checkpoint (social)
@@ -1186,7 +1155,7 @@ in ascending order of their distance from the current location."
   baselines    = {USG,LRT,GeoMF,RankGeoMF,GE,TransRec,LORE,MGMPMF},
   model_name   = {STA,STA-E,STA-H,spatiotemporal context-aware and translation-based recommender framework},
 
-  annotation = {good baselines},
+  
   num_citations= {18},
 }
 
@@ -1209,7 +1178,7 @@ in ascending order of their distance from the current location."
   baselines    = {MostPopular(TOP),Markov(MC),LRLT,FPMC,PRME,RNN,ST-RNN},
   model_name   = {ASTEN},
 
-  annotation = {},
+  
   num_citations= {1},
 }
 
@@ -1235,7 +1204,7 @@ in ascending order of their distance from the current location."
   baselines    = {WMF,PFM,BPR,GeoMF,Rank-GeoFM},
   model_name   = {LCR},
 
-  annotation = {more model names not included},
+  
   num_citations= {3},
 }
 
@@ -1256,7 +1225,7 @@ in ascending order of their distance from the current location."
   baselines    = {USG,MGMPFM,LFBCA,iGSLR,LORE,IRenMF,GeoMF,Rank-GeoFM,Geo-Teaser,PACE},
   model_name   = {APOIR},
 
-  annotation = {excellent},
+  
   num_citations= {12},
 }
 
@@ -1280,7 +1249,7 @@ in ascending order of their distance from the current location."
   baselines    = {WRMF,BPRMF,LRT,FPMC-LR},
   model_name   = {STELLAR,TLAR,SLAR},
 
-  annotation   = {"FPMC-LR is the state-of-the-art", TENSOR},
+  
   num_citations= {132},
 
 }
@@ -1303,7 +1272,7 @@ in ascending order of their distance from the current location."
   baselines    = {UBCF,G(particular of the article),USG,MGM},
   model_name   = {UGR},
 
-  annotation = {weak},
+  
   num_citations= {0},
 }
 
@@ -1326,7 +1295,7 @@ in ascending order of their distance from the current location."
   baselines    = {MF},
   model_name   = {TSG-MF,T-MF,S-MF,G-MF},
 
-  annotation = {weak},
+  
   num_citations= {8},
 
 }
@@ -1352,8 +1321,6 @@ in ascending order of their distance from the current location."
   baselines    = {SB,UBCF,UTE+SE,GTAG-BP,GT-BNMF,CTF-ARA,SK},
   model_name   = {APRA-SA},
 
-  annotation = {social because of the POI popularity; category because of the POI features.
-  Ok results},
   num_citations= {6},
 }
 
@@ -1377,7 +1344,7 @@ in ascending order of their distance from the current location."
   baselines    = {WRMF,IRenMF,GeoMF,Rank-GeoFM,Rank-GeoFM-NoGeo,RH-Push,Inf-Push,P-Push},
   model_name   = {JTCR,JTCR-Phase1,JTCR-NoVar,JTCR-NoGeo},
 
-  annotation = {},
+  
   num_citations= {7},
 }
 
@@ -1402,7 +1369,7 @@ in ascending order of their distance from the current location."
   baselines    = {UBCF,USG,USGT,UBCFT},
   model_name   = {MATI},
 
-  annotation = {This model has a part named MATI model that can incorporates any},
+  
   num_citations= {8},
 }
 
@@ -1425,8 +1392,6 @@ in ascending order of their distance from the current location."
   baselines    = {FPMC,FPMC-LR,POI2VEC},
   model_name   = {UGSE-LR,PEU-RNN},
 
-  annotation = {EdgePPR fusing preferences and RNN,
-  need to put references to articles that are used in baselines where year >= 2017},
   num_citations= {2},
 }
 
@@ -1450,15 +1415,6 @@ in ascending order of their distance from the current location."
   baselines    = {WRMF,BPRMF,MGMMF,IRENMF,Rank-GeoFM,PACE,DeepAE},
   model_name   = {SAE-NAD},
 
-  annotation = {SAE-NAD, which consists of a self-attentive encoder (SAE) and a neighbor-aware decoder (NAD).
- "To incorporate the geographical context information, we propose
-a neighbor-aware decoder to make users’ reachability higher on
-the similar and nearby neighbors of checked-in POIs, which is
-achieved by the inner product of POI embeddings together with the
-radial basis function (RBF) kernel"
-
-little gains compared to other methods
-},
   num_citations= {22},
 }
 
@@ -1480,7 +1436,7 @@ little gains compared to other methods
   baselines    = {FPMC-LR,PRME-G,GE,RNN,LSTM,GRU,ST-RNN},
   model_name   = {ST-LSTM,ST-CLSTM},
 
-  annotation = {},
+  
   num_citations= {13},
 }
 %not poi
@@ -1521,7 +1477,7 @@ little gains compared to other methods
   baselines    = {MF,PMF,FPMC-LR,PRME-G},
   model_name   = {GPDM,PPDM},
 
-  annotation = {},
+  
   num_citations= {2},
 }
 
@@ -1559,7 +1515,7 @@ little gains compared to other methods
   baselines    = {},
   model_name   = {DP-POIRS},
 
-  annotation = {No evaluation},
+  
   num_citations= {0},
 }
 
@@ -1582,7 +1538,7 @@ little gains compared to other methods
   baselines    = {MostPopular,LRT,MGMPFM,iGSLR,BPRMF,WMF,L-WMF},
   model_name   = {L-WMF},
 
-  annotation = {},
+  
   num_citations= {6},
 
 }
@@ -1605,7 +1561,7 @@ little gains compared to other methods
   baselines    = {UST,LC-POIs},
   model_name   = {AKAWO},
 
-  annotation = {extremely equal to LC-POIs(2015) but it reformulates one more time the problem},
+  
 
   unique= {true},
   num_citations= {0},
@@ -1627,7 +1583,7 @@ little gains compared to other methods
   baselines    = {FMC,ME,NS,HS,FPMC,PRME,CWRAP},
   model_name   = {POI2Vec},
 
-  annotation = {Good experimentations in future visitor and next poi. Solves next_poi and future_visitor problem},
+  
   num_citations= {81},
 }
 
@@ -1651,9 +1607,6 @@ little gains compared to other methods
   baselines    = {Random,Add.Markov,LORE,LSTM-Seq2Seq},
   model_name   = {DRPS,Dynamic Recommendation of POI Sequence},
 
-  annotation = {
-  propose new metrics to evaluate the recommendation accuracy of a POI sequence: Aligned Precision (AP) and Order-aware Sequence Precision (OSP)
-  },
   num_citations= {0},
 
 }
@@ -1675,7 +1628,7 @@ little gains compared to other methods
   baselines    = {UBCF,PR(POI sequence recommendation),MostPopular,TAPR(Time-Aware POI sequence Recommendation)},
   model_name   = {CAPR},
 
-  annotation = {},
+  
   num_citations= {0},
 }
 
@@ -1694,7 +1647,7 @@ little gains compared to other methods
   baselines    = {},
   model_name   = {CPSR,Context-Aware POI Sequence Recommendation},
 
-  annotation   = {},
+  
   num_citations= {0},
 }
 
@@ -1717,7 +1670,7 @@ little gains compared to other methods
   baselines    = {MostPopular,Random,RandomNearest,CTM(CrowdTravel method)},
   model_name   = {PV-PrefixSpan},
 
-  annotation   = {///Cant find dataset and cant classify methodology},
+  
   num_citations= {1},
 }
 
@@ -1739,7 +1692,7 @@ little gains compared to other methods
   baselines    = {MostPopular,UCF,UCF+G,GeoMF,HSR,ASMF-LA,HGMF,Markov,TA-CF,HGMF,TA-TEM,RNN,ST-RNN},
   model_name   = {HiRecS,Hierarchical Contextual Location Recommendation System},
 
-  annotation   = {Present a review of similar articles and the article itself},
+  
   num_citations= {1},
 }
 
@@ -1757,7 +1710,7 @@ little gains compared to other methods
   baselines    = {},
   model_name   = {},
 
-  annotation   = {Simple article and baselines, low relevant article},
+  
   unique       = {True},
   num_citations= {0},
 }
@@ -1777,7 +1730,7 @@ little gains compared to other methods
   baselines    = {CKNN,UPS-CF,CAPRF,GCF,LCA-LDA,JIM},
   model_name   = {LSARS},
 
-  annotation   = {},
+  
   num_citations= {38},
 
 }
@@ -1802,7 +1755,7 @@ little gains compared to other methods
   baselines    = {UBCF,ICF,TBCF,GeoTeCS,ICGS,DCR,DCW,K-Means,PSO,DPSOHiK},
   model_name   = {ABiPRS,Behavior induced Personalized Recommender System},
 
-  annotation   = {Uses several recommenders systems, but it will not be included in information because is not part of the method and i could not find it in the article},
+  
   num_citations= {20},
 }
 
@@ -1822,7 +1775,7 @@ little gains compared to other methods
   baselines    = {},
   model_name   = {PCAHTRS,Personalized Context-Aware Hybrid Travel Recommender System},
 
-  annotation   = {confuse baselines, simple model but it is interesting},
+  
   num_citations= {20},
 }
 
@@ -1934,8 +1887,5 @@ little gains compared to other methods
   metrics      = {adapted ResQue questionnaire},
   baselines    = {Average,Average without Misery,Most Pleasure,aggregating recommendations},
   model_name   = {Split Group,Connect Segments},
-
-  annotation   = {statistical test (friedman), online eval},
   num_citations= {1},
-
 }
