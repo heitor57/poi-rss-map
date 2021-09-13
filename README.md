@@ -1,10 +1,18 @@
-# POI Recommender Systems - Systematic Literature Mapping
+# POI Recommender Systems -- Systematic Literature Mapping
 
-This is a repository containing the tools and data (that is already present in the table of the article) used to do a mapping of recent Point-of-Interest (POI) Recommender Systems (RS) works, it contains (1) a bibliographic database and (2) a set of scripts do generate visualizations on the data.
+This is a repository containing the tools and data used to do the mapping of recent Point-of-Interest (POI) Recommender Systems (RS) works described at (Werneck et al., 2021), it contains (1) a bibliographic database and (2) a set of scripts do generate visualizations of the data.
+
+## Requirements
+
+The Pipfile contains Python requirements to run the scripts, also LaTeX and Texmaker support is required to automatically compile tex files.
 
 ## Usage
 
-All views of the data can be generated executing the scripts/run_all script.
+All views of the data can be generated executing the scripts/run_all script and all views are placed in the results' folder.
+
+## References
+
+Werneck, H., Silva, N., Viana, M., Pereira, A. C. M., Mourão, F., & Rocha, L. (2021). Points of Interest recommendations: Methods, evaluation, and future directions. Information Systems, 101, 101789. https://doi.org/10/gmmq79
 
 ## Citation
 
