@@ -1,4 +1,4 @@
-# POI Recommender Systems -- Systematic Literature Mapping
+# POI Recommender Systems Systematic Literature Mapping
 
 This is a repository containing the tools and data used to do the mapping of recent Point-of-Interest (POI) Recommender Systems (RS) works described at (Werneck et al., 2021), it contains (1) a bibliographic database and (2) a set of scripts do generate visualizations of the data.
 
